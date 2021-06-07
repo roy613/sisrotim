@@ -198,7 +198,7 @@ blockquote {
 .tm-hero-title {
   font-weight: bold;
   font-size: 3.3 rem;
-  text-shadow: 0px 0px 9px #333;
+  text-shadow: 3px 3px 3px #333;
 }
 
 .tm-hero-subtitle {
@@ -212,15 +212,45 @@ blockquote {
   right: 0;
 }
 
+.tm-hero-text-container-inner img{
+  height: 30%;
+}
+
 .info-panel{
-  margin-top: -200px;
-  
+  margin-top: -250px;
+}
+.link a{
+  color: rgb(226, 226, 226);
+  text-shadow: 1px 1px 2px rgb(0, 0, 0);
+  font-weight: bold;  
+}
+
+.link a:hover{
+  color: rgb(87, 87, 87) !important;
+  background-color: palegreen;
+  /* text-shadow: 2px 2px 9px rgb(0, 0, 0); */
+}
+@media (max-width: 500px){
+  .tm-hero-text-container-inner img{
+    height: 20%;
+  }
+  .info-panel{
+    margin-top: -350px;
+  }
+  .tm-hero-title {    
+    font-size:x-large;    
+  }
+  .link a{
+    color: rgba(245, 247, 250, 0.966);
+    text-shadow: 1px 1px 2px rgb(0, 0, 0);
+    font-weight: bold;
+    font-size: smaller;  
+  }
 }
 @media (max-height: 480px) {
   .tm-hero-text-container-inner {
     margin-top: -40px;
   }
-
   .tm-intro-next {
     bottom: 20px;
   }
@@ -233,9 +263,11 @@ blockquote {
 
 .tm-down-arrow {
   	color: #FFF;
+    width: 220px;
     cursor: pointer;
     background: #357;
-    padding: 15px 40px;
+    border-radius: 30px;
+    padding: 1px 5px;
     transition: all 0.3s ease;
 }
 
@@ -243,7 +275,7 @@ blockquote {
 .tm-down-arrow:focus {
   color: #FFF;
   background: #37A;
-  padding: 20px 50px;
+  padding: 7px 7px;
 }
 
 /* Introduction */

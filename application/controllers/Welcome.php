@@ -21,11 +21,13 @@ class Welcome extends CI_Controller {
 	public function index()
 	{
 		$this->load->view('front/new/v_header');
-		// $this->load->view('front/new/v_body');
-		// $this->load->view('front/new/v_footer');
+		$this->load->view('front/new/v_body');
+		$this->load->view('front/new/v_footer');
 	}
-	public function tes()
+	public function about()
 	{
-		$this->load->view('front/index');
+		$this->load->view('front/new/v_header');
+		$this->load->view('front/new/v_about');
+		$this->load->view('front/new/v_footer');
 	}
 }
