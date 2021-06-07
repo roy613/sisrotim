@@ -58,7 +58,7 @@ https://www.tooplate.com/view/2117-infinite-loop
 
         <div class="text-center tm-hero-text-container">
             <div class="tm-hero-text-container-inner">
-            <img src="<?php echo base_url(); ?>assets/logo.png" width="auto" height="130" alt="">
+            <img src="<?php echo base_url(); ?>assets/logo.png" width="auto" height="100" alt="">
                 <h2 class="tm-hero-title">SISTEM INFORMASI PROGRESS BATAS INTERNAL KUTIM VERSI<span style="font-size: larger;"> 1.0</span></h2>
                 <!-- <p class="tm-hero-subtitle">
                     SISTEM INFORMASI PROGRESS BATAS INTERNAL KUTIM VERSI<span style="font-size: larger;"> 1.0</span>
@@ -66,35 +66,32 @@ https://www.tooplate.com/view/2117-infinite-loop
             </div>
         </div>
 
-        <!-- <div class="container">
+        <div class="container">
       <div class="row justify-content-center">
-        <div class="col-12 info-panel">
+        <div class="col-9 info-panel">
           <div class="row d-flex justify-content-around">
             <div class="col-md-3 link">
               <a href="<?php echo base_url() . 'welcome/profil' ?>">
-                <img src="<?php echo base_url(); ?>assetf/gambar/1.png" class="float-left">
-                <h4>Profil</h4>
-                <p>Kelurahan Teluk Lingga</p>
+              <i class="fas fa-book fa-2x"></i><br>
+                <p>Peraturan Bupati</p>
               </a>
             </div>
             <div class="col-md-3 link">
               <a href="<?php echo base_url() . 'welcome/gallery' ?>">
-                <img src="<?php echo base_url(); ?>assetf/gambar/3.png" class="float-left">
-                <h4>Gallery</h4>
-                <p>Kelurahan Teluk Lingga</p>
+              <i class="fas fa-map-marked-alt fa-2x"></i><br>
+                <p>Kecamatan dan Desa</p>
               </a>
             </div>
-            <div class="col-md-3 link">
+            <div class="col-md-3 link"> 
               <a href="<?php echo base_url() . 'welcome/layanan' ?>">
-                <img src="<?php echo base_url(); ?>assetf/gambar/2.png" class="float-left">
-                <h4>Layanan</h4>
-                <p>Kelurahan Teluk Lingga</p>
+              <i class="fas fa-info-circle fa-2x"></i><br>
+                <p>Tentang Aplikasi</p>
               </a>
             </div>
           </div>
         </div>
       </div>
-    </div> -->
+    </div>
 
         <!-- <div class="row justify-content-center">
             <div class="col-md-9">
