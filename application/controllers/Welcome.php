@@ -30,4 +30,10 @@ class Welcome extends CI_Controller {
 		$this->load->view('front/new/v_about');
 		$this->load->view('front/new/v_footer');
 	}
+	public function protas()
+	{
+		$this->load->view('front/new/v_header');
+		$this->load->view('front/new/v_kd');
+		$this->load->view('front/new/v_footer');
+	}
 }

@@ -35,8 +35,8 @@
 
         <div class="text-center tm-hero-text-container">
             <div class="tm-hero-text-container-inner">
-                <img src="<?php echo base_url(); ?>assets/logo.png" width="auto" alt="">
-                <h2 class="tm-hero-title">SISTEM INFORMASI PROGRESS BATAS INTERNAL KUTIM VERSI<span style="font-size: larger;"> 1.0</span></h2>
+                <img src="<?php echo base_url(); ?>assets/logo.png" width="auto" alt=""> <br><br>
+                <h2 class="tm-hero-title">SISTEM INFORMASI BATAS DESA KABUPATEN KUTAI TIMUR</h2>
                 <!-- <p class="tm-hero-subtitle">
                     SISTEM INFORMASI PROGRESS BATAS INTERNAL KUTIM VERSI<span style="font-size: larger;"> 1.0</span>
                 </p> -->
@@ -55,9 +55,9 @@
                             </a>
                         </div>
                         <div class="col-md-3 link">
-                            <a href="<?php echo base_url() . 'welcome/gallery' ?>">
+                            <a href="<?php echo base_url() . 'welcome/protas' ?>">
                                 <center><i class="fas fa-map-marked-alt fa-2x"></i><br>
-                                    <p>Kecamatan dan Desa</p>
+                                    <p>Progress Batas</p>
                                 </center>
                             </a>
                         </div>

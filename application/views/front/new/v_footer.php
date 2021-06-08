@@ -1,5 +1,6 @@
 
         <footer class="text-center small tm-footer">
+            <br><br>
             <p class="mb-0">
                 Copyright &copy; 2021 Bagian Pemerintahan Sekretariat kabupaten Kutai Timur
     

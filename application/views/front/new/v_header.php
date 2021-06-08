@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>SISROTIM - versi 1.0</title>
+    <title>SIMBADA | KUTAI TIMUR</title>
     <link rel="apple-touch-icon" href="<?php echo base_url(); ?>assets/logo.png">
     <link rel="shortcut icon" type="image/x-icon" href="<?php echo base_url(); ?>assets/logo.png">
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/front1/fontawesome-5.5/css/all.min.css" />
