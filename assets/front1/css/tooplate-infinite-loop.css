@@ -121,6 +121,7 @@ blockquote {
 .tm-nav-link:hover {
   color: #FFF;
   background-color: #369;
+  border-radius: 30px;
 }
 
 .navbar-toggler {
