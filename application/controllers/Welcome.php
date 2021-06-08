@@ -21,7 +21,6 @@ class Welcome extends CI_Controller {
 	public function index()
 	{
 		$this->load->view('front/new/v_body');
-		$this->load->view('front/new/v_footer');
 	}
 	public function about()
 	{
@@ -33,6 +32,18 @@ class Welcome extends CI_Controller {
 	{
 		$this->load->view('front/new/v_header');
 		$this->load->view('front/new/v_kd');
+		$this->load->view('front/new/v_footer');
+	}
+	public function kecamatan()
+	{
+		$this->load->view('front/new/v_header');
+		$this->load->view('front/new/v_cam');
+		$this->load->view('front/new/v_footer');
+	}
+	public function desa()
+	{
+		$this->load->view('front/new/v_header');
+		$this->load->view('front/new/v_desa');
 		$this->load->view('front/new/v_footer');
 	}
 }

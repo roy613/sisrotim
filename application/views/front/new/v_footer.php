@@ -1,218 +1,45 @@
-<section>
-    <footer class="text-center small tm-footer">
-        <br><br>
-        <p class="mb-0">
-            Copyright &copy; 2021 Bagian Pemerintahan Sekretariat kabupaten Kutai Timur
-
-            <!-- . <a rel="nofollow" href="https://www.tooplate.com" title="HTML templates">Designed by TOOPLATE</a></p> -->
-    </footer>
+<section class="paralax-mf footer-paralax bg-image sect-mt4 route" style="background-image: url(<?php echo base_url(); ?>assets/f2/img/b1.jpeg)">
+  <div class="overlay-mf"></div>
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="copyright-box">
+            <p class="copyright"> Copyright &copy; 2021 Bagian Pemerintahan Sekretariat Daerah <br>Kabupaten Kutai Timur</p>
+            <div class="credits">
+              <!--
+                  All the links in the footer should remain intact.
+                  You can delete the links only if you purchased the pro version.
+                  Licensing information: https://bootstrapmade.com/license/
+                  Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=DevFolio
+                -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
 </section>
+<a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+<div id="preloader"></div>
 
+<!-- JavaScript Libraries -->
+<script src="<?php echo base_url() ?>assets/f2/lib/jquery/jquery.min.js"></script>
+<script src="<?php echo base_url() ?>assets/f2/lib/jquery/jquery-migrate.min.js"></script>
+<script src="<?php echo base_url() ?>assets/f2/lib/popper/popper.min.js"></script>
+<script src="<?php echo base_url() ?>assets/f2/lib/bootstrap/js/bootstrap.min.js"></script>
+<script src="<?php echo base_url() ?>assets/f2/lib/easing/easing.min.js"></script>
+<script src="<?php echo base_url() ?>assets/f2/lib/counterup/jquery.waypoints.min.js"></script>
+<script src="<?php echo base_url() ?>assets/f2/lib/counterup/jquery.counterup.js"></script>
+<script src="<?php echo base_url() ?>assets/f2/lib/owlcarousel/owl.carousel.min.js"></script>
+<script src="<?php echo base_url() ?>assets/f2/lib/lightbox/js/lightbox.min.js"></script>
+<script src="<?php echo base_url() ?>assets/f2/lib/typed/typed.min.js"></script>
+<!-- Contact Form JavaScript File -->
+<script src="<?php echo base_url() ?>assets/f2/contactform/contactform.js"></script>
 
+<!-- Template Main Javascript File -->
+<script src="<?php echo base_url() ?>assets/f2/js/main.js"></script>
 
-
-
-
-
-
-<script src="<?php echo base_url(); ?>assets/front1/js/jquery-1.9.1.min.js"></script>
-<script src="<?php echo base_url(); ?>assets/front1/slick/slick.min.js"></script>
-<script src="<?php echo base_url(); ?>assets/front1/magnific-popup/jquery.magnific-popup.min.js"></script>
-<script src="<?php echo base_url(); ?>assets/front1/js/easing.min.js"></script>
-<script src="<?php echo base_url(); ?>assets/front1/js/jquery.singlePageNav.min.js"></script>
-<script src="<?php echo base_url(); ?>assets/front1/js/bootstrap.min.js"></script>
-<script>
-    function getOffSet() {
-        var _offset = 450;
-        var windowHeight = window.innerHeight;
-
-        if (windowHeight > 500) {
-            _offset = 400;
-        }
-        if (windowHeight > 680) {
-            _offset = 300
-        }
-        if (windowHeight > 830) {
-            _offset = 210;
-        }
-
-        return _offset;
-    }
-
-    function setParallaxPosition($doc, multiplier, $object) {
-        var offset = getOffSet();
-        var from_top = $doc.scrollTop(),
-            bg_css = 'center ' + (multiplier * from_top - offset) + 'px';
-        $object.css({
-            "background-position": bg_css
-        });
-    }
-
-    // Parallax function
-    // Adapted based on https://codepen.io/roborich/pen/wpAsm        
-    var background_image_parallax = function($object, multiplier, forceSet) {
-        multiplier = typeof multiplier !== 'undefined' ? multiplier : 0.5;
-        multiplier = 1 - multiplier;
-        var $doc = $(document);
-        // $object.css({"background-attatchment" : "fixed"});
-
-        if (forceSet) {
-            setParallaxPosition($doc, multiplier, $object);
-        } else {
-            $(window).scroll(function() {
-                setParallaxPosition($doc, multiplier, $object);
-            });
-        }
-    };
-
-    var background_image_parallax_2 = function($object, multiplier) {
-        multiplier = typeof multiplier !== 'undefined' ? multiplier : 0.5;
-        multiplier = 1 - multiplier;
-        var $doc = $(document);
-        $object.css({
-            "background-attachment": "fixed"
-        });
-
-        $(window).scroll(function() {
-            if ($(window).width() > 768) {
-                var firstTop = $object.offset().top,
-                    pos = $(window).scrollTop(),
-                    yPos = Math.round((multiplier * (firstTop - pos)) - 186);
-
-                var bg_css = 'center ' + yPos + 'px';
-
-                $object.css({
-                    "background-position": bg_css
-                });
-            } else {
-                $object.css({
-                    "background-position": "center"
-                });
-            }
-        });
-    };
-
-    $(function() {
-        // Hero Section - Background Parallax
-        background_image_parallax($(".tm-parallax"), 0.30, false);
-        background_image_parallax_2($("#contact"), 0.80);
-        background_image_parallax_2($("#testimonials"), 0.80);
-
-        // Handle window resize
-        window.addEventListener('resize', function() {
-            background_image_parallax($(".tm-parallax"), 0.30, true);
-        }, true);
-
-        // Detect window scroll and update navbar
-        $(window).scroll(function(e) {
-            if ($(document).scrollTop() > 120) {
-                $('.tm-navbar').addClass("scroll");
-            } else {
-                $('.tm-navbar').removeClass("scroll");
-            }
-        });
-
-        // Close mobile menu after click 
-        $('#tmNav a').on('click', function() {
-            $('.navbar-collapse').removeClass('show');
-        })
-
-        // Scroll to corresponding section with animation
-        $('#tmNav').singlePageNav({
-            'easing': 'easeInOutExpo',
-            'speed': 600
-        });
-
-        // Add smooth scrolling to all links
-        // https://www.w3schools.com/howto/howto_css_smooth_scroll.asp
-        $("a").on('click', function(event) {
-            if (this.hash !== "") {
-                event.preventDefault();
-                var hash = this.hash;
-
-                $('html, body').animate({
-                    scrollTop: $(hash).offset().top
-                }, 600, 'easeInOutExpo', function() {
-                    window.location.hash = hash;
-                });
-            } // End if
-        });
-
-        // Pop up
-        $('.tm-gallery').magnificPopup({
-            delegate: 'a',
-            type: 'image',
-            gallery: {
-                enabled: true
-            }
-        });
-
-        $('.tm-testimonials-carousel').slick({
-            dots: true,
-            prevArrow: false,
-            nextArrow: false,
-            infinite: false,
-            slidesToShow: 3,
-            slidesToScroll: 1,
-            responsive: [{
-                    breakpoint: 992,
-                    settings: {
-                        slidesToShow: 2
-                    }
-                },
-                {
-                    breakpoint: 768,
-                    settings: {
-                        slidesToShow: 2
-                    }
-                },
-                {
-                    breakpoint: 480,
-                    settings: {
-                        slidesToShow: 1
-                    }
-                }
-            ]
-        });
-
-        // Gallery
-        $('.tm-gallery').slick({
-            dots: true,
-            infinite: false,
-            slidesToShow: 5,
-            slidesToScroll: 2,
-            responsive: [{
-                    breakpoint: 1199,
-                    settings: {
-                        slidesToShow: 4,
-                        slidesToScroll: 2
-                    }
-                },
-                {
-                    breakpoint: 991,
-                    settings: {
-                        slidesToShow: 3,
-                        slidesToScroll: 2
-                    }
-                },
-                {
-                    breakpoint: 767,
-                    settings: {
-                        slidesToShow: 2,
-                        slidesToScroll: 1
-                    }
-                },
-                {
-                    breakpoint: 480,
-                    settings: {
-                        slidesToShow: 1,
-                        slidesToScroll: 1
-                    }
-                }
-            ]
-        });
-    });
-</script>
 </body>
 
 </html>

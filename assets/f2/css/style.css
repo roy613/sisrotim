@@ -604,6 +604,7 @@ a:hover {
   height: 100vh;
   position: relative;
   color: #fff;
+  background-image: url(../img/b1.jpeg);
 }
 
 .intro .intro-content {
@@ -638,16 +639,21 @@ a:hover {
 }
 
 .intro-single {
-  height: 350px;
+  height: 170px;
 }
 
 .intro-single .intro-content {
-  margin-top: 30px;
+  margin-top: 40px;
 }
 
 .intro-single .intro-title {
   text-transform: uppercase;
-  font-size: 3rem;
+  font-size: 1.5rem;
+  margin-top: 30px;
+}
+
+.breadcrumb{
+  margin-top: -2.2rem;
 }
 
 .intro-single .breadcrumb {
@@ -1219,11 +1225,13 @@ footer .credits a {
   }
 
   .intro .intro-subtitle {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
   }
 
   .intro-single .intro-title {
-    font-size: 3.5rem;
+    font-size: 2.2rem;
+    margin-top: 20px;
+    /* text-shadow: 1px 1px 9px black; */
   }
 
   .testimonial-box .description {
