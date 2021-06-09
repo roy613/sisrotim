@@ -43,6 +43,24 @@
         function pildes() {
             $('#desa').modal('show');
         }
+        // function pilihan() {
+        //     var cam = document.getElementById("kecamatan1").value;
+
+        //     let request = new XMLHttpRequest()
+        //     request.open("GET", "<?php echo base_url('welcome/periksa')?>?kec="+cam);
+        //     request.send();
+        //     request.onload=()=>{
+        //         if(request.status===200){
+        //             if((JSON.parse(request.response).status)=="success"){
+        //                 document.getElementById("desa").html="<option value="">--Pilih Kecamatan--</option>
+        //                     <?php foreach($aa as $row) {?>
+        //                     <option value="<?php echo $row->mk_id;?>"><?php echo $row->mk_kec;?></option>
+        //                     <?php }?>";
+        //                 document.getElementById("desa").disabled="false";
+        //             }
+        //         }
+        //     }
+        // }
     </script>
 
     <!--/ Nav Star /-->
@@ -85,11 +103,11 @@
                 <form method="post" action="" enctype="multipart/form-data">
                     <div class="form-group">
                         <label for="kecamatan">Silahkan Pilih Nama Kecamatan</label>
-                        <select class="custom-select" id="kecamatan" name="kecamatan" placeholder="">
-                            <option>Bupati</option>
-                            <option>Wakil Bupati</option>
-                            <option>Camat</option>
-                            <option>Lurah</option>
+                        <select class="custom-select" id="kecamatan" name="kecamatan" placeholder="" required>
+                            <option value="">--Pilih Kecamatan--</option>
+                            <?php foreach($aa as $row) {?>
+                            <option value="<?php echo $row->mk_id;?>"><?php echo $row->mk_kec;?></option>
+                            <?php }?>
                         </select>
                     </div>
                     <button type="submit" id="save" class="btn btn-primary" style="float: right;">Pilih</button>
@@ -112,20 +130,16 @@
                 <form method="post" action="" enctype="multipart/form-data">
                     <div class="form-group">
                         <label for="kecamatan">Silahkan Pilih Nama Kecamatan</label>
-                        <select class="custom-select" id="kecamatan" name="kecamatan" placeholder="">
-                            <option>Bupati</option>
-                            <option>Wakil Bupati</option>
-                            <option>Camat</option>
-                            <option>Lurah</option>
+                        <select class="custom-select" id="kecamatan1" name="kecamatan" placeholder="" required>
+                        <option value="">--Pilih Kecamatan--</option>
+                            <?php foreach($aa as $row) {?>
+                            <option value="<?php echo $row->mk_id;?>"><?php echo $row->mk_kec;?></option>
+                            <?php }?>
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="desa">Silahkan Pilih Nama Desa</label>
-                        <select class="custom-select" id="desa" name="desa" placeholder="">
-                            <option>Bupati</option>
-                            <option>Wakil Bupati</option>
-                            <option>Camat</option>
-                            <option>Lurah</option>
+                        <select class="custom-select" id="desa" name="desa" placeholder="" required disabled>
                         </select>
                     </div>
                     <button type="submit" id="save" class="btn btn-primary" style="float: right;">Pilih</button>

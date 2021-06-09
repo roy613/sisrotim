@@ -30,14 +30,33 @@ class Welcome extends CI_Controller {
 	}
 	public function protas()
 	{
-		$this->load->view('front/new/v_header');
+		$data['aa'] = $this->db->query("SELECT * FROM master_kecamatan")->result();
+		$data['ab'] = $this->db->query("SELECT * FROM master_desa")->result();
+		$this->load->view('front/new/v_header', $data);
 		$this->load->view('front/new/v_kd');
 		$this->load->view('front/new/v_footer');
 	}
+	public function periksa()
+	{
+		$kec=$_GET['cam'];
+		$data = $this->db->query("SELECT * FROM master_desa WHERE md_kec=$kec")->num_rows();
+		if($data>0){
+			$result['status']="success";
+			$myJSON=json_encode($result);
+			echo $myJSON;
+		}else{
+			$result['status']="failed";
+			$myJSON=json_encode($result);
+			echo $myJSON;
+		}
+
+	}
 	public function kecamatan()
 	{
+		$cam = $this->input->post('kecamatan');
+		$data[''] = $this->db->query("SELECT * FROM ")->result();
 		$this->load->view('front/new/v_header');
-		$this->load->view('front/new/v_cam');
+		$this->load->view('front/new/v_cam', $data);
 		$this->load->view('front/new/v_footer');
 	}
 	public function desa()
