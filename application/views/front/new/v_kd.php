@@ -40,7 +40,7 @@
                   </div>
                 </div>
                 <div class="skill-mf">
-                  <p class="title-s">Progress Batas Desa</p>
+                  <p class="title-s">Progress Penataan Batas Desa di Kutai Timur</p>
                   <span>Total Segmen</span> <span class="pull-right">10 Segmen</span>
                   <div class="progress">
                     <div class="progress-bar" role="progressbar" style="width: 100%;" aria-valuenow="100" aria-valuemin="0"
@@ -67,7 +67,7 @@
                 <div class="about-me pt-4 pt-md-0">
                   <div class="title-box-2">
                     <h5 class="title-left">
-                      PROSES PENETAPAN TAPAL BATAS DESA
+                      PROGRESS PENATAAN BATAS DESA
                     </h5>
                   </div>
                   <p class="lead">

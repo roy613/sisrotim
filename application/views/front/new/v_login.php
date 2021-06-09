@@ -22,13 +22,13 @@
             <div class="row justify-content-center">
                 <div class="col-md-6 text-center mb-5">
                 <img src="<?php echo base_url(); ?>assets/logo.png" width="auto" alt="" height="80px" class="mr-2"><br>
-                    <h2 class="heading-section">LOGIN SIMPRONATASA</h2>
+                    <h2 class="heading-section" style="text-shadow: 2px 2px 9px black">LOGIN SIMPRONATASA</h2>
                 </div>
             </div>
             <div class="row justify-content-center">
                 <div class="col-md-6 col-lg-4">
                     <div class="login-wrap p-0">
-                        <h6 class="mb-4 text-center teks" style="color:#fff">Silahkan Input Username dan Password Anda</h6>
+                        <h6 class="mb-4 text-center" style="color:#fff; text-shadow: 2px 2px 9px black">Silahkan Input Username dan Password Anda</h6>
                         <form action="#" class="signin-form">
                             <div class="form-group">
                                 <input type="text" class="form-control" placeholder="Username" required>

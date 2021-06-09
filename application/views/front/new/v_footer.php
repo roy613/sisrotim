@@ -25,6 +25,7 @@
 
 <!-- JavaScript Libraries -->
 <script src="<?php echo base_url() ?>assets/f2/lib/jquery/jquery.min.js"></script>
+
 <script src="<?php echo base_url() ?>assets/f2/lib/jquery/jquery-migrate.min.js"></script>
 <script src="<?php echo base_url() ?>assets/f2/lib/popper/popper.min.js"></script>
 <script src="<?php echo base_url() ?>assets/f2/lib/bootstrap/js/bootstrap.min.js"></script>
@@ -39,6 +40,9 @@
 
 <!-- Template Main Javascript File -->
 <script src="<?php echo base_url() ?>assets/f2/js/main.js"></script>
+
+
+
 
 </body>
 

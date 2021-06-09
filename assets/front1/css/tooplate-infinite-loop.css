@@ -198,12 +198,12 @@ blockquote {
 
 .tm-hero-title {
   font-weight: bold;
-  font-size: 3.3 rem;
-  text-shadow: 3px 3px 3px #333;
+  font-size: 2.1rem;
+  text-shadow: 2px 2px 3px rgb(31, 12, 138);
 }
 
 .tm-hero-subtitle {
-  text-shadow: 2px 2px 2px #333;
+  text-shadow: 1px 1px 9px rgb(31, 12, 138);
 }
 
 .tm-intro-next {
@@ -231,15 +231,16 @@ blockquote {
   background-color: palegreen;
   /* text-shadow: 2px 2px 9px rgb(0, 0, 0); */
 }
-@media (max-width: 500px){
+@media (max-width: 780px){
   .tm-hero-text-container-inner img{
     height: 20%;
   }
   .info-panel{
-    margin-top: -350px;
+    margin-top: -325px;
   }
   .tm-hero-title {    
-    font-size:x-large;    
+    font-size:x-large;
+    t    
   }
   .link a{
     color: rgba(245, 247, 250, 0.966);
@@ -247,6 +248,10 @@ blockquote {
     font-weight: bold;
     font-size: smaller;  
   }
+}
+@media (max-width: 400px){
+  .huruf{    
+    font-size:14px;
 }
 @media (max-height: 480px) {
   .tm-hero-text-container-inner {
@@ -623,10 +628,10 @@ figure.effect-honey:hover h2 i {
 
 .tm-footer {
   position: absolute;
-  bottom: 35px;
+  bottom: 0px;
   left: 0;
   right: 0;
-  padding: 0 15px;
+  padding:0px;  
 }
 
 .tm-footer a {

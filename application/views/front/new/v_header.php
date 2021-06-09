@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>SIMBADA| KUTAI TIMUR</title>
+    <title>SIMPRONATASA| KUTAI TIMUR</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -40,6 +40,7 @@
         function pilkec() {
             $('#kecamatan').modal('show');
         }
+
         function pildes() {
             $('#desa').modal('show');
         }
@@ -47,15 +48,15 @@
         //     var cam = document.getElementById("kecamatan1").value;
 
         //     let request = new XMLHttpRequest()
-        //     request.open("GET", "<?php echo base_url('welcome/periksa')?>?kec="+cam);
+        //     request.open("GET", "<?php echo base_url('welcome/periksa') ?>?kec="+cam);
         //     request.send();
         //     request.onload=()=>{
         //         if(request.status===200){
         //             if((JSON.parse(request.response).status)=="success"){
         //                 document.getElementById("desa").html="<option value="">--Pilih Kecamatan--</option>
-        //                     <?php foreach($aa as $row) {?>
-        //                     <option value="<?php echo $row->mk_id;?>"><?php echo $row->mk_kec;?></option>
-        //                     <?php }?>";
+        //                     <?php foreach ($aa as $row) { ?>
+        //                     <option value="<?php echo $row->mk_id; ?>"><?php echo $row->mk_kec; ?></option>
+        //                     <?php } ?>";
         //                 document.getElementById("desa").disabled="false";
         //             }
         //         }
@@ -63,11 +64,12 @@
         // }
     </script>
 
+
     <!--/ Nav Star /-->
     <nav class="navbar navbar-b navbar-trans navbar-expand-md fixed-top" id="mainNav">
         <div class="container">
             <a href="<?php echo base_url(); ?>" class="navbar-brand js-scroll" href="#page-top">
-                <img src="<?php echo base_url(); ?>assets/logo.png" width="auto" alt="" height="30px" class="mr-2">SIMBADA</a>
+                <img src="<?php echo base_url(); ?>assets/logo.png" width="auto" alt="" height="30px" class="mr-2">SIMPRONATASA</a>
             <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarDefault" aria-controls="navbarDefault" aria-expanded="false" aria-label="Toggle navigation">
                 <span></span>
                 <span></span>
@@ -94,24 +96,24 @@
             <div class="modal-content">
                 <div class="modal-header bg-primary">
                     <img src="<?php echo base_url(); ?>assets/logo.png" width="auto" alt="" height="30px" class="mr-2">
-                    <h5 class="modal-title" id="exampleModalLabel" style="color: white;">SIMBADA</h5>
+                    <h5 class="modal-title" id="exampleModalLabel" style="color: white;">SIMPRONATASA</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
-                <form method="post" action="" enctype="multipart/form-data">
-                    <div class="form-group">
-                        <label for="kecamatan">Silahkan Pilih Nama Kecamatan</label>
-                        <select class="custom-select" id="kecamatan" name="kecamatan" placeholder="" required>
-                            <option value="">--Pilih Kecamatan--</option>
-                            <?php foreach($aa as $row) {?>
-                            <option value="<?php echo $row->mk_id;?>"><?php echo $row->mk_kec;?></option>
-                            <?php }?>
-                        </select>
-                    </div>
-                    <button type="submit" id="save" class="btn btn-primary" style="float: right;">Pilih</button>
-                </form>
+                    <form method="post" action="" enctype="multipart/form-data">
+                        <div class="form-group">
+                            <label for="kecamatan">Silahkan Pilih Nama Kecamatan</label>
+                            <select class="custom-select" id="kecamatan" name="kecamatan" placeholder="" required>
+                                <option value="" selected disabled>--Pilih Kecamatan--</option>
+                                <?php foreach ($aa as $row) { ?>
+                                    <option value="<?php echo $row->mk_id; ?>"><?php echo $row->mk_kec; ?></option>
+                                <?php } ?>
+                            </select>
+                        </div>
+                        <button type="submit" id="save" class="btn btn-primary" style="float: right;">Pilih</button>
+                    </form>
                 </div>
             </div>
         </div>
@@ -121,29 +123,73 @@
             <div class="modal-content">
                 <div class="modal-header bg-primary">
                     <img src="<?php echo base_url(); ?>assets/logo.png" width="auto" alt="" height="30px" class="mr-2">
-                    <h5 class="modal-title" id="exampleModalLabel" style="color: white;">SIMBADA</h5>
+                    <h5 class="modal-title" id="exampleModalLabel" style="color: white;">SIMPRONATASA</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
-                <form method="post" action="" enctype="multipart/form-data">
-                    <div class="form-group">
-                        <label for="kecamatan">Silahkan Pilih Nama Kecamatan</label>
-                        <select class="custom-select" id="kecamatan1" name="kecamatan" placeholder="" required>
-                        <option value="">--Pilih Kecamatan--</option>
-                            <?php foreach($aa as $row) {?>
-                            <option value="<?php echo $row->mk_id;?>"><?php echo $row->mk_kec;?></option>
-                            <?php }?>
+                    <form method="post" action="" enctype="multipart/form-data">
+                        <!-- <div class="form-group">
+                            <label for="kecamatan">Silahkan Pilih Nama Kecamatan</label>
+                            <select class="custom-select" id="kecamatan1" name="kecamatan" placeholder="" required>
+                                <option value="" selected disabled>--Pilih Kecamatan--</option>
+                                <?php foreach ($aa as $row) { ?>
+                                    <option value="<?php echo $row->mk_id; ?>"><?php echo $row->mk_kec; ?></option>
+                                <?php } ?>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="desa">Silahkan Pilih Nama Desa</label>
+                            <select class="custom-select" id="desa" name="desa" placeholder="" required disabled>
+                            </select>
+                        </div> -->
+                        <!-- <div class="ui selection dropdown" name="kecamatan1" id="kecamatan1">
+                            <input type="hidden" id="selected_kecamatan1" name="selected_kecamatan1">
+                            <i class="dropdown icon"></i>
+                            <div class="default text">--Pilih Kecamatan--</div>
+                            <div class="menu">
+                                <?php foreach ($aa as $row) { ?>
+                                    <option value="<?php echo $row->mk_id; ?>"><?php echo $row->mk_kec; ?></option>
+                                <?php } ?>
+                            </div>
+                        </div>
+
+                        <div class="ui selection dropdown" id="desa">
+                            <input type="hidden" id="selected_desa" name="selected_desa">
+                            <i class="dropdown icon"></i>
+                            <div class="default text" id="default_text">--Pilih Desa--</div>
+                            <div class="menu" id="desa_content"></div>
+                        </div> -->
+                        <div class="form-group">
+                        <label for="kecamatan1">Silahkan Pilih Nama Kecamatan</label>
+                        <select class="custom-select" id="kecamatan1" name="kecamatan1" placeholder="" required>
+                        <option value="" selected disabled>--Pilih Kecamatan--</option>
+                        <?php foreach ($aa as $row) { ?>
+                                <option <?php echo $kecamatan_selected == $row->mk_id ? 'selected="selected"' : '' ?> 
+                                    value="<?php echo $row->mk_id ?>"><?php echo $row->mk_kec ?></option>
+                                <?php
+                            }
+                            ?>
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="desa">Silahkan Pilih Nama Desa</label>
-                        <select class="custom-select" id="desa" name="desa" placeholder="" required disabled>
+                    <label for="desa">Silahkan Pilih Nama Desa</label>
+                    <select class="custom-select" id="desa1" name="desa1" placeholder="" required disabled>
+                            <option value="">Please Select</option>
+                            <?php
+                            foreach ($ab as $row) {
+                                ?>
+                                <!--di sini kita tambahkan class berisi id provinsi-->
+                                <option <?php echo $desa_selected == $row->md_kec ? 'selected="selected"' : '' ?> 
+                                    class="<?php echo $row->md_kec ?>" value="<?php echo $row->md_id ?>"><?php echo $row->md_desa ?></option>
+                                <?php
+                            }
+                            ?>
                         </select>
                     </div>
-                    <button type="submit" id="save" class="btn btn-primary" style="float: right;">Pilih</button>
-                </form>
+                        <button type="submit" id="save" class="btn btn-primary" style="float: right;">Pilih</button>
+                    </form>
                 </div>
             </div>
         </div>
