@@ -61,7 +61,7 @@ https://www.tooplate.com/view/2117-infinite-loop
                             </a>
                         </div>
                         <div class="col-md-3 link">
-                            <a href="<?php echo base_url() . 'welcome/layanan' ?>">
+                            <a href="<?php echo base_url() . 'welcome/login' ?>">
                                 <center><i class="fas fa-door-open fa-2x"></i><br>
                                     <p>Login</p>
                                 </center>
@@ -94,7 +94,7 @@ https://www.tooplate.com/view/2117-infinite-loop
     <script src="<?php echo base_url(); ?>assets/front1/js/easing.min.js"></script>
     <script src="<?php echo base_url(); ?>assets/front1/js/jquery.singlePageNav.min.js"></script>
     <script src="<?php echo base_url(); ?>assets/front1/js/bootstrap.min.js"></script>
-    <script>
+    <!-- <script>
         function getOffSet() {
             var _offset = 450;
             var windowHeight = window.innerHeight;
@@ -285,7 +285,7 @@ https://www.tooplate.com/view/2117-infinite-loop
                 ]
             });
         });
-    </script>
+    </script> -->
 </body>
 
 </html>
