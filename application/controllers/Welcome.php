@@ -69,7 +69,7 @@ class Welcome extends CI_Controller {
 	public function kecamatan()
 	{
 		$cam = $this->input->post('kecamatan');
-		$data[''] = $this->db->query("SELECT * FROM ")->result();
+		$data['qq'] = $this->db->query("SELECT * FROM data WHERE d_kec1=$cam")->result();
 		$this->load->view('front/new/v_header');
 		$this->load->view('front/new/v_cam', $data);
 		$this->load->view('front/new/v_footer');

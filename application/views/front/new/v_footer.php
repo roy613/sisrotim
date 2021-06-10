@@ -35,6 +35,11 @@
 <script src="<?php echo base_url() ?>assets/f2/lib/owlcarousel/owl.carousel.min.js"></script>
 <script src="<?php echo base_url() ?>assets/f2/lib/lightbox/js/lightbox.min.js"></script>
 <script src="<?php echo base_url() ?>assets/f2/lib/typed/typed.min.js"></script>
+<script src="<?php echo base_url() ?>assets/front/assets/js/bootstrap.bundle.min.js"></script>
+    <!-- Templatemo -->
+    <script src="<?php echo base_url() ?>assets/front/assets/js/templatemo.js"></script>
+    <!-- Custom -->
+    <script src="<?php echo base_url() ?>assets/front/assets/js/custom.js"></script>
 <!-- Contact Form JavaScript File -->
 <script src="<?php echo base_url() ?>assets/f2/contactform/contactform.js"></script>
 

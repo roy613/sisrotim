@@ -1,15 +1,35 @@
+<nav class="navbar navbar-b navbar-trans navbar-expand-md fixed-top" id="mainNav">
+  <div class="container">
+    <a href="<?php echo base_url(); ?>" class="navbar-brand js-scroll" href="#page-top">
+      <img src="<?php echo base_url(); ?>assets/logo.png" width="auto" alt="" height="30px" class="mr-2">SIMPRONATASA</a>
+    <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarDefault" aria-controls="navbarDefault" aria-expanded="false" aria-label="Toggle navigation">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <div class="navbar-collapse collapse justify-content-end" id="navbarDefault">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link js-scroll" href="<?php echo base_url(); ?>">Home</a>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+</nav>
+
 <div class="intro intro-single route bg-image">
   <div class="overlay-mf"></div>
   <div class="intro-content display-table">
     <div class="table-cell">
       <div class="container">
-        <h2 class="intro-title mb-4">Progress Batas</h2>
+        <h2 class="intro-title mb-4">Tentang Aplikasi</h2>
         <ol class="breadcrumb d-flex justify-content-center">
           <li class="breadcrumb-item">
             <a href="<?php echo base_url(); ?>">Home</a>
           </li>
           <li class="breadcrumb-item active">
-            <a href="#" style="color:grey">Progress Batas</a>
+            <a href="#" style="color:grey">Tentang Aplikasi</a>
           </li>
         </ol>
       </div>
@@ -21,49 +41,62 @@
     <div class="row">
       <div class="col-sm-12">
         <div class="box-shadow-full">
-          <div class="container tm-testimonials-content">
-            <div class="row">
-              <div class="col-lg-12 tm-content-box">
-                <h2 class="text-white text-center mb-4 tm-section-title">Testimonials</h2>
-                <p class="mx-auto tm-section-desc text-center">
-                  Nulla dictum sem non eros euismod, eu placerat tortor lobortis. Suspendisse id velit eu libero pellentesque interdum. Etiam quis congue eros.
-                </p>
-                <div class="mx-auto tm-gallery-container tm-gallery-container-2">
-                  <div class="tm-testimonials-carousel">
-                    <figure class="tm-testimonial-item">
-                      <img src="img/testimonial-img-01.jpg" alt="Image" class="img-fluid mx-auto">
-                      <blockquote>This background image includes a semi-transparent overlay layer. This section also has a parallax image effect.</blockquote>
-                      <figcaption>Catherine Win (Designer)</figcaption>
-                    </figure>
-
-                    <figure class="tm-testimonial-item">
-                      <img src="img/testimonial-img-02.jpg" alt="Image" class="img-fluid mx-auto">
-                      <blockquote>Testimonial section comes with carousel items. You can use Infinite Loop HTML CSS template for your websites.</blockquote>
-                      <figcaption>Dual Rocker (CEO)</figcaption>
-                    </figure>
-
-                    <figure class="tm-testimonial-item">
-                      <img src="img/testimonial-img-03.jpg" alt="Image" class="img-fluid mx-auto">
-                      <blockquote>Nulla finibus ligula nec tortor convallis tincidunt. Interdum et malesuada fames ac ante ipsum primis in faucibus.</blockquote>
-                      <figcaption>Sandar Soft (Marketing)</figcaption>
-                    </figure>
-
-                    <figure class="tm-testimonial-item">
-                      <img src="img/testimonial-img-04.jpg" alt="Image" class="img-fluid mx-auto">
-                      <blockquote>Curabitur rutrum pharetra lobortis. Pellentesque vehicula, velit quis eleifend fermentum, erat arcu aliquet neque.</blockquote>
-                      <figcaption>Oliva Htoo (Designer)</figcaption>
-                    </figure>
-
-                    <figure class="tm-testimonial-item">
-                      <img src="img/testimonial-img-02.jpg" alt="Image" class="img-fluid mx-auto">
-                      <blockquote>Integer sit amet risus et erat imperdiet finibus. Nam lacus nunc, vulputate id ex eget, euismod auctor augue.</blockquote>
-                      <figcaption>Jacob Joker (CTO)</figcaption>
-                    </figure>
-                  </div>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="about-me pt-4 pt-md-0">
+                <div class="title-box-2">
+                  <h5 class="title-left">
+                    SIMPRONATASA
+                  </h5>
                 </div>
+                <p class="lead" style="text-align: justify;">
+                  mejikuhibinu mejikuhibinu mejikuhibinu mejikuhibinumejikuhibinu mejikuhibinumejikuhibinu mejikuhibinu mejikuhibinu mejikuhibinu mejikuhibinu mejikuhibinu
+                </p>
               </div>
             </div>
           </div>
+
+          <h6 class="h2 py-5 typo-space-line" style="font-size:xx-large;">Tim Penyusun</h6>
+          <div class="pt-5 pb-3 d-lg-flex align-items-center gx-5">
+          
+              
+              
+           
+            <div class="row">
+              <div class="col-lg-12 row">
+                <div class="team-member col-md-3">
+                  <img class="team-member-img img-fluid rounded-circle p-4" src="<?php echo base_url() ?>assets/kabag.jpg" alt="foto kabag">
+                  <ul class="team-member-caption list-unstyled text-center pt-4 text-muted light-300">
+                    <li>Joko Suripto, S.Sos, M.Si</li>
+                    <li>Kabag Tata Pemerintahan</li>
+                  </ul>
+                </div>
+                <div class="team-member col-md-3">
+                  <img class="team-member-img img-fluid rounded-circle p-4" src="<?php echo base_url() ?>assets/kasubagpw.jpeg" alt="foto kasubag">
+                  <ul class="team-member-caption list-unstyled text-center pt-4 text-muted light-300">
+                    <li>Trisno, SSTP</li>
+                    <li>Kasubag Adm. Kewilayahan</li>
+                  </ul>
+                </div>
+                <div class="team-member col-md-3">
+                  <img class="team-member-img img-fluid rounded-circle p-4" src="<?php echo base_url() ?>assets/kasubagtp.jpeg" alt="foto kasubag">
+                  <ul class="team-member-caption list-unstyled text-center pt-4 text-muted light-300">
+                    <li>Vita Nurhasanah, S.STP, M.Si</li>
+                    <li>Kasubag Adm. Pemerintahan</li>
+                  </ul>
+                </div>
+                <div class="team-member col-md-3">
+                  <img class="team-member-img img-fluid rounded-circle p-4" src="<?php echo base_url() ?>assets/kasubag.jpeg" alt="foto kasubag">
+                  <ul class="team-member-caption list-unstyled text-center pt-4 text-muted light-300">
+                    <li>Amri, S.Sos</li>
+                    <li>Kasubag Otonomi dan TP</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
         </div>
       </div>
     </div>
