@@ -1,3 +1,168 @@
+<body id="page-top">
+
+    <script>
+        function pilkec() {
+            $('#kec').modal('show');
+        }
+
+        function pildes() {
+            $('#des').modal('show');
+        }
+        // function pilihan() {
+        //     var cam = document.getElementById("kecamatan1").value;
+
+        //     let request = new XMLHttpRequest()
+        //     request.open("GET", "<?php echo base_url('welcome/periksa') ?>?kec="+cam);
+        //     request.send();
+        //     request.onload=()=>{
+        //         if(request.status===200){
+        //             if((JSON.parse(request.response).status)=="success"){
+        //                 document.getElementById("desa").html="<option value="">--Pilih Kecamatan--</option>
+        //                     <?php foreach ($aa as $row) { ?>
+        //                     <option value="<?php echo $row->mk_id; ?>"><?php echo $row->mk_kec; ?></option>
+        //                     <?php } ?>";
+        //                 document.getElementById("desa").disabled="false";
+        //             }
+        //         }
+        //     }
+        // }
+    </script>
+
+
+    <!--/ Nav Star /-->
+    <nav class="navbar navbar-b navbar-trans navbar-expand-md fixed-top" id="mainNav">
+        <div class="container">
+            <a href="<?php echo base_url(); ?>" class="navbar-brand js-scroll" href="#page-top">
+                <img src="<?php echo base_url(); ?>assets/logo.png" width="auto" alt="" height="30px" class="mr-2">SIMPRONATASA</a>
+            <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarDefault" aria-controls="navbarDefault" aria-expanded="false" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="navbar-collapse collapse justify-content-end" id="navbarDefault">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll" href="javascript:;" onclick="pilkec()">Kecamatan</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll" href="javascript:;" onclick="pildes()">Desa</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll" href="<?php echo base_url(); ?>">Home</a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+    <div class="modal fade" id="kec" tabindex="-1" aria-labelledby="exampleModalLabel" a data-backdrop="static" data-keyboard="false" aria-hidden="true">
+        <div class="modal-dialog modal-sm modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header bg-primary">
+                    <img src="<?php echo base_url(); ?>assets/logo.png" width="auto" alt="" height="30px" class="mr-2">
+                    <h5 class="modal-title" id="exampleModalLabel" style="color: white;">SIMPRONATASA</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form method="post" action="<?php echo base_url() . 'welcome/kecamatan' ?>" enctype="multipart/form-data">
+                        <div class="form-group">
+                            <label for="kecamatan">Silahkan Pilih Nama Kecamatan</label>
+                            <select class="custom-select" id="kecamatan" name="kecamatan" placeholder="" required>
+                                <option value="" selected disabled>--Pilih Kecamatan--</option>
+                                <?php foreach ($aa as $row) { ?>
+                                    <option><?php echo $row->mk_kec; ?></option>
+                                <?php } ?>
+                            </select>
+                        </div>
+                        
+                        <button type="submit" id="save" class="btn btn-primary" style="float: right;">Pilih</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="des" tabindex="-1" aria-labelledby="exampleModalLabel" a data-backdrop="static" data-keyboard="false" aria-hidden="true">
+        <div class="modal-dialog modal-sm modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header bg-primary">
+                    <img src="<?php echo base_url(); ?>assets/logo.png" width="auto" alt="" height="30px" class="mr-2">
+                    <h5 class="modal-title" id="exampleModalLabel" style="color: white;">SIMPRONATASA</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form method="post" action="<?php echo base_url() . 'welcome/kecamatan' ?>" enctype="multipart/form-data">
+                        <!-- <div class="form-group">
+                        <label for="kecamatan">Silahkan Pilih Nama Kecamatan</label>
+                        <select class="custom-select" id="kecamatan1" name="kecamatan" placeholder="" required>
+                            <option value="" selected disabled>--Pilih Kecamatan--</option>
+                            <?php foreach ($aa as $row) { ?>
+                                <option value="<?php echo $row->mk_id; ?>"><?php echo $row->mk_kec; ?></option>
+                            <?php } ?>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="desa">Silahkan Pilih Nama Desa</label>
+                        <select class="custom-select" id="desa" name="desa" placeholder="" required disabled>
+                        </select>
+                    </div> -->
+                        <!-- <div class="ui selection dropdown" name="kecamatan1" id="kecamatan1">
+                        <input type="hidden" id="selected_kecamatan1" name="selected_kecamatan1">
+                        <i class="dropdown icon"></i>
+                        <div class="default text">--Pilih Kecamatan--</div>
+                        <div class="menu">
+                            <?php foreach ($aa as $row) { ?>
+                                <option value="<?php echo $row->mk_id; ?>"><?php echo $row->mk_kec; ?></option>
+                            <?php } ?>
+                        </div>
+                    </div>
+
+                    <div class="ui selection dropdown" id="desa">
+                        <input type="hidden" id="selected_desa" name="selected_desa">
+                        <i class="dropdown icon"></i>
+                        <div class="default text" id="default_text">--Pilih Desa--</div>
+                        <div class="menu" id="desa_content"></div>
+                    </div> -->
+                        <div class="form-group">
+                            <label for="kecamatan1">Silahkan Pilih Nama Kecamatan</label>
+                            <select class="custom-select" id="kecamatan1" name="kecamatan1" placeholder="" required>
+                                <option value="" selected disabled>--Pilih Kecamatan--</option>
+                                <?php foreach ($aa as $row) { ?>
+                                    <option <?php echo $kecamatan_selected == $row->mk_id ? 'selected="selected"' : '' ?> value="<?php echo $row->mk_id ?>"><?php echo $row->mk_kec ?></option>
+                                <?php
+                                }
+                                ?>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="desa">Silahkan Pilih Nama Desa</label>
+                            <select class="custom-select" id="desa1" name="desa1" placeholder="" required disabled>
+                                <option value="">Please Select</option>
+                                <?php
+                                foreach ($ab as $row) {
+                                ?>
+                                    
+                                    <option <?php echo $desa_selected == $row->md_kec ? 'selected="selected"' : '' ?> class="<?php echo $row->md_kec ?>" value="<?php echo $row->md_id ?>"><?php echo $row->md_desa ?></option>
+                                <?php
+                                }
+                                ?>
+                            </select>
+                        </div>
+                        <button type="submit" id="save" class="btn btn-primary" style="float: right;">Pilih</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--/ Nav End /-->
+
+
+
+
 <div class="intro intro-single route bg-image">
     <div class="overlay-mf"></div>
     <div class="intro-content display-table">
@@ -8,8 +173,11 @@
                     <li class="breadcrumb-item">
                         <a href="<?php echo base_url(); ?>">Home</a>
                     </li>
+                    <li class="breadcrumb-item">
+                        <a href="<?php echo base_url(). 'welcome/protas'; ?>">Progress Batas</a>
+                    </li>
                     <li class="breadcrumb-item active">
-                        <a href="#" style="color:grey">Progress Batas</a>
+                        <a href="#" style="color:grey">Kecamatan</a>
                     </li>
                 </ol>
             </div>
@@ -33,22 +201,23 @@
                                 </div>
                                 <div class="col-sm-6 col-md-7">
                                     <div class="about-info">
+
+                                        <?php foreach ($aq as $row) { ?>
+                                            <p><span class="title-s">Kecamatan : </span><?php echo Ucwords($row->mk_kec) ?></p>
+                                            <p><span class="title-s">Luas: </span> <span><?php echo $row->mk_luas ?><sup>2</sup></span></p>
+                                            <p><span class="title-s">Ibukota: </span> <span><?php echo $row->mk_ibukota?></span></p>
                                         
-                                        <?php foreach ($qq as $row) { ?>
-                                            <p><span class="title-s">Kecamatan : </span>Sangkulirang</p>
-                                        <?php } ?>
-                                        <p><span class="title-s">Luas: </span> <span>35.748 km<sup>2</sup></span></p>
-                                        <p><span class="title-s">Ibukota: </span> <span>Benua Baru Ulu</span></p>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="skill-mf">
-                                <span>Total Segmen</span> <span class="pull-right">10 Segmen</span>
+                                <span>Total Segmen</span> <span class="pull-right"><?php echo $row->mk_segmen ?> Segmen</span>
                                 <div class="progress">
-                                    <div class="progress-bar" role="progressbar" style="width: 100%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                                    <div class="progress-bar" role="progressbar" style="width: <?php echo $row->mk_segmen ?>%;" aria-valuenow="<?php echo $row->mk_ibukota ?>" aria-valuemin="0" aria-valuemax="100"></div>
                                 </div>
+                                <?php } ?>
                                 <span>Total Segmen Yang Telah Ditetapkan</span> <span class="pull-right">3 Segmen (30 %)</span>
                                 <div class="progress">
                                     <div class="progress-bar" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
@@ -70,19 +239,49 @@
                                         <tr>
                                             <th style="text-align: center; width:5%">No</th>
                                             <th style="text-align: center; width:15%">Jenis Batas</th>
-                                            <th style="text-align: center; width:20%">Batas di Desa</th>
-                                            <th style="text-align: center;">Berbatasan Dengan</th>
+                                            <th style="text-align: center; width:20%">Desa</th>
+                                            <th style="text-align: center;">Berbatasan Dengan<br> Desa(Kecamatan)</th>
                                             <th style="text-align: center; width:10%">Panjang Garis</th>
                                             <th style="text-align: center; width:10%">Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
+                                    <?php $cam = $ab; $no=1; foreach($qq as $row) {?>
                                         <tr>
-                                            <td>1</td>
-                                            <td>Penetapan</td>
-                                            <td>Maloy</td>
-                                            <td>Desa Kaliorang Kec. Kaliorang <br> Desa Bukit Makmur Kec. Kaliorang</td>
-                                            <td>100 Meter</td>
+                                            <td><?php echo $no++;?></td>
+                                            <td><?php echo $row->d_jenis;?></td>
+                                            <td><?php if ($row->d_kec1==$ab && $row->d_posisi1=="selatan"){
+                                                echo $row->d_desa1 .",";
+                                            } ?> <?php if ($row->d_kec2==$ab && $row->d_posisi2=="selatan"){
+                                                echo $row->d_desa2 .",";
+                                             }?><?php if ($row->d_kec3==$ab && $row->d_posisi3=="selatan"){
+                                                echo $row->d_desa3 .",";
+                                             }?> <?php if ($row->d_kec4==$ab && $row->d_posisi4=="selatan"){
+                                                echo $row->d_desa4 .",";
+                                             }?> <?php if ($row->d_kec5==$ab && $row->d_posisi5=="selatan"){
+                                                echo $row->d_desa5 .",";
+                                             }?> <?php if ($row->d_kec6==$ab && $row->d_posisi6=="selatan"){
+                                                echo $row->d_desa6 .",";
+                                             }?> <?php if ($row->d_kec7==$ab && $row->d_posisi7=="selatan"){
+                                                echo $row->d_desa7 .",";
+                                             }?></td>
+                                            <td><?php if ($row->d_kec1!=$ab && $row->d_posisi1=="utara"){
+                                                echo $row->d_desa1 ." (".$row->d_kec1."),";
+                                            }?> <?php if ($row->d_kec2!=$ab && $row->d_posisi2=="utara"){
+                                                echo $row->d_desa2 ." (".$row->d_kec2."), <br>";
+                                             }?> <?php if ($row->d_kec3!=$ab && $row->d_posisi3=="utara"){
+                                                echo $row->d_desa3 ." (".$row->d_kec3."), <br>";
+                                             }?> <?php if ($row->d_kec4!=$ab && $row->d_posisi4=="utara"){
+                                                echo $row->d_desa4 ." (".$row->d_kec4."), <br>";
+                                             }?> <?php if ($row->d_kec5!=$ab && $row->d_posisi5=="utara"){
+                                                echo $row->d_desa5 ." (".$row->d_kec5."), <br>";
+                                             }?> <?php if ($row->d_kec6!=$ab && $row->d_posisi6=="utara"){
+                                                echo $row->d_desa6 ." (".$row->d_kec6."), <br>";
+                                             }?> <?php if ($row->d_kec7!=$ab && $row->d_posisi7=="utara"){
+                                                echo $row->d_desa7 ." (".$row->d_kec7."),";
+                                             }?></td>                                            
+                                                                                    
+                                            <td><? php echo $row->d_d_ket;?></td>
                                             <td>
                                                 <div class="btn-group" role="group" style="float: right; margin-right:15px">
                                                     <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color:lightskyblue; color:black"> <i class="fa fa-download"> Unduh</i>
@@ -98,7 +297,8 @@
                                                 </a> -->
                                             </td>
                                         </tr>
-                                        <tr>
+                                        <?php }?>
+                                        <!-- <tr>
                                             <td>2</td>
                                             <td>Sengketa</td>
                                             <td>Benua Baru Ilir</td>
@@ -114,11 +314,11 @@
                                                         <li><a href="" style="color:black; font-size:small !important">Gambar Areal Sengketa</a></li>
                                                     </ul>
                                                 </div>
-                                                <!-- <a target="_blank" href="" class="btn btn-success btn-sm">
+                                                 <a target="_blank" href="" class="btn btn-success btn-sm">
                                                     <i class="fa fa-download"> Unduh</i>
-                                                </a> -->
+                                                </a> 
                                             </td>
-                                        </tr>
+                                        </tr> -->
                                     </tbody>
                                 </table>
                             </div>
