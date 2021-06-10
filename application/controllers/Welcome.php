@@ -6,6 +6,7 @@ class Welcome extends CI_Controller {
     {
         parent::__construct();
         $this->load->model('Kecamatan');
+        $this->load->model('M_data');
     }
 
 	/**
@@ -88,4 +89,37 @@ class Welcome extends CI_Controller {
 	{
 		$this->load->view('front/new/v_login');
 	}
+
+    public function login_aksi()
+    {
+        $this->form_validation->set_rules('username', 'Username', 'required|min_length[5]');
+        $this->form_validation->set_rules('password', 'Password', 'required');
+        if ($this->form_validation->run() != false) {
+            
+            $username = $this->input->post('username');
+            $password = $this->input->post('password');
+            $where = array(
+                'username' => $username,
+                'pass' => md5($password),
+            );
+            $this->load->model('m_data');
+            $cek = $this->m_data->cek_login('pengguna', $where)->num_rows();
+            if ($cek > 0) {
+               
+                $data = $this->m_data->cek_login('pengguna', $where)->row();
+                $data_session = array(
+                    'id' => $data->p_id,
+                    'username' => $data->username,                    
+                    'status' => 'telah_login'
+                );
+                $this->session->set_userdata($data_session);
+                redirect(base_url() . 'home_b');
+            } else {
+                redirect(base_url() . 'login?alert=gagal');
+            }
+        } else {
+            $this->load->view('front/new/v_login');
+        }
+    } 
 }
+

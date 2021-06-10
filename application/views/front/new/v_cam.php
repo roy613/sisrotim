@@ -27,6 +27,33 @@
         //     }
         // }
     </script>
+<style>
+    table{
+        width:100%; 
+        font-size:small;
+    }
+    th{
+        background-color: skyblue;
+        padding: 7px !important;
+        text-align: center;
+        vertical-align: middle !important;
+    }
+    td{
+        padding: 4px !important;
+        text-align: center;
+    }
+
+    li{
+        font-size: small;
+        color: black;
+        margin-left: 8px;
+        margin-right: 8px;
+        
+    }
+    li:hover{
+        background-color: skyblue !important;
+    }
+</style>
 
 
     <!--/ Nav Star /-->
@@ -234,15 +261,16 @@
                                 <p class="lead">
                                     Sebelah Utara
                                 </p>
-                                <table id="" class="table table-bordered table-hover " style="width:100%;">
-                                    <thead style="background-color: skyblue;">
+                                <div style="overflow-x:auto;">
+                                <table id="" class="table table-bordered table-hover" style=" ">
+                                    <thead style="">
                                         <tr>
-                                            <th style="text-align: center; width:5%">No</th>
-                                            <th style="text-align: center; width:15%">Jenis Batas</th>
-                                            <th style="text-align: center; width:20%">Desa</th>
-                                            <th style="text-align: center;">Berbatasan Dengan<br> Desa(Kecamatan)</th>
-                                            <th style="text-align: center; width:10%">Panjang Garis</th>
-                                            <th style="text-align: center; width:10%">Action</th>
+                                            <th style="width:5%">No</th>
+                                            <th style="width:15%">Jenis Batas</th>
+                                            <th style="width:20%">Desa</th>
+                                            <th style="">Berbatasan Dengan<br> Desa(Kecamatan)</th>
+                                            <th style="width:10%">Panjang Garis</th>
+                                            <th style="width:10%">Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -292,35 +320,12 @@
                                                         <li><a href="" style="color:black">Gambar Peta</a></li>
                                                     </ul>
                                                 </div>
-                                                <!-- <a target="_blank" href="" class="btn btn-success btn-sm">
-                                                    <i class="fa fa-download"> Unduh</i>
-                                                </a> -->
                                             </td>
                                         </tr>
-                                        <?php }?>
-                                        <!-- <tr>
-                                            <td>2</td>
-                                            <td>Sengketa</td>
-                                            <td>Benua Baru Ilir</td>
-                                            <td>Desa Bukit Makmur Kec. Kaliorang</td>
-                                            <td>100 Meter</td>
-                                            <td>
-                                                <div class="btn-group" role="group" style="float: right; margin-right:15px">
-                                                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color:lightskyblue; color:black"> <i class="fa fa-download"> Unduh</i>
-                                                        <span class="caret"></span>
-                                                    </button>
-                                                    <ul class="dropdown-menu">
-                                                        <li><a href="" style="color:black">Berita Acara</a></li>
-                                                        <li><a href="" style="color:black; font-size:small !important">Gambar Areal Sengketa</a></li>
-                                                    </ul>
-                                                </div>
-                                                 <a target="_blank" href="" class="btn btn-success btn-sm">
-                                                    <i class="fa fa-download"> Unduh</i>
-                                                </a> 
-                                            </td>
-                                        </tr> -->
+                                        <?php }?>                                        
                                     </tbody>
                                 </table>
+                                </div>
                             </div>
                         </div>
                     </div>
