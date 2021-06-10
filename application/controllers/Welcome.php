@@ -69,7 +69,8 @@ class Welcome extends CI_Controller {
 	public function kecamatan()
 	{
 		$cam = $this->input->post('kecamatan');
-		$data['qq'] = $this->db->query("SELECT * FROM data WHERE d_kec1=$cam")->result();
+		$data['qq'] = $this->db->query("SELECT * FROM data, master_kecamatan, master_desa WHERE d_kec1=mk_id AND d_kec2=d_kec1=$cam OR d_kec2=$cam OR d_kec3=$cam OR d_kec4=$cam OR d_kec5=$cam OR d_kec6=$cam OR d_kec7=$cam AND d_status=1 ORDER BY d_id ASC")->result();
+		
 		$this->load->view('front/new/v_header');
 		$this->load->view('front/new/v_cam', $data);
 		$this->load->view('front/new/v_footer');

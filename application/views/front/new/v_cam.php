@@ -33,6 +33,7 @@
                                 </div>
                                 <div class="col-sm-6 col-md-7">
                                     <div class="about-info">
+                                        
                                         <?php foreach ($qq as $row) { ?>
                                             <p><span class="title-s">Kecamatan : </span>Sangkulirang</p>
                                         <?php } ?>
