@@ -18,7 +18,21 @@ class Home_b extends CI_Controller
     public function index()
     {           
         $this->load->view('back/v_header');
-        // $this->load->view('back/v_sidebar');
-        // $this->load->view('back/v_body');
-        // $this->load->view('back/v_footer');
+        $this->load->view('back/v_sidebar');
+        $this->load->view('back/v_body');
+        $this->load->view('back/v_footer');
     }
+    public function pengguna()
+    {
+        $data['guna'] = $this->db->query("SELECT * FROM pengguna order by p_id desc")->result();
+        $this->load->view('back/v_header');
+        $this->load->view('back/v_sidebar');
+        $this->load->view('back/v_pengguna', $data);
+        $this->load->view('back/v_footer');
+    }
+    public function keluar()
+    {
+        $this->session->sess_destroy();
+        redirect(base_url() .'welcome/login?alert=logout');
+    }
+}

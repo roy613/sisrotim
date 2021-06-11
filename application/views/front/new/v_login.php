@@ -42,13 +42,13 @@ Dulu!</div>";
                 <div class="col-md-6 col-lg-4">
                     <div class="login-wrap p-0">
                         <h6 class="mb-4 text-center" style="color:#fff; text-shadow: 2px 2px 9px black">Silahkan Input Username dan Password Anda</h6>
-                        <form action="<?php echo base_url() . 'welcome/login_aksi' ?>" class="signin-form">
+                        <form action="<?php echo base_url() . 'welcome/login_aksi' ?>" class="signin-form" method="post">
+                            <div style="color: red;"><?php echo form_error('username'); ?></div>
                             <div class="form-group">
-                                <div style="color: red;"><?php echo form_error('username'); ?></div>
                                 <input type="text" class="form-control" name="username" placeholder="Username">
                             </div>
+                            <div style="color: red;"><?php echo form_error('password'); ?></div>
                             <div class="form-group">
-                                <div style="color: red;"><?php echo form_error('password'); ?></div>
                                 <input id="password-field" name="password" type="password" class="form-control" placeholder="Password">
                                 <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
                             </div>

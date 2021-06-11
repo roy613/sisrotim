@@ -238,17 +238,30 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-3">
                             <div class="skill-mf">
                                 <span>Total Segmen</span> <span class="pull-right"><?php echo $row->mk_segmen ?> Segmen</span>
                                 <div class="progress">
-                                    <div class="progress-bar" role="progressbar" style="width: <?php echo $row->mk_segmen ?>%;" aria-valuenow="<?php echo $row->mk_ibukota ?>" aria-valuemin="0" aria-valuemax="100"></div>
+                                    <div class="progress-bar" role="progressbar" style="width: 100%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <span>Kesepakatan</span> <span class="pull-right"><?php echo number_format($aaa); ?> Segmen (<?php echo number_format($aaa/$row->mk_segmen*100); ?> %)</span>
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar" style="width: <?php echo number_format($aaa/$row->mk_segmen*100); ?>%" aria-valuenow="<?php echo number_format($aaa/$row->mk_segmen*100); ?>" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                              
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="skill-mf">
+                                <span>Penetapan</span> <span class="pull-right"><?php echo number_format($aaa); ?> Segmen (<?php echo number_format($aaa/$row->mk_segmen*100); ?> %)</span>
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar" style="width: <?php echo number_format($aaa/$row->mk_segmen*100); ?>%" aria-valuenow="<?php echo number_format($aaa/$row->mk_segmen*100); ?>" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <span>Sengketa</span> <span class="pull-right"><?php echo $row->mk_segmen ?> Segmen</span>
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar" style="width: 100%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
                                 </div>
                                 <?php } ?>
-                                <span>Total Segmen Yang Telah Ditetapkan</span> <span class="pull-right">3 Segmen (30 %)</span>
-                                <div class="progress">
-                                    <div class="progress-bar" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
                             </div>
                         </div>
                         <div class="col-md-12">
@@ -262,13 +275,13 @@
                                     Sebelah Utara
                                 </p>
                                 <div style="overflow-x:auto;">
-                                <table id="" class="table table-bordered table-hover" style=" ">
-                                    <thead style="">
+                                <table class="table table-bordered table-hover">
+                                    <thead>
                                         <tr>
                                             <th style="width:5%">No</th>
                                             <th style="width:15%">Jenis Batas</th>
                                             <th style="width:20%">Desa</th>
-                                            <th style="">Berbatasan Dengan<br> Desa(Kecamatan)</th>
+                                            <th>Berbatasan Dengan<br> Desa(Kecamatan)</th>
                                             <th style="width:10%">Panjang Garis</th>
                                             <th style="width:10%">Action</th>
                                         </tr>
@@ -277,7 +290,11 @@
                                     <?php $cam = $ab; $no=1; foreach($qq as $row) {?>
                                         <tr>
                                             <td><?php echo $no++;?></td>
-                                            <td><?php echo $row->d_jenis;?></td>
+                                            <td><?php if ($row->d_jenis == 1) {
+                                                echo "Penetapan" ;} else if ($row->d_jenis == 2) {
+                                                    echo "Kesepakatan";} else {
+                                                        echo "Sengketa";
+                                                    }?></td>
                                             <td><?php if ($row->d_kec1==$ab && $row->d_posisi1=="selatan"){
                                                 echo $row->d_desa1 .",";
                                             } ?> <?php if ($row->d_kec2==$ab && $row->d_posisi2=="selatan"){
@@ -309,15 +326,23 @@
                                                 echo $row->d_desa7 ." (".$row->d_kec7."),";
                                              }?></td>                                            
                                                                                     
-                                            <td><? php echo $row->d_d_ket;?></td>
+                                            <td><?php echo $row->d_pgaris;?></td>
                                             <td>
                                                 <div class="btn-group" role="group" style="float: right; margin-right:15px">
                                                     <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color:lightskyblue; color:black"> <i class="fa fa-download"> Unduh</i>
                                                         <span class="caret"></span>
                                                     </button>
                                                     <ul class="dropdown-menu">
+                                                    <?php if ($row->d_jenis == 1) { ?>
                                                         <li><a href="" style="color:black">Peraturan Bupati</a></li>
                                                         <li><a href="" style="color:black">Gambar Peta</a></li>
+                                                       <?php } else if ($row->d_jenis == 2) { ?>
+                                                        <li><a href="" style="color:black">BA Kesepakatan</a></li>
+                                                        <li><a href="" style="color:black">Peta Kesepakatan</a></li>
+                                                        <?php } else if ($row->d_jenis == 3) { ?>
+                                                            <li><a href="" style="color:black">BA Sengketa</a></li>
+                                                        <li><a href="" style="color:black">Peta Areal Sengketa</a></li>
+                                                        <?php }?>
                                                     </ul>
                                                 </div>
                                             </td>
