@@ -42,6 +42,29 @@
           </ul>
         </li>        
         <li class="nav-item">
+          <a href="#" class="nav-link">
+          <i class="fas fa-database"></i>
+            <p>
+              Master Data
+              <i class="fas fa-angle-left right"></i>
+            </p>
+          </a>
+          <ul class="nav nav-treeview">
+            <li class="nav-item">
+              <a href="<?php echo base_url() . 'home_b/kec' ?>" class="nav-link">
+              <i class="far fa-circle"></i>
+                <p>Data Kecamatan</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#' ?>" class="nav-link">
+              <i class="far fa-circle"></i>
+                <p>Data Desa</p>
+              </a>
+            </li>            
+          </ul>
+        </li>        
+        <li class="nav-item">
           <a href="<?php echo base_url() . 'home_b/pengguna' ?>" class="nav-link">
             <i class="fas fa-user-circle"></i>
             <p>

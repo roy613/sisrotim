@@ -35,6 +35,20 @@
             });
         }
     </script>
+    <style>
+        
+        #kesepakatan {
+            background-color: #FAFAD2;
+        }
+
+        #penetapan {
+            background-color: #8FBC8F;
+        }
+
+        #sengketa {
+            background-color: #FA8072;
+        }
+    </style>
 
 
     <!--/ Nav Star /-->
@@ -176,17 +190,17 @@
                                     <div class="progress">
                                         <div class="progress-bar" role="progressbar" style="width: 100%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
                                     </div>
-                                    <span>Total Segmen Yang Telah Ditetapkan</span> <span class="pull-right">3 Segmen (30 %)</span>
+                                    <span>Penetapan</span> <span class="pull-right">3 Segmen (30 %)</span>
                                     <div class="progress">
-                                        <div class="progress-bar" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
+                                        <div class="progress-bar" id="penetapan" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
                                     </div>
-                                    <span>Total Segmen Yang Belum Ditetapkan</span> <span class="pull-right">7 Segmen (70 %)</span>
+                                    <span>Kesepakatan</span> <span class="pull-right">7 Segmen (70 %)</span>
                                     <div class="progress">
-                                        <div class="progress-bar" role="progressbar" style="width:70%" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+                                        <div class="progress-bar" id="kesepakatan" role="progressbar" style="width:70%" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
                                     </div>
-                                    <span>Target Tahun 2021</span> <span class="pull-right">3 Segmen (30 %)</span>
+                                    <span>Sengketa</span> <span class="pull-right">3 Segmen (30 %)</span>
                                     <div class="progress">
-                                        <div class="progress-bar" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
+                                        <div class="progress-bar" id="sengketa" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
                                     </div>
                                 </div>
                             </div>

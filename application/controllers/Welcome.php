@@ -24,11 +24,11 @@ class Welcome extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
+	// public function index()
+	// {
+	// 	$this->load->view('front/new/v_tes');
+	// }
 	public function index()
-	{
-		$this->load->view('front/new/v_tes');
-	}
-	public function tes()
 	{
 		$this->load->view('front/new/v_body');
 	}
@@ -47,7 +47,7 @@ class Welcome extends CI_Controller {
 	}
 	public function periksa()
 	{
-		// $kec=$_GET['cam'];
+		
 		$kec = $this->input->post('cam');
 		$data = $this->db->query("SELECT * FROM master_desa WHERE md_kec='".$kec."'")->result();
 		

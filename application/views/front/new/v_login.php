@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <link rel="stylesheet" href="<?php echo base_url() ?>assets/new/login-form-20/css/style.css">
+    <link href="<?php echo base_url() ?>assets/f2/css/style.css" rel="stylesheet">
 
 </head>
 
@@ -62,11 +63,13 @@ Dulu!</div>";
             </div>
         </div>
     </section>
+    <div id="preloader"></div>
 
     <script src="<?php echo base_url() ?>assets/new/login-form-20/js/jquery.min.js"></script>
     <script src="<?php echo base_url() ?>assets/new/login-form-20/js/popper.js"></script>
     <script src="<?php echo base_url() ?>assets/new/login-form-20/js/bootstrap.min.js"></script>
     <script src="<?php echo base_url() ?>assets/new/login-form-20/js/main.js"></script>
+    <script src="<?php echo base_url() ?>assets/f2/js/main.js"></script>
 
 </body>
 

@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/front1/magnific-popup/magnific-popup.css">
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/front1/css/bootstrap.min.css" />
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/front1/css/tooplate-infinite-loop.css" />
+    <link href="<?php echo base_url() ?>assets/front1/css/style.css" rel="stylesheet">
     <!--
 Tooplate 2117 Infinite Loop
 https://www.tooplate.com/view/2117-infinite-loop
@@ -85,7 +86,7 @@ https://www.tooplate.com/view/2117-infinite-loop
 
        
 
-
+    <div id="preloader"></div>
 
 
     <script src="<?php echo base_url(); ?>assets/front1/js/jquery-1.9.1.min.js"></script>
@@ -94,6 +95,7 @@ https://www.tooplate.com/view/2117-infinite-loop
     <script src="<?php echo base_url(); ?>assets/front1/js/easing.min.js"></script>
     <script src="<?php echo base_url(); ?>assets/front1/js/jquery.singlePageNav.min.js"></script>
     <script src="<?php echo base_url(); ?>assets/front1/js/bootstrap.min.js"></script>
+    <script src="<?php echo base_url() ?>assets/f2/js/main.js"></script>
     <!-- <script>
         function getOffSet() {
             var _offset = 450;
