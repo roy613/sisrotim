@@ -8,44 +8,31 @@
         function pildes() {
             $('#desa').modal('show');
         }
+
         function pilihan() {
             var cam = document.getElementById("kecamatan1").value;
             // var id=$(this).val();
             $.ajax({
-                url : "<?php echo base_url('welcome/periksa') ?>",
-                method : "POST",
-                data : {cam: cam},
-                async : false,
-                dataType : 'json',
-                success: function(data){
+                url: "<?php echo base_url('welcome/periksa') ?>",
+                method: "POST",
+                data: {
+                    cam: cam
+                },
+                async: false,
+                dataType: 'json',
+                success: function(data) {
                     var html = '';
                     var a = "<option selected disabled>-- Silahkan Pilih Desa --</option>";
                     var i;
-                    for(i=0; i<data.length; i++){                        
-                        html += '<option>'+data[i].md_desa+'</option>';
+                    for (i = 0; i < data.length; i++) {
+                        html += '<option>' + data[i].md_desa + '</option>';
                     }
-                    document.getElementById("desa1").innerHTML=a.concat(html);
-                    document.getElementById("desa1").disabled=false;
-                   
-                     
+                    document.getElementById("desa1").innerHTML = a.concat(html);
+                    document.getElementById("desa1").disabled = false;
+
+
                 }
             });
-
-            // let request = new XMLHttpRequest()
-            // request.open("GET", "<?php echo base_url('welcome/periksa') ?>?kec="+cam);
-            // request.send();
-            // request.onload=()=>{
-            //     if(request.status===200){
-
-            //         if((JSON.parse(request.response).status)=="success"){
-            //             document.getElementById("desa").html="<option value="">--Pilih Kecamatan--</option>
-            //                 <?php foreach ($aa as $row) { ?>
-            //                 <option value="<?php echo $row->mk_id; ?>"><?php echo $row->mk_kec; ?></option>
-            //                 <?php } ?>";
-            //             document.getElementById("desa").disabled="false";
-            //         }
-            //     }
-            // }
         }
     </script>
 
@@ -62,6 +49,9 @@
             </button>
             <div class="navbar-collapse collapse justify-content-end" id="navbarDefault">
                 <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll" href="<?php echo base_url() . 'welcome/protas'; ?>">Kabupaten</a>
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link js-scroll" href="javascript:;" onclick="pilkec()">Kecamatan</a>
                     </li>
@@ -97,7 +87,7 @@
                                 <?php } ?>
                             </select>
                         </div>
-                        
+
                         <button type="submit" id="save" class="btn btn-primary" style="float: right;">Pilih</button>
                     </form>
                 </div>
@@ -116,38 +106,21 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form method="post" action="<?php echo base_url() . 'welcome/kecamatan' ?>" enctype="multipart/form-data">
+                    <form method="post" action="<?php echo base_url() . 'welcome/desa' ?>" enctype="multipart/form-data">
                         <div class="form-group">
-                        <label for="kecamatan">Silahkan Pilih Nama Kecamatan</label>
-                        <select class="custom-select" id="kecamatan1" name="kecamatan" placeholder="" onchange="pilihan()" required>
-                            <option selected disabled>--Pilih Kecamatan--</option>
-                            <?php foreach ($aa as $row) { ?>
-                                <option><?php echo $row->mk_kec; ?></option>
-                            <?php } ?>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="desa1">Silahkan Pilih Nama Desa</label>
-                        <select class="custom-select" id="desa1" name="desa1" placeholder="" required disabled>                        
-                        </select>
-                    </div>
-                        <!-- <div class="ui selection dropdown" name="kecamatan1" id="kecamatan1">
-                        <input type="hidden" id="selected_kecamatan1" name="selected_kecamatan1">
-                        <i class="dropdown icon"></i>
-                        <div class="default text">--Pilih Kecamatan--</div>
-                        <div class="menu">
-                            <?php foreach ($aa as $row) { ?>
-                                <option value="<?php echo $row->mk_id; ?>"><?php echo $row->mk_kec; ?></option>
-                            <?php } ?>
+                            <label for="kecamatan">Silahkan Pilih Nama Kecamatan</label>
+                            <select class="custom-select" id="kecamatan1" name="kecamatan" placeholder="" onchange="pilihan()" required>
+                                <option selected disabled>--Pilih Kecamatan--</option>
+                                <?php foreach ($aa as $row) { ?>
+                                    <option><?php echo $row->mk_kec; ?></option>
+                                <?php } ?>
+                            </select>
                         </div>
-                    </div>
-
-                    <div class="ui selection dropdown" id="desa">
-                        <input type="hidden" id="selected_desa" name="selected_desa">
-                        <i class="dropdown icon"></i>
-                        <div class="default text" id="default_text">--Pilih Desa--</div>
-                        <div class="menu" id="desa_content"></div>
-                    </div> -->                       
+                        <div class="form-group">
+                            <label for="desa1">Silahkan Pilih Nama Desa</label>
+                            <select class="custom-select" id="desa1" name="desa1" placeholder="" required disabled>
+                            </select>
+                        </div>
                         <button type="submit" id="save" class="btn btn-primary" style="float: right;">Pilih</button>
                     </form>
                 </div>

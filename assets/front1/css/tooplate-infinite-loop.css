@@ -233,8 +233,8 @@ blockquote {
 
 .link a:hover{
   color: rgba(255, 255, 255, 0.404) !important;
-  -webkit-text-stroke-width: 2.3px;
-  -webkit-text-stroke-color: rgb(57, 57, 187);  
+  -webkit-text-stroke-width: 1.7px;
+  -webkit-text-stroke-color: rgb(46, 46, 209);  
   text-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
   
 }

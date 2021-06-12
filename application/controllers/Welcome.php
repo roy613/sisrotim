@@ -26,6 +26,10 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
+		$this->load->view('front/new/v_tes');
+	}
+	public function tes()
+	{
 		$this->load->view('front/new/v_body');
 	}
 	public function about()
@@ -37,14 +41,6 @@ class Welcome extends CI_Controller {
 	public function protas()
 	{
 		$data['aa'] = $this->db->query("SELECT * FROM master_kecamatan")->result();
-		// $data['ab'] = $this->db->query("SELECT * FROM master_desa")->result();
-		// $data = array(
-        //     'kecamatan' => $this->Kecamatan->get_kecamatan(),
-        //     'desa' => $this->Kecamatan->get_desa(),            
-        //     'kecamatan_selected' => '',
-        //     'desa_selected' => '',
-            
-        // );
 		$this->load->view('front/new/v_header', $data);
 		$this->load->view('front/new/v_kd');
 		$this->load->view('front/new/v_footer');
@@ -62,7 +58,9 @@ class Welcome extends CI_Controller {
 	public function kecamatan()
 	{
 		$cam = $this->input->post('kecamatan');
-		$data['aaa'] = $this->db->query("SELECT * FROM data WHERE (d_kec1='".$cam."' OR d_kec2='".$cam."' OR d_kec3='".$cam."'OR d_kec4='".$cam."' OR d_kec5='".$cam."' OR d_kec6='".$cam."' OR d_kec7='".$cam."') AND d_status=1 ORDER BY d_id ASC")->num_rows();
+		$data['p'] = $this->db->query("SELECT * FROM data WHERE (d_kec1='".$cam."' OR d_kec2='".$cam."' OR d_kec3='".$cam."'OR d_kec4='".$cam."' OR d_kec5='".$cam."' OR d_kec6='".$cam."' OR d_kec7='".$cam."') AND d_status=1 AND d_jenis=1")->num_rows();
+		$data['k'] = $this->db->query("SELECT * FROM data WHERE (d_kec1='".$cam."' OR d_kec2='".$cam."' OR d_kec3='".$cam."'OR d_kec4='".$cam."' OR d_kec5='".$cam."' OR d_kec6='".$cam."' OR d_kec7='".$cam."') AND d_status=1 AND d_jenis=2 ")->num_rows();
+		$data['s'] = $this->db->query("SELECT * FROM data WHERE (d_kec1='".$cam."' OR d_kec2='".$cam."' OR d_kec3='".$cam."'OR d_kec4='".$cam."' OR d_kec5='".$cam."' OR d_kec6='".$cam."' OR d_kec7='".$cam."') AND d_status=1 AND d_jenis=3 ")->num_rows();
 		$data['qq'] = $this->db->query("SELECT * FROM data WHERE (d_kec1='".$cam."' OR d_kec2='".$cam."' OR d_kec3='".$cam."'OR d_kec4='".$cam."' OR d_kec5='".$cam."' OR d_kec6='".$cam."' OR d_kec7='".$cam."') AND d_status=1 ORDER BY d_id ASC")->result();
 		$data['aq'] = $this->db->query("SELECT * FROM master_kecamatan WHERE mk_kec='".$cam."'")->result();
 		$data['aa'] = $this->db->query("SELECT * FROM master_kecamatan")->result();
@@ -73,8 +71,16 @@ class Welcome extends CI_Controller {
 	}
 	public function desa()
 	{
+		$cam = $this->input->post('desa1');
+		$data['p'] = $this->db->query("SELECT * FROM data WHERE (d_desa1='".$cam."' OR d_desa2='".$cam."' OR d_desa3='".$cam."'OR d_desa4='".$cam."' OR d_desa5='".$cam."' OR d_desa6='".$cam."' OR d_desa7='".$cam."') AND d_status=1 AND d_jenis=1")->num_rows();
+		$data['k'] = $this->db->query("SELECT * FROM data WHERE (d_desa1='".$cam."' OR d_desa2='".$cam."' OR d_desa3='".$cam."'OR d_desa4='".$cam."' OR d_desa5='".$cam."' OR d_desa6='".$cam."' OR d_desa7='".$cam."') AND d_status=1 AND d_jenis=2")->num_rows();
+		$data['s'] = $this->db->query("SELECT * FROM data WHERE (d_desa1='".$cam."' OR d_desa2='".$cam."' OR d_desa3='".$cam."'OR d_desa4='".$cam."' OR d_desa5='".$cam."' OR d_desa6='".$cam."' OR d_desa7='".$cam."') AND d_status=1 AND d_jenis=3")->num_rows();
+		$data['qq'] = $this->db->query("SELECT * FROM data WHERE (d_desa1='".$cam."' OR d_desa2='".$cam."' OR d_desa3='".$cam."'OR d_desa4='".$cam."' OR d_desa5='".$cam."' OR d_desa6='".$cam."' OR d_desa7='".$cam."') AND d_status=1 ORDER BY d_id ASC")->result();
+		$data['aq'] = $this->db->query("SELECT * FROM master_desa WHERE md_desa='".$cam."'")->result();
+		$data['aa'] = $this->db->query("SELECT * FROM master_kecamatan")->result();
+		$data['ab'] = $cam;
 		$this->load->view('front/new/v_header');
-		$this->load->view('front/new/v_desa');
+		$this->load->view('front/new/v_desa', $data);
 		$this->load->view('front/new/v_footer');
 	}
 	
