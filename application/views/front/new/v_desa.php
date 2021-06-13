@@ -22,12 +22,13 @@
                 dataType: 'json',
                 success: function(data) {
                     var html = '';
-                    var a = "<option selected disabled>-- Silahkan Pilih Desa --</option>";
+                    // var a = "<option selected disabled>-- Silahkan Pilih Desa --</option>";
                     var i;
                     for (i = 0; i < data.length; i++) {
                         html += '<option>' + data[i].md_desa + '</option>';
                     }
-                    document.getElementById("desa1").innerHTML = a.concat(html);
+                    // document.getElementById("desa1").innerHTML = a.concat(html);
+                    document.getElementById("desa1").innerHTML = html;
                     document.getElementById("desa1").disabled = false;
 
 
@@ -371,7 +372,7 @@
                                                                                                     echo $row->d_desa5 . " (" . $row->d_kec5 . "), <br>";
                                                                                                 } ?> <?php if ($row->d_desa6 != $ab && $row->d_posisi6 ==  2) {
                                                                                                         echo $row->d_desa6 . " (" . $row->d_kec6 . "), <br>";
-                                                                                                    } ?> <?php if ($row->desa7 != $ab && $row->d_posisi7 == 2) {
+                                                                                                    } ?> <?php if ($row->d_desa7 != $ab && $row->d_posisi7 == 2) {
                                                                                                                 echo $row->d_desa7 . " (" . $row->d_kec7 . "),";
                                                                                                             } ?></td>
                                                             <td> <?php echo $row->d_pgaris; ?></td>

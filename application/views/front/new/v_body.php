@@ -29,7 +29,7 @@ https://www.tooplate.com/view/2117-infinite-loop
         <div class="text-center tm-hero-text-container">
             <div class="tm-hero-text-container-inner">
                 <img src="<?php echo base_url(); ?>assets/logo.png" width="auto" alt=""> <br><br>
-                <h2 class="tm-hero-title">SISTEM INFORMASI PROGRESS PENATAAN BATAS DESA<br>KABUPATEN KUTAI TIMUR</h2>
+                <h2 class="tm-hero-title">SISTEM INFORMASI PROGRES PENETAPAN BATAS DESA<br>KABUPATEN KUTAI TIMUR</h2>
                 <!-- <p class="tm-hero-subtitle">
                     SISTEM INFORMASI PROGRESS BATAS INTERNAL KUTIM VERSI<span style="font-size: larger;"> 1.0</span>
                 </p> -->

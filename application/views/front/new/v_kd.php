@@ -22,12 +22,13 @@
                 dataType: 'json',
                 success: function(data) {
                     var html = '';
-                    var a = "<option selected disabled>-- Silahkan Pilih Desa --</option>";
+                    // var a = "<option selected disabled>-- Silahkan Pilih Desa --</option>";
                     var i;
                     for (i = 0; i < data.length; i++) {
                         html += '<option>' + data[i].md_desa + '</option>';
                     }
-                    document.getElementById("desa1").innerHTML = a.concat(html);
+                    // document.getElementById("desa1").innerHTML = a.concat(html);
+                    document.getElementById("desa1").innerHTML = html;
                     document.getElementById("desa1").disabled = false;
 
 
@@ -36,7 +37,6 @@
         }
     </script>
     <style>
-        
         #kesepakatan {
             background-color: #FAFAD2;
         }
@@ -198,10 +198,12 @@
                                     <div class="progress">
                                         <div class="progress-bar" id="kesepakatan" role="progressbar" style="width:70%" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
                                     </div>
-                                    <span>Sengketa</span> <span class="pull-right">3 Segmen (30 %)</span>
-                                    <div class="progress">
-                                        <div class="progress-bar" id="sengketa" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
+                                    <a href="#" title="Lihat Data Sengketa">
+                                        <span>Sengketa</span> <span class="pull-right">3 Segmen (30 %)</span>
+                                        <div class="progress">
+                                            <div class="progress-bar" id="sengketa" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                    </a>
                                 </div>
                             </div>
                             <div class="col-md-6">

@@ -40,7 +40,7 @@ class Welcome extends CI_Controller {
 	}
 	public function protas()
 	{
-		$data['aa'] = $this->db->query("SELECT * FROM master_kecamatan")->result();
+		$data['aa'] = $this->db->query("SELECT * FROM master_kecamatan WHERE mk_ket=1")->result();
 		$this->load->view('front/new/v_header', $data);
 		$this->load->view('front/new/v_kd');
 		$this->load->view('front/new/v_footer');
@@ -49,7 +49,7 @@ class Welcome extends CI_Controller {
 	{
 		
 		$kec = $this->input->post('cam');
-		$data = $this->db->query("SELECT * FROM master_desa WHERE md_kec='".$kec."'")->result();
+		$data = $this->db->query("SELECT * FROM master_desa WHERE md_kec='".$kec."' AND md_ket=1")->result();
 		
 		$myJSON=json_encode($data);
 		echo $myJSON;		   
@@ -58,10 +58,10 @@ class Welcome extends CI_Controller {
 	public function kecamatan()
 	{
 		$cam = $this->input->post('kecamatan');
-		$data['p'] = $this->db->query("SELECT * FROM data WHERE (d_kec1='".$cam."' OR d_kec2='".$cam."' OR d_kec3='".$cam."'OR d_kec4='".$cam."' OR d_kec5='".$cam."' OR d_kec6='".$cam."' OR d_kec7='".$cam."') AND d_status=1 AND d_jenis=1")->num_rows();
-		$data['k'] = $this->db->query("SELECT * FROM data WHERE (d_kec1='".$cam."' OR d_kec2='".$cam."' OR d_kec3='".$cam."'OR d_kec4='".$cam."' OR d_kec5='".$cam."' OR d_kec6='".$cam."' OR d_kec7='".$cam."') AND d_status=1 AND d_jenis=2 ")->num_rows();
-		$data['s'] = $this->db->query("SELECT * FROM data WHERE (d_kec1='".$cam."' OR d_kec2='".$cam."' OR d_kec3='".$cam."'OR d_kec4='".$cam."' OR d_kec5='".$cam."' OR d_kec6='".$cam."' OR d_kec7='".$cam."') AND d_status=1 AND d_jenis=3 ")->num_rows();
-		$data['qq'] = $this->db->query("SELECT * FROM data WHERE (d_kec1='".$cam."' OR d_kec2='".$cam."' OR d_kec3='".$cam."'OR d_kec4='".$cam."' OR d_kec5='".$cam."' OR d_kec6='".$cam."' OR d_kec7='".$cam."') AND d_status=1 ORDER BY d_id ASC")->result();
+		$data['p'] = $this->db->query("SELECT * FROM data WHERE (d_kec1='".$cam."' OR d_kec2='".$cam."' OR d_kec3='".$cam."'OR d_kec4='".$cam."' OR d_kec5='".$cam."' OR d_kec6='".$cam."' OR d_kec7='".$cam."') AND d_status=1 AND d_jenis=1 AND d_ket=1")->num_rows();
+		$data['k'] = $this->db->query("SELECT * FROM data WHERE (d_kec1='".$cam."' OR d_kec2='".$cam."' OR d_kec3='".$cam."'OR d_kec4='".$cam."' OR d_kec5='".$cam."' OR d_kec6='".$cam."' OR d_kec7='".$cam."') AND d_status=1 AND d_jenis=2 AND d_ket=1")->num_rows();
+		$data['s'] = $this->db->query("SELECT * FROM data WHERE (d_kec1='".$cam."' OR d_kec2='".$cam."' OR d_kec3='".$cam."'OR d_kec4='".$cam."' OR d_kec5='".$cam."' OR d_kec6='".$cam."' OR d_kec7='".$cam."') AND d_status=1 AND d_jenis=3 AND d_ket=1")->num_rows();
+		$data['qq'] = $this->db->query("SELECT * FROM data WHERE (d_kec1='".$cam."' OR d_kec2='".$cam."' OR d_kec3='".$cam."'OR d_kec4='".$cam."' OR d_kec5='".$cam."' OR d_kec6='".$cam."' OR d_kec7='".$cam."') AND d_status=1 AND d_ket=1 ORDER BY d_id ASC")->result();
 		$data['aq'] = $this->db->query("SELECT * FROM master_kecamatan WHERE mk_kec='".$cam."'")->result();
 		$data['aa'] = $this->db->query("SELECT * FROM master_kecamatan")->result();
 		$data['ab'] = $cam;

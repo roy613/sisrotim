@@ -22,7 +22,7 @@
           </a>
           <ul class="nav nav-treeview">
             <li class="nav-item">
-              <a href="#' ?>" class="nav-link">
+              <a href="<?php echo base_url() . 'home_b/pk' ?>" class="nav-link">
                 <i class="fas fa-ruler-vertical"></i>
                 <p>Perbup Penetapan</p>
               </a>
@@ -57,7 +57,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a href="#' ?>" class="nav-link">
+              <a href="<?php echo base_url() . 'home_b/desa' ?>" class="nav-link">
               <i class="far fa-circle"></i>
                 <p>Data Desa</p>
               </a>

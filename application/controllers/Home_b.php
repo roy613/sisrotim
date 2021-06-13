@@ -22,9 +22,40 @@ class Home_b extends CI_Controller
     }
     public function kec()
     {           
+        $data['kec'] = $this->db->query("SELECT * FROM master_kecamatan ORDER BY mk_id ASC")->result();
         $this->load->view('back/v_header');
         $this->load->view('back/v_sidebar');
-        $this->load->view('back/v_kec');
+        $this->load->view('back/v_kec', $data);
+        $this->load->view('back/v_footer');
+    }
+    public function desa()
+    {           
+        $data['desa'] = $this->db->query("SELECT * FROM master_desa ORDER BY md_kec ASC")->result();
+        $data['kec'] = $this->db->query("SELECT * FROM master_kecamatan ORDER BY mk_id ASC")->result();
+        $this->load->view('back/v_header');
+        $this->load->view('back/v_sidebar');
+        $this->load->view('back/v_desa', $data);
+        $this->load->view('back/v_footer');
+    }
+
+    public function periksa()
+	{
+		
+		$kec = $this->input->post('cam');
+		$data = $this->db->query("SELECT * FROM master_desa WHERE md_kec='".$kec."'")->result();
+		
+		$myJSON=json_encode($data);
+		echo $myJSON;		   
+    }
+
+    public function pk()
+    {                   
+        $data['desa'] = $this->db->query("SELECT * FROM master_desa ORDER BY md_kec ASC")->result();
+        $data['kec'] = $this->db->query("SELECT * FROM master_kecamatan ORDER BY mk_id ASC")->result();
+        $data['pk'] = $this->db->query("SELECT * FROM data ORDER BY d_id desc")->result();
+        $this->load->view('back/v_header');
+        $this->load->view('back/v_sidebar');
+        $this->load->view('back/v_pk', $data);
         $this->load->view('back/v_footer');
     }
     public function pengguna()

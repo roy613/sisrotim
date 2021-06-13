@@ -22,12 +22,13 @@
                 dataType: 'json',
                 success: function(data) {
                     var html = '';
-                    var a = "<option selected disabled>-- Silahkan Pilih Desa --</option>";
+                    // var a = "<option selected disabled>-- Silahkan Pilih Desa --</option>";
                     var i;
                     for (i = 0; i < data.length; i++) {
                         html += '<option>' + data[i].md_desa + '</option>';
                     }
-                    document.getElementById("desa1").innerHTML = a.concat(html);
+                    // document.getElementById("desa1").innerHTML = a.concat(html);
+                    document.getElementById("desa1").innerHTML = html;
                     document.getElementById("desa1").disabled = false;
 
 
