@@ -27,6 +27,34 @@ class Edit extends CI_Controller
         $this->m_data->update_data($where, $data, 'data');
         redirect(base_url() . 'home_b/bs?alert=sukses1');
     }
+    public function bk()
+    {
+        $id = $this->input->post('edit_id');
+        $status = $this->input->post('edit_status');
+
+        $where = array(
+            'd_id' => $id
+        );
+        $data = array(
+            'd_status' => $status,
+        );
+        $this->m_data->update_data($where, $data, 'data');
+        redirect(base_url() . 'home_b/bk?alert=sukses1');
+    }
+    public function pk()
+    {
+        $id = $this->input->post('edit_id');
+        $status = $this->input->post('edit_status');
+
+        $where = array(
+            'd_id' => $id
+        );
+        $data = array(
+            'd_status' => $status,
+        );
+        $this->m_data->update_data($where, $data, 'data');
+        redirect(base_url() . 'home_b/pk?alert=sukses1');
+    }
 
 
 

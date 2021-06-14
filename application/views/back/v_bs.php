@@ -49,7 +49,7 @@
                                             <th style="">PANJANG GARIS</th>
                                             <th style="">GAMBAR PETA</th>
                                             <th style="width:auto">STATUS</th>
-                                            <th style="width:6%">OPSI</th>
+                                            <th style="width:auto">OPSI</th>
                                         </tr>
 
                                     </thead>
@@ -195,7 +195,7 @@
                                     <label for="nomor">NOMOR BERITA ACARA</label>
                                     <input type="text" class="form-control" id="nomor" name="nomor" placeholder="Input Nomor Berita Acara ..." required>
                                     <input type="hidden" class="form-control" id="id" name="id">
-                                    <input type="hidden" class="form-control" id="jenis" name="jenis" value="1">
+                                    <input type="hidden" class="form-control" id="jenis" name="jenis" value="3">
                                 </div>
                                 <div class="form-group">
                                     <label for="tentang">TENTANG BA</label>

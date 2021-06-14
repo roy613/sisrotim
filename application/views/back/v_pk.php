@@ -10,23 +10,23 @@
     </section>
     <section class="content">
         <div class="container-fluid">
-            <div class="row">
+           
                 <div class="col-12">
                     <!-- Main content -->
-                    <div class="invoice p-3 mb-3">
+                    <div class="card">
                         <!-- title row -->
-                        <div class="row">
-                            <div class="col-12">
+                        <div class="card-header">
+                            
                                 <a data-toggle="modal" data-target="#desa" class="btn btn-sm btn-primary" style="float:right" onclick="empty()">Tambah Data Perbup</a>
-                                <h4>
+                                <h4 class="card-title">
                                     DATA PERATURAN BUPATI PENETAPAN
                                 </h4>
-                            </div>
+                           
                             <!-- /.col -->
                         </div>
-                        <div class="row">
-                            <div class="col-12 table-responsive" style="overflow-x:auto">
-                                <table id="example2" class="table table-bordered table-striped">
+                        
+                            <div class="card-body" style="overflow-x:auto">
+                                <table id="example1" class="table table-bordered table-striped table-responsive">
                                     <thead>
                                         <?php
                                         if (isset($_GET['alert'])) {
@@ -44,12 +44,12 @@
                                         } ?>
                                         <tr style="background-color: #0066ff; color: white; font-size:10pt">
                                             <th style="width: 2%">NO</th>
-                                            <th style="width:30%">NO PERBUP/ TENTANG</th>
+                                            <th style="width:23%">NO PERBUP/ TENTANG</th>
                                             <th style="width:30%">KECAMATAN/ DESA(POSISI)</th>
-                                            <th >PANJANG GARIS</th>
+                                            <th>PANJANG GARIS</th>
                                             <th>GAMBAR PETA</th>
-                                            <th>STATUS</th>
-                                            <th style="width:9%">OPSI</th>
+                                            <th style="width:auto">STATUS</th>
+                                            <th style="width:auto">OPSI</th>
                                         </tr>
 
                                     </thead>
@@ -136,11 +136,11 @@
                                                         echo "Tampil";
                                                     } else {
                                                         echo "Tidak Tampil";
-                                                    } ?></td>
+                                                    } ?> <a href="javascript:;" onclick="fillData('<?php echo $k->d_id; ?>','<?php echo $k->d_tentang; ?>',)" class="btn btn-warning " style="font-size: 10pt !important; padding:4px !important" title="Edit"><i class="fa fa-edit" aria-hidden="true"></i></a> </td>
                                                 <td>
                                                     <a href="<?php echo base_url() . 'simpan/pk_hapus/' . $k->d_id; ?>" onclick="return confirm('Apakah Anda Yakin Ingin Menghapus Data Ini ?');" class="btn btn-danger" style="font-size: 10pt !important; padding:4px !important">
                                                         <i class="fa fa-trash" title="Hapus"></i> </a>
-                                                    <a href="javascript:;" onclick="fillData(
+                                                    <!-- <a href="javascript:;" onclick="fillData(
                             '<?php echo $k->d_tentang; ?>',
                           '<?php echo $k->d_nomor; ?>',
                           '<?php echo $k->d_kec1; ?>',
@@ -165,16 +165,16 @@
                           '<?php echo $k->d_desa7; ?>',
                           '<?php echo $k->d_posisi7; ?>',                          
                           '<?php echo $k->d_pgaris; ?>',                          
-                          )" class="btn btn-warning " style="font-size: 10pt !important; padding:4px !important" title="Edit"><i class="fa fa-edit" aria-hidden="true"></i></a>
+                          )" class="btn btn-warning " style="font-size: 10pt !important; padding:4px !important" title="Edit"><i class="fa fa-edit" aria-hidden="true"></i></a> -->
                                                 </td>
                                             <?php } ?>
                                     </tbody>
                                 </table>
                             </div>
-                        </div>
+                        
                     </div>
                 </div>
-            </div>
+            
         </div>
 
         <!-- Modal -->
@@ -496,15 +496,44 @@
     </section>
 </div>
 
-<script>
-    function fillData(md_id, md_kec, md_desa, md_luas, md_segmen, md_status) {
+<div class="modal fade" id="edit" tabindex="-1" aria-labelledby="exampleModalLabel" a data-backdrop="static" data-keyboard="false" aria-hidden="true">
+        <div class="modal-dialog modal-sm modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header bg-primary">
+                    <img src="<?php echo base_url(); ?>assets/logo.png" width="auto" alt="" height="30px" class="mr-2">
+                    <h5 class="modal-title" id="exampleModalLabel" style="color: white;">SIMPRONATASA</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form method="post" action="<?php echo base_url() . 'edit/pk' ?>" enctype="multipart/form-data">
+                        <p id="edit_nomor"></p>
+                        <div class="form-group">
+                            <label for="edit_status">Ubah Status Data</label>
+                            <input type="hidden" class="form-control" id="edit_id" name="edit_id">
+                            <select class="form-control" name="edit_status" id="edit_status" required>
+                                        <option value="">-- Pilih Status --</option>
+                                        <option value="1">Tampilkan</option>
+                                        <option value="2">Jangan Tampilkan</option>
+                                    </select>
+                        </div>
+                        <button type="submit" id="save1" class="btn btn-primary" style="float: right;">Pilih</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 
-        $('#id').val(md_id);
-        $('#nama').val(md_desa);
-        $('#luas').val(mk_luas);
-        $('#segmen').val(mk_segmen);
-        // $('#status').innerHTML('<option selected value ="mk_status">''</option>');
-        $('#desa').modal('show');
+    
+
+<script>
+    function fillData(d_id,d_nomor) {
+        
+        $('#edit_id').val(d_id);       
+        $('#edit_nomor').html(d_nomor);       
+        
+        $('#edit').modal('show');
 
 
         // $('#status').val(st_status);
@@ -512,11 +541,9 @@
     }
 
     function empty() {
-        // $('#id').val("");
-        // $('#nama').val("");
-        // $('#luas').val("");
-        // $('#segmen').val("");
-        // $('#status').val("");
+        $('#tentang').val("");
+        $('#nomor').val("");       
+        $('#panjang').val("");
 
         document.getElementById("ceka1").style.display = 'none';
         document.getElementById("ceka2").style.display = 'none';
