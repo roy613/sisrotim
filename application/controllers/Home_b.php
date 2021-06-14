@@ -52,7 +52,7 @@ class Home_b extends CI_Controller
     {                   
         $data['desa'] = $this->db->query("SELECT * FROM master_desa ORDER BY md_kec ASC")->result();
         $data['kec'] = $this->db->query("SELECT * FROM master_kecamatan ORDER BY mk_id ASC")->result();
-        $data['pk'] = $this->db->query("SELECT * FROM data ORDER BY d_id desc")->result();
+        $data['pk'] = $this->db->query("SELECT * FROM data WHERE d_jenis=1 ORDER BY d_id desc")->result();
         $this->load->view('back/v_header');
         $this->load->view('back/v_sidebar');
         $this->load->view('back/v_pk', $data);

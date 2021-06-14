@@ -153,7 +153,7 @@
                         <div class="form-group">
                             <label for="kecamatan">Silahkan Pilih Nama Kecamatan</label>
                             <select class="custom-select" id="kecamatan1" name="kecamatan" placeholder="" onchange="pilihan()" required>
-                                <option selected disabled>--Pilih Kecamatan--</option>
+                                <option selected disabled value="">--Pilih Kecamatan--</option>
                                 <?php foreach ($aa as $row) { ?>
                                     <option><?php echo $row->mk_kec; ?></option>
                                 <?php } ?>

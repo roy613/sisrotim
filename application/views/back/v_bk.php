@@ -205,7 +205,7 @@
                                 <div class="form-group">
                                     <label for="kec1">Kecamatan 1</label>
                                     <select class="form-control" name="kec1" id="kec1" onchange="pilihsatu()" required>
-                                        <option selected disabled value="">-- Pilih Kecamatan --</option>
+                                        <option selected disabled>-- Pilih Kecamatan --</option>
                                         <?php foreach ($kec as $a) { ?>
                                             <option> <?php echo $a->mk_kec; ?></option>
                                         <?php } ?>
@@ -220,7 +220,7 @@
                                 <div class="form-group">
                                     <label for="posisi1">Posisi 1</label>
                                     <select class="form-control" name="posisi1" id="posisi1" required disabled>
-                                        <option selected disabled value="">-- Pilih Posisi --</option>
+                                        <option selected disabled>-- Pilih Posisi --</option>
                                         <option value="1">Utara</option>
                                         <option value="2">Selatan</option>
                                         <option value="3">Timur</option>
@@ -231,7 +231,7 @@
                                 <div class="form-group">
                                     <label for="kec2">Kecamatan 2</label>
                                     <select class="form-control" name="kec2" id="kec2" onchange="pilihdua()" required>
-                                        <option selected disabled value="">-- Pilih Kecamatan --</option>
+                                        <option selected disabled>-- Pilih Kecamatan --</option>
                                         <?php foreach ($kec as $a) { ?>
                                             <option> <?php echo $a->mk_kec; ?></option>
                                         <?php } ?>
@@ -239,14 +239,17 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="desa2">Desa 2</label>
-                                    <select class="form-control" name="desa2" id="desa2" disabled required>                                        
-                                        
+                                    <select class="form-control" name="desa2" id="desa2" disabled required>
+                                        <option selected disabled>-- Pilih Desa --</option>
+                                        <?php foreach ($desa as $a) { ?>
+                                            <option> <?php echo $a->md_desa; ?></option>
+                                        <?php } ?>
                                     </select>
                                 </div>
                                 <div class="form-group">
                                     <label for="posisi2">Posisi 2</label>
                                     <select class="form-control" name="posisi2" id="posisi2" disabled required>
-                                        <option selected disabled value="">-- Pilih Posisi --</option>
+                                        <option selected disabled>-- Pilih Posisi --</option>
                                         <option value="1">Utara</option>
                                         <option value="2">Selatan</option>
                                         <option value="3">Timur</option>
@@ -267,7 +270,7 @@
                                 <div class="form-group" id="ceka1">
                                     <label for="kec3">Kecamatan 3</label>
                                     <select class="form-control" name="kec3" id="kec3" onchange="pilihtiga()">
-                                        <option selected disabled value="">-- Pilih Kecamatan --</option>
+                                        <option selected disabled>-- Pilih Kecamatan --</option>
                                         <?php foreach ($kec as $a) { ?>
                                             <option> <?php echo $a->mk_kec; ?></option>
                                         <?php } ?>
@@ -276,13 +279,16 @@
                                 <div class="form-group" id="ceka2">
                                     <label for="desa3">Desa 3</label>
                                     <select class="form-control" name="desa3" id="desa3" disabled>
-                                        
+                                        <option selected disabled>-- Pilih Desa --</option>
+                                        <?php foreach ($desa as $a) { ?>
+                                            <option> <?php echo $a->md_desa; ?></option>
+                                        <?php } ?>
                                     </select>
                                 </div>
                                 <div class="form-group" id="ceka3">
                                     <label for="posisi3">Posisi 3</label>
                                     <select class="form-control" name="posisi3" id="posisi3" disabled>
-                                        <option selected disabled value="">-- Pilih Posisi --</option>
+                                        <option selected disabled>-- Pilih Posisi --</option>
                                         <option value="1">Utara</option>
                                         <option value="2">Selatan</option>
                                         <option value="3">Timur</option>
@@ -303,7 +309,7 @@
                                 <div class="form-group" id="cekb1">
                                     <label for="kec4">Kecamatan 4</label>
                                     <select class="form-control" name="kec4" id="kec4" onchange="pilihempat()">
-                                        <option selected disabled value="">-- Pilih Kecamatan --</option>
+                                        <option selected disabled>-- Pilih Kecamatan --</option>
                                         <?php foreach ($kec as $a) { ?>
                                             <option> <?php echo $a->mk_kec; ?></option>
                                         <?php } ?>
@@ -313,13 +319,15 @@
                                     <label for="desa4">Desa 4</label>
                                     <select class="form-control" name="desa4" id="desa4" disabled>
                                         <option selected disabled>-- Pilih Desa --</option>
-                                        
+                                        <?php foreach ($desa as $a) { ?>
+                                            <option> <?php echo $a->md_desa; ?></option>
+                                        <?php } ?>
                                     </select>
                                 </div>
                                 <div class="form-group" id="cekb3">
                                     <label for="posisi4">Posisi 4</label>
                                     <select class="form-control" name="posisi4" id="posisi4" disabled>
-                                        <option selected disabled value="">-- Pilih Posisi --</option>
+                                        <option selected disabled>-- Pilih Posisi --</option>
                                         <option value="1">Utara</option>
                                         <option value="2">Selatan</option>
                                         <option value="3">Timur</option>
@@ -340,7 +348,7 @@
                                 <div class="form-group" id="cekc1">
                                     <label for="kec5">Kecamatan 5</label>
                                     <select class="form-control" name="kec5" id="kec5" onchange="pilihlima()">
-                                        <option selected disabled value="">-- Pilih Kecamatan --</option>
+                                        <option selected disabled>-- Pilih Kecamatan --</option>
                                         <?php foreach ($kec as $a) { ?>
                                             <option> <?php echo $a->mk_kec; ?></option>
                                         <?php } ?>
@@ -350,13 +358,15 @@
                                     <label for="desa5">Desa 5</label>
                                     <select class="form-control" name="desa5" id="desa5" disabled>
                                         <option selected disabled>-- Pilih Desa --</option>
-                                       
+                                        <?php foreach ($desa as $a) { ?>
+                                            <option> <?php echo $a->md_desa; ?></option>
+                                        <?php } ?>
                                     </select>
                                 </div>
                                 <div class="form-group" id="cekc3">
                                     <label for="posisi5">Posisi 5</label>
-                                    <select class="form-control" name="posisi5" id="posisi5" disabled>
-                                    <option selected disabled value="">-- Pilih Posisi --</option>
+                                    <select class="form-control" name="posisi5" id="posisi5" disabled >
+                                    <option selected disabled>-- Pilih Posisi --</option>
                                         <option value="1">Utara</option>
                                         <option value="2">Selatan</option>
                                         <option value="3">Timur</option>
@@ -377,7 +387,7 @@
                                 <div class="form-group" id="cekd1">
                                     <label for="kec6">Kecamatan 6</label>
                                     <select class="form-control" name="kec6" id="kec6" onchange="pilihenam()">
-                                        <option selected disabled value="">-- Pilih Kecamatan --</option>
+                                        <option selected disabled>-- Pilih Kecamatan --</option>
                                         <?php foreach ($kec as $a) { ?>
                                             <option> <?php echo $a->mk_kec; ?></option>
                                         <?php } ?>
@@ -386,13 +396,16 @@
                                 <div class="form-group" id="cekd2">
                                     <label for="desa6">Desa 6</label>
                                     <select class="form-control" name="desa6" id="desa6" disabled>
-                                        
+                                        <option selected disabled>-- Pilih Desa --</option>
+                                        <?php foreach ($desa as $a) { ?>
+                                            <option> <?php echo $a->md_desa; ?></option>
+                                        <?php } ?>
                                     </select>
                                 </div>
                                 <div class="form-group" id="cekd3">
                                     <label for="posisi6">Posisi 6</label>
                                     <select class="form-control" name="posisi6" id="posisi6" disabled>
-                                        <option selected disabled value="">-- Pilih Posisi --</option>
+                                        <option selected disabled>-- Pilih Posisi --</option>
                                         <option value="1">Utara</option>
                                         <option value="2">Selatan</option>
                                         <option value="3">Timur</option>
@@ -413,7 +426,7 @@
                                 <div class="form-group" id="ceke1">
                                     <label for="kec7">Kecamatan 7</label>
                                     <select class="form-control" name="kec7" id="kec7" onchange="pilihtujuh()">
-                                        <option selected disabled value="">-- Pilih Kecamatan --</option>
+                                        <option selected disabled>-- Pilih Kecamatan --</option>
                                         <?php foreach ($kec as $a) { ?>
                                             <option> <?php echo $a->mk_kec; ?></option>
                                         <?php } ?>
@@ -422,13 +435,16 @@
                                 <div class="form-group" id="ceke2">
                                     <label for="desa7">Desa 7</label>
                                     <select class="form-control" name="desa7" id="desa7" disabled>
-                                       
+                                        <option selected disabled>-- Pilih Desa --</option>
+                                        <?php foreach ($desa as $a) { ?>
+                                            <option> <?php echo $a->md_desa; ?></option>
+                                        <?php } ?>
                                     </select>
                                 </div>
                                 <div class="form-group" id="ceke3">
                                     <label for="posisi7">Posisi 7</label>
                                     <select class="form-control" name="posisi7" id="posisi7" disabled>
-                                        <option selected disabled value="">-- Pilih Posisi --</option>
+                                        <option selected disabled>-- Pilih Posisi --</option>
                                         <option value="1">Utara</option>
                                         <option value="2">Selatan</option>
                                         <option value="3">Timur</option>

@@ -28,7 +28,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a href="#' ?>" class="nav-link">
+              <a href="<?php echo base_url() . 'home_b/bk' ?>" class="nav-link">
                 <i class="fas fa-balance-scale"></i>
                 <p>BA Kesepakatan</p>
               </a>

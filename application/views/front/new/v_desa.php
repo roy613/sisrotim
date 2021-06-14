@@ -22,7 +22,7 @@
                 dataType: 'json',
                 success: function(data) {
                     var html = '';
-                    // var a = "<option selected disabled>-- Silahkan Pilih Desa --</option>";
+                    // var a = "<option selected disabled">-- Silahkan Pilih Desa --</option>";
                     var i;
                     for (i = 0; i < data.length; i++) {
                         html += '<option>' + data[i].md_desa + '</option>';
@@ -153,7 +153,7 @@
                         <div class="form-group">
                             <label for="kecamatan">Silahkan Pilih Nama Kecamatan</label>
                             <select class="custom-select" id="kecamatan1" name="kecamatan" placeholder="" onchange="pilihan()" required>
-                                <option selected disabled>--Pilih Kecamatan--</option>
+                                <option selected disabled value="">--Pilih Kecamatan--</option>
                                 <?php foreach ($aa as $row) { ?>
                                     <option><?php echo $row->mk_kec; ?></option>
                                 <?php } ?>
