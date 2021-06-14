@@ -364,7 +364,8 @@
                                 </div>
                                 <div class="form-group" id="cekc3">
                                     <label for="posisi5">Posisi 5</label>
-                                    <select class="form-control" name="posisi5" id="posisi5" disabled <option selected disabled>-- Pilih Posisi --</option>
+                                    <select class="form-control" name="posisi5" id="posisi5" disabled>
+                                    </select> <option selected disabled>-- Pilih Posisi --</option>
                                         <option value="1">Utara</option>
                                         <option value="2">Selatan</option>
                                         <option value="3">Timur</option>
