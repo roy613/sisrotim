@@ -71,10 +71,10 @@
                     <tr style="background-color: #0066ff; color: white; font-size:10pt">
                       <th style="width: 2%">NO</th>
                       <th style="width:15%">KECAMATAN</th>
-                      <th style="">IBUKOTA</th>
-                      <th style="">LUAS</th>
-                      <th style="">TOTAL SEGMEN</th>
-                      <th style="">PETA</th>
+                      <th >IBUKOTA</th>
+                      <th>LUAS</th>
+                      <th >TOTAL SEGMEN</th>
+                      <th >PETA</th>
                       <th style="width:14%">STATUS</th>
                       <th style="width:9%">OPSI</th>
                     </tr>

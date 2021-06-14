@@ -17,16 +17,16 @@
                         <!-- title row -->
                         <div class="row">
                             <div class="col-12">
-                                <a data-toggle="modal" data-target="#desa" class="btn btn-sm btn-primary" style="float:right" onclick="empty()">Tambah Data Perbup</a>
+                                <a data-toggle="modal" data-target="#desa" class="btn btn-sm btn-primary" style="float:right" onclick="empty()">Tambah Data BA</a>
                                 <h4>
-                                    DATA PERATURAN BUPATI PENETAPAN
+                                    DATA BERITA ACARA SENGKETA
                                 </h4>
                             </div>
                             <!-- /.col -->
                         </div>
                         <div class="row">
                             <div class="col-12 table-responsive" style="overflow-x:auto">
-                                <table id="example2" class="table table-bordered table-striped">
+                                <table id="example1" class="table table-bordered table-striped">
                                     <thead>
                                         <?php
                                         if (isset($_GET['alert'])) {
@@ -44,19 +44,19 @@
                                         } ?>
                                         <tr style="background-color: #0066ff; color: white; font-size:10pt">
                                             <th style="width: 2%">NO</th>
-                                            <th style="width:30%">NO PERBUP/ TENTANG</th>
+                                            <th style="width:30%">NO BA/ TENTANG</th>
                                             <th style="width:30%">KECAMATAN/ DESA(POSISI)</th>
-                                            <th >PANJANG GARIS</th>
-                                            <th>GAMBAR PETA</th>
-                                            <th>STATUS</th>
-                                            <th style="width:9%">OPSI</th>
+                                            <th style="">PANJANG GARIS</th>
+                                            <th style="">GAMBAR PETA</th>
+                                            <th style="">STATUS</th>
+                                            <th style="width:6%">OPSI</th>
                                         </tr>
 
                                     </thead>
                                     <tbody>
                                         <?php
                                         $no = 1;
-                                        foreach ($pk as $k) { ?>
+                                        foreach ($bs as $k) { ?>
                                             <tr style="font-size: 10pt;">
                                                 <td><?php echo $no++; ?></td>
                                                 <td><?php echo $k->d_nomor; ?>/ <?php echo Ucwords($k->d_tentang); ?></td>
@@ -80,7 +80,7 @@
                                                                                                                                 echo "Barat";
                                                                                                                             } ?>)<br>
 
-                                                    <?php if ($k->d_kec3 != 0) { ?> <?php echo Ucwords($k->d_kec3); ?>/<?php echo Ucwords($k->d_desa3); ?>(<?php if ($k->d_posisi3 == 1) {
+                                                    <?php if ($k->d_kec3 != "") { ?> <?php echo Ucwords($k->d_kec3); ?>/<?php echo Ucwords($k->d_desa3); ?>(<?php if ($k->d_posisi3 == 1) {
                                                                                                                                                                 echo "Utara";
                                                                                                                                                             } else if ($k->d_posisi3 == 2) {
                                                                                                                                                                 echo "Selatan";
@@ -90,7 +90,7 @@
                                                                                                                                                                 echo "Barat";
                                                                                                                                                             } ?>)<br> <?php } ?>
 
-                                                    <?php if ($k->d_kec4 != 0) { ?> <?php echo Ucwords($k->d_kec4); ?>/<?php echo Ucwords($k->d_desa4); ?>(<?php if ($k->d_posisi4 == 1) {
+                                                    <?php if ($k->d_kec4 != "") { ?> <?php echo Ucwords($k->d_kec4); ?>/<?php echo Ucwords($k->d_desa4); ?>(<?php if ($k->d_posisi4 == 1) {
                                                                                                                                                                 echo "Utara";
                                                                                                                                                             } else if ($k->d_posisi4 == 2) {
                                                                                                                                                                 echo "Selatan";
@@ -100,7 +100,7 @@
                                                                                                                                                                 echo "Barat";
                                                                                                                                                             } ?>)<br> <?php } ?>
 
-                                                    <?php if ($k->d_kec5 != 0) { ?> <?php echo Ucwords($k->d_kec5); ?>/<?php echo Ucwords($k->d_desa5); ?>(<?php if ($k->d_posisi5 == 1) {
+                                                    <?php if ($k->d_kec5 != "") { ?> <?php echo Ucwords($k->d_kec5); ?>/<?php echo Ucwords($k->d_desa5); ?>(<?php if ($k->d_posisi5 == 1) {
                                                                                                                                                                 echo "Utara";
                                                                                                                                                             } else if ($k->d_posisi5 == 2) {
                                                                                                                                                                 echo "Selatan";
@@ -110,7 +110,7 @@
                                                                                                                                                                 echo "Barat";
                                                                                                                                                             } ?>)<br> <?php } ?>
 
-                                                    <?php if ($k->d_kec6 != 0) { ?> <?php echo Ucwords($k->d_kec6); ?>/<?php echo Ucwords($k->d_desa6); ?>(<?php if ($k->d_posisi6 == 1) {
+                                                    <?php if ($k->d_kec6 != "") { ?> <?php echo Ucwords($k->d_kec6); ?>/<?php echo Ucwords($k->d_desa6); ?>(<?php if ($k->d_posisi6 == 1) {
                                                                                                                                                                 echo "Utara";
                                                                                                                                                             } else if ($k->d_posisi6 == 2) {
                                                                                                                                                                 echo "Selatan";
@@ -120,7 +120,7 @@
                                                                                                                                                                 echo "Barat";
                                                                                                                                                             } ?>)<br> <?php } ?>
 
-                                                    <?php if ($k->d_kec7 != 0) { ?> <?php echo Ucwords($k->d_kec7); ?>/<?php echo Ucwords($k->d_desa7); ?>(<?php if ($k->d_posisi7 == 1) {
+                                                    <?php if ($k->d_kec7 != "") { ?> <?php echo Ucwords($k->d_kec7); ?>/<?php echo Ucwords($k->d_desa7); ?>(<?php if ($k->d_posisi7 == 1) {
                                                                                                                                                                 echo "Utara";
                                                                                                                                                             } else if ($k->d_posisi7 == 2) {
                                                                                                                                                                 echo "Selatan";
@@ -140,7 +140,7 @@
                                                 <td>
                                                     <a href="<?php echo base_url() . 'simpan/pk_hapus/' . $k->d_id; ?>" onclick="return confirm('Apakah Anda Yakin Ingin Menghapus Data Ini ?');" class="btn btn-danger" style="font-size: 10pt !important; padding:4px !important">
                                                         <i class="fa fa-trash" title="Hapus"></i> </a>
-                                                    <a href="javascript:;" onclick="fillData(
+                                                    <!-- <a href="javascript:;" onclick="fillData(
                             '<?php echo $k->d_tentang; ?>',
                           '<?php echo $k->d_nomor; ?>',
                           '<?php echo $k->d_kec1; ?>',
@@ -165,7 +165,7 @@
                           '<?php echo $k->d_desa7; ?>',
                           '<?php echo $k->d_posisi7; ?>',                          
                           '<?php echo $k->d_pgaris; ?>',                          
-                          )" class="btn btn-warning " style="font-size: 10pt !important; padding:4px !important" title="Edit"><i class="fa fa-edit" aria-hidden="true"></i></a>
+                          )" class="btn btn-warning " style="font-size: 10pt !important; padding:4px !important" title="Edit"><i class="fa fa-edit" aria-hidden="true"></i></a> -->
                                                 </td>
                                             <?php } ?>
                                     </tbody>
@@ -182,23 +182,24 @@
             <div class="modal-dialog modal-md modal-dialog-centered modal-dialog-scrollable">
                 <div class="modal-content">
                     <div class="modal-header bg-dark">
-                        <h5 class="modal-title" id="exampleModalLabel">INPUT DATA PERATURAN BUPATI PENETAPAN</h5>
+                        <h5 class="modal-title" id="exampleModalLabel">INPUT DATA BERITA ACARA SENGKETA</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
 
                     <div class="modal-body">
-                        <form method="post" action="<?php echo base_url('simpan/pk') ?>" enctype="multipart/form-data">
+                        <form method="post" action="<?php echo base_url('simpan/bk') ?>" enctype="multipart/form-data">
                             <div class="card-body">
                                 <div class="form-group">
-                                    <label for="nomor">NOMOR PERBUP</label>
-                                    <input type="text" class="form-control" id="nomor" name="nomor" placeholder="contoh : 3 tahun 2021" required>
+                                    <label for="nomor">NOMOR BERITA ACARA</label>
+                                    <input type="text" class="form-control" id="nomor" name="nomor" placeholder="Input Nomor Berita Acara ..." required>
                                     <input type="hidden" class="form-control" id="id" name="id">
+                                    <input type="hidden" class="form-control" id="jenis" name="jenis" value="1">
                                 </div>
                                 <div class="form-group">
-                                    <label for="tentang">TENTANG PERBUP</label>
-                                    <input type="text" class="form-control" id="tentang" name="tentang" placeholder="Input tentang perbup ..." required>
+                                    <label for="tentang">TENTANG BA</label>
+                                    <input type="text" class="form-control" id="tentang" name="tentang" placeholder="Input tentang Berita Acara ..." required>
                                 </div>
 
                                 <div class="form-group">
@@ -364,7 +365,8 @@
                                 </div>
                                 <div class="form-group" id="cekc3">
                                     <label for="posisi5">Posisi 5</label>
-                                    <select class="form-control" name="posisi5" id="posisi5" disabled <option selected disabled>-- Pilih Posisi --</option>
+                                    <select class="form-control" name="posisi5" id="posisi5" disabled >
+                                    <option selected disabled>-- Pilih Posisi --</option>
                                         <option value="1">Utara</option>
                                         <option value="2">Selatan</option>
                                         <option value="3">Timur</option>
@@ -472,7 +474,7 @@
                                     </select>
                                 </div>
                                 <div class="form-group">
-                                    <label for="filegambar">Gambar Peta Indikatif (jpg, jpeg, png)</label>
+                                    <label for="filegambar">Gambar Peta (jpg, jpeg, png)</label>
                                     <div class="input-group">
                                         <div class="custom-file">
                                             <input type="file" class="custom-file-input" name="filegambar" id="filegambar">
@@ -511,11 +513,12 @@
     }
 
     function empty() {
-        // $('#id').val("");
-        // $('#nama').val("");
-        // $('#luas').val("");
-        // $('#segmen').val("");
-        // $('#status').val("");
+        
+        $('#tentang').val("");
+        $('#nomor').val("");       
+        $('#panjang').val("");
+     
+
 
         document.getElementById("ceka1").style.display = 'none';
         document.getElementById("ceka2").style.display = 'none';

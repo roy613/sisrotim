@@ -5,7 +5,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0">Dashboard</h1>
+            <h1 class="m-0">Summary</h1>
 
           </div><!-- /.row -->
         </div><!-- /.container-fluid -->
@@ -19,26 +19,13 @@
           <div class="row">
             <div class="col-md-4 col-6">
               <!-- small box -->
-              <div class="small-box bg-info">
-                <div class="inner">
-                  <h3></h3>
-                  <p>xxxxxx</p>
-                </div>
-                <div class="icon">
-                <i class="fas fa-archive"></i>
-                </div>                
-              </div>
-            </div>
-            <!-- ./col -->
-            <div class="col-md-4 col-6">
-              <!-- small box -->
               <div class="small-box bg-success">
                 <div class="inner">
-                  <h3></h3>
-                  <p>xxxxxx</p>
+                  <h3><?php echo number_format($pk);?></h3>
+                  <p>PERBUP PENETAPAN</p>
                 </div>
                 <div class="icon">
-                <i class="far fa-file-image"></i>
+                <i class="fas fa-gavel"></i>
                 </div>                
               </div>
             </div>
@@ -47,11 +34,24 @@
               <!-- small box -->
               <div class="small-box bg-warning">
                 <div class="inner">
-                  <h3></h3>
-                  <p>xxxxxxx</p>
+                  <h3><?php echo number_format($bk);?></h3>
+                  <p>BA KESEPAKATAN</p>
                 </div>
                 <div class="icon">
-                  <i class="far fa-file-archive"></i>
+                <i class="far fa-calendar-check"></i>
+                </div>                
+              </div>
+            </div>
+            <!-- ./col -->
+            <div class="col-md-4 col-6">
+              <!-- small box -->
+              <div class="small-box bg-danger">
+                <div class="inner">
+                  <h3><?php echo number_format($bs);?></h3>
+                  <p>BA SENGKETA</p>
+                </div>
+                <div class="icon">
+                <i class="far fa-calendar-times"></i>
                 </div>
               </div>
             </div>

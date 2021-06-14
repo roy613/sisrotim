@@ -3,7 +3,7 @@
   <strong>Copyright &copy;2021 Bagian Tata Pemerintahan Sekretariat Daerah <br>Kabupaten Kutai Timur</strong>
   All rights reserved.
   <div class="float-right d-none d-sm-inline-block">
-    <b>Version</b> 1.0
+    SIMPRONATASA <b>Version</b> 1.0
   </div>
 </footer>
 
@@ -154,6 +154,30 @@
     caret_pos = updated_len - original_len + caret_pos;
     input[0].setSelectionRange(caret_pos, caret_pos);
   }
+</script>
+<script>
+  $(function() {
+    $("#example1").DataTable({
+      "responsive": false,
+      "lengthChange": true,
+      "autoWidth": false,
+      "ordering": true,
+      "buttons": ["excel", "pdf", "print"]
+    }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+    $('#example2').DataTable({
+      "paging": true,
+      "lengthChange": false,
+      "searching": false,
+      "ordering": true,
+      "info": true,
+      "autoWidth": false,
+      "responsive": true,
+    });
+  });
+
+  $('#tanggal').datetimepicker({
+    format: 'L'
+  });
 </script>
 
 </body>

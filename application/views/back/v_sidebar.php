@@ -23,19 +23,19 @@
           <ul class="nav nav-treeview">
             <li class="nav-item">
               <a href="<?php echo base_url() . 'home_b/pk' ?>" class="nav-link">
-                <i class="fas fa-ruler-vertical"></i>
+                <i class="fas fa-gavel"></i>
                 <p>Perbup Penetapan</p>
               </a>
             </li>
             <li class="nav-item">
               <a href="<?php echo base_url() . 'home_b/bk' ?>" class="nav-link">
-                <i class="fas fa-balance-scale"></i>
+                <i class="far fa-calendar-check"></i>
                 <p>BA Kesepakatan</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="#" class="nav-link">
-                <i class="fas fa-th-list"></i>
+              <a href="<?php echo base_url() . 'home_b/bs' ?>" class="nav-link">
+                <i class="far fa-calendar-times"></i>
                 <p>BA Sengketa</p>
               </a>
             </li>

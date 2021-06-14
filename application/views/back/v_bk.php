@@ -17,9 +17,9 @@
                         <!-- title row -->
                         <div class="row">
                             <div class="col-12">
-                                <a data-toggle="modal" data-target="#desa" class="btn btn-sm btn-primary" style="float:right" onclick="empty()">Tambah Data Desa</a>
+                                <a data-toggle="modal" data-target="#desa" class="btn btn-sm btn-primary" style="float:right" onclick="empty()">Tambah Data BA</a>
                                 <h4>
-                                    DATA PERATURAN BUPATI PENETAPAN
+                                    DATA BERITA ACARA KESEPAKATAN
                                 </h4>
                             </div>
                             <!-- /.col -->
@@ -44,7 +44,7 @@
                                         } ?>
                                         <tr style="background-color: #0066ff; color: white; font-size:10pt">
                                             <th style="width: 2%">NO</th>
-                                            <th style="width:30%">NO PERBUP/ TENTANG</th>
+                                            <th style="width:30%">NO BA/ TENTANG</th>
                                             <th style="width:30%">KECAMATAN/ DESA(POSISI)</th>
                                             <th style="">PANJANG GARIS</th>
                                             <th style="">GAMBAR PETA</th>
@@ -56,7 +56,7 @@
                                     <tbody>
                                         <?php
                                         $no = 1;
-                                        foreach ($pk as $k) { ?>
+                                        foreach ($bk as $k) { ?>
                                             <tr style="font-size: 10pt;">
                                                 <td><?php echo $no++; ?></td>
                                                 <td><?php echo $k->d_nomor; ?>/ <?php echo Ucwords($k->d_tentang); ?></td>
@@ -182,24 +182,24 @@
             <div class="modal-dialog modal-md modal-dialog-centered modal-dialog-scrollable">
                 <div class="modal-content">
                     <div class="modal-header bg-dark">
-                        <h5 class="modal-title" id="exampleModalLabel">INPUT DATA PERATURAN BUPATI PENETAPAN</h5>
+                        <h5 class="modal-title" id="exampleModalLabel">INPUT DATA BERITA ACARA KESEPAKATAN</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
 
                     <div class="modal-body">
-                        <form method="post" action="<?php echo base_url('simpan/pk') ?>" enctype="multipart/form-data">
+                        <form method="post" action="<?php echo base_url('simpan/bk') ?>" enctype="multipart/form-data">
                             <div class="card-body">
                                 <div class="form-group">
-                                    <label for="nomor">NOMOR PERBUP</label>
-                                    <input type="text" class="form-control" id="nomor" name="nomor" placeholder="contoh : Nomor 3 tahun 2021" required>
+                                    <label for="nomor">NOMOR BERITA ACARA</label>
+                                    <input type="text" class="form-control" id="nomor" name="nomor" placeholder="Input Nomor Berita Acara ..." required>
                                     <input type="hidden" class="form-control" id="id" name="id">
                                     <input type="hidden" class="form-control" id="jenis" name="jenis" value="1">
                                 </div>
                                 <div class="form-group">
-                                    <label for="tentang">TENTANG PERBUP</label>
-                                    <input type="text" class="form-control" id="tentang" name="tentang" placeholder="Input tentang perbup ..." required>
+                                    <label for="tentang">TENTANG BA</label>
+                                    <input type="text" class="form-control" id="tentang" name="tentang" placeholder="Input tentang Berita Acara ..." required>
                                 </div>
 
                                 <div class="form-group">
