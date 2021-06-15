@@ -7,6 +7,7 @@ class Welcome extends CI_Controller {
         parent::__construct();
         // $this->load->model('Kecamatan');
         $this->load->model('M_data');
+		$this->load->helper('download');
     }
 
 	/**
@@ -120,5 +121,11 @@ class Welcome extends CI_Controller {
             $this->load->view('front/new/v_login');
         }
     } 
+
+	public function download_pk_gambar($nama)
+	{
+		$this->load->helper('download');
+		force_download("./gambar/peta_penetapan/$nama", NULL);
+	}
 }
 

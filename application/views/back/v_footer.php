@@ -190,10 +190,11 @@
 </script>
 
 <script>
-    function fillData(d_id, d_nomor) {
+    function fillData(d_id, d_nomor, status) {
 
         $('#edit_id').val(d_id);
         $('#edit_nomor').html(d_nomor);
+        $('#edit_status').val(status);
 
         $('#edit').modal('show');
 

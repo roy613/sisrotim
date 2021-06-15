@@ -137,7 +137,7 @@
                                                 echo "Tampil";
                                             } else {
                                                 echo "Tidak Tampil";
-                                            } ?> <a href="javascript:;" onclick="fillData('<?php echo $k->d_id; ?>','<?php echo $k->d_tentang; ?>',)" style="font-size: 10pt !important; padding:4px !important" title="Edit"><i class="fa fa-edit" aria-hidden="true"></i></a> </td>
+                                            } ?> <a href="javascript:;" onclick="fillData('<?php echo $k->d_id; ?>','<?php echo $k->d_tentang; ?>','<?php echo $k->d_status; ?>')" style="font-size: 10pt !important; padding:4px !important" title="Edit"><i class="fa fa-edit" aria-hidden="true"></i></a> </td>
                                         <td>
                                             <a href="<?php echo base_url() . 'simpan/pk_hapus/' . $k->d_id; ?>" onclick="return confirm('Apakah Anda Yakin Ingin Menghapus Data Ini ?');" class="btn btn-danger" style="font-size: 10pt !important; padding:4px !important">
                                                 <i class="fa fa-trash" title="Hapus"></i> </a>
@@ -196,6 +196,7 @@
                                     <label for="nomor">NOMOR PERBUP</label>
                                     <input type="text" class="form-control" id="nomor" name="nomor" placeholder="contoh : 3 tahun 2021" required>
                                     <input type="hidden" class="form-control" id="id" name="id">
+                                    <input type="hidden" class="form-control" id="jenis" name="jenis" value="1">
                                 </div>
                                 <div class="form-group">
                                     <label for="tentang">TENTANG PERBUP</label>
@@ -220,7 +221,7 @@
                                 <div class="form-group">
                                     <label for="posisi1">Posisi 1</label>
                                     <select class="form-control" name="posisi1" id="posisi1" required disabled>
-                                        <option selected disabled>-- Pilih Posisi --</option>
+                                        <option selected disabled value="">-- Pilih Posisi --</option>
                                         <option value="1">Utara</option>
                                         <option value="2">Selatan</option>
                                         <option value="3">Timur</option>
@@ -249,7 +250,7 @@
                                 <div class="form-group">
                                     <label for="posisi2">Posisi 2</label>
                                     <select class="form-control" name="posisi2" id="posisi2" disabled required>
-                                        <option selected disabled>-- Pilih Posisi --</option>
+                                        <option selected disabled value="">-- Pilih Posisi --</option>
                                         <option value="1">Utara</option>
                                         <option value="2">Selatan</option>
                                         <option value="3">Timur</option>

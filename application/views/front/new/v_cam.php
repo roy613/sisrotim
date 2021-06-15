@@ -208,7 +208,9 @@
                                 <div class="row">
                                     <div class="col-sm-6 col-md-5">
                                         <div class="about-img">
-                                            <img src="<?php echo base_url() ?>assets/front1/img/b1.jpeg" class="img-fluid rounded b-shadow-a" alt="Peta Kutim">
+                                            <?php foreach ($aq as $row) { ?>
+                                            <img src="<?php echo base_url(); ?>gambar/peta_kecamatan/<?php echo $row->mk_peta; ?>" style="height:170px; width:170px" class="img-fluid rounded b-shadow-a" alt="Peta Kutim">
+                                            <?php }?>
                                         </div>
                                     </div>
                                     <div class="col-sm-6 col-md-7">

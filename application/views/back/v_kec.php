@@ -1,13 +1,12 @@
 <script>
-  function fillData(mk_id, mk_kec, mk_ibukota, mk_luas, mk_segmen, mk_status) {
-
+  function fillDataok(mk_id, mk_kec, mk_ibukota, mk_luas, mk_segmen, mk_status) {
     $('#id').val(mk_id);
     $('#nama').val(mk_kec);
     $('#ibukota').val(mk_ibukota);
     $('#luas').val(mk_luas);
     $('#segmen').val(mk_segmen);
-    // $('#status').innerHTML('<option selected value ="mk_status">''</option>');
-    $('#kec').modal('show');
+    $('#status').val(mk_status);
+    $('#modalcam').modal('show');
 
 
     // $('#status').val(st_status);
@@ -15,6 +14,7 @@
   }
 
   function empty() {
+    
     $('#id').val("");
     $('#nama').val("");
     $('#ibukota').val("");
@@ -42,7 +42,7 @@
         <div class="card">
           <!-- title row -->
           <div class="card-header">
-            <a data-toggle="modal" data-target="#kec" class="btn btn-sm btn-primary" style="float:right" onclick="empty()">Tambah Data Kecamatan</a>
+            <a data-toggle="modal" data-target="#modalcam" class="btn btn-sm btn-primary" style="float:right" onclick="empty()">Tambah Data Kecamatan</a>
             <h4 class="card-title">
               DATA KECAMATAN
             </h4>
@@ -94,11 +94,11 @@
                           echo "Tampil";
                         } else {
                           echo "Tidak Tampil";                          
-                        }?> <a href="javascript:;" onclick="editdata('<?php echo $k->mk_id; ?>','<?php echo $k->mk_kec; ?>')"  style="font-size: 10pt !important; padding:4px !important" title="Edit"><i class="fa fa-edit" aria-hidden="true"></i></a></td>
+                        }?> <a href="javascript:;" onclick="editdata('<?php echo $k->mk_id; ?>','<?php echo $k->mk_kec; ?>','<?php echo $k->mk_ket; ?>')"  style="font-size: 10pt !important; padding:4px !important" title="Edit"><i class="fa fa-edit" aria-hidden="true"></i></a></td>
                     <td>
                       <a href="<?php echo base_url() . 'simpan/k_hapus/' . $k->mk_id; ?>" onclick="return confirm('Apakah Anda Yakin Ingin Menghapus Data Ini ?');" class="btn btn-danger" style="font-size: 10pt !important; padding:4px !important">
                         <i class="fa fa-trash" title="Hapus"></i> </a>
-                      <a href="javascript:;" onclick="fillData('<?php echo $k->mk_id; ?>','<?php echo $k->mk_kec; ?>','<?php echo $k->mk_ibukota; ?>','<?php echo $k->mk_luas; ?>','<?php echo $k->mk_segmen; ?>','<?php echo $k->mk_ket; ?>')" class="btn btn-warning " style="font-size: 10pt !important; padding:4px !important" title="Edit"><i class="fa fa-edit" aria-hidden="true"></i></a>
+                      <a href="javascript:;" onclick="fillDataok('<?php echo $k->mk_id; ?>','<?php echo $k->mk_kec; ?>','<?php echo $k->mk_ibukota; ?>','<?php echo $k->mk_luas; ?>','<?php echo $k->mk_segmen; ?>','<?php echo $k->mk_ket; ?>')" class="btn btn-warning " style="font-size: 10pt !important; padding:4px !important" title="Edit"><i class="fa fa-edit" aria-hidden="true"></i></a>
                     </td>
                   <?php } ?>
               </tbody>
@@ -111,7 +111,7 @@
 
 
 <!-- Modal -->
-<div class="modal fade" id="kec" tabindex="-1" aria-labelledby="exampleModalLabel" a data-backdrop="static" data-keyboard="false" aria-hidden="true">
+<div class="modal fade" id="modalcam" tabindex="-1" aria-labelledby="exampleModalLabel" a data-backdrop="static" data-keyboard="false" aria-hidden="true">
   <div class="modal-dialog modal-md modal-dialog-centered modal-dialog-scrollable">
     <div class="modal-content">
       <div class="modal-header bg-dark">
@@ -125,8 +125,8 @@
         <form method="post" action="<?php echo base_url('simpan/kecamatan') ?>" enctype="multipart/form-data">
           <div class="card-body">
             <div class="form-group">
-              <label for="judul">Nama</label>
-              <input type="text" class="form-control" id="nama" name="nama" placeholder="Input Nama.." required>
+              <label for="judul">Nama Kecamatan</label>
+              <input type="text" class="form-control" id="nama" name="nama" placeholder="Input Nama Kecamatan.." required>
               <input type="hidden" class="form-control" id="id" name="id">
             </div>
             <div class="form-group">
@@ -203,10 +203,11 @@
 </div>
 
 <script>
-  function editdata(mk_id, mk_kec) {
+  function editdata(mk_id, mk_kec, mk_status) {
 
 $('#edit_id').val(mk_id);
 $('#edit_cam').html(mk_kec);
+$('#edit_status').val(mk_status);
 
 $('#editstatus').modal('show');
 

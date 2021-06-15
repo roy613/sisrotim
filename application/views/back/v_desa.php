@@ -1,12 +1,12 @@
 <script>
-  function fillData(md_id, md_kec, md_desa, md_luas, md_segmen, md_status) {
-
+  function fillDataok(md_id, md_kec, md_desa, md_luas, md_segmen, md_status) {
     $('#id').val(md_id);
+    $('#kecamatan').val(md_kec);
     $('#nama').val(md_desa);
-    $('#luas').val(mk_luas);
-    $('#segmen').val(mk_segmen);
-    // $('#status').innerHTML('<option selected value ="mk_status">''</option>');
-    $('#desa').modal('show');
+    $('#luas').val(md_luas);
+    $('#segmen').val(md_segmen);
+    $('#status').val(md_status);
+    $('#modaldesa').modal('show');
 
 
     // $('#status').val(st_status);
@@ -40,7 +40,7 @@
         <div class="card">
           <!-- title row -->
           <div class="card-header">
-            <a data-toggle="modal" data-target="#desa" class="btn btn-sm btn-primary" style="float:right" onclick="empty()">Tambah Data Desa</a>
+            <a data-toggle="modal" data-target="#modaldesa" class="btn btn-sm btn-primary" style="float:right" onclick="empty()">Tambah Data Desa</a>
             <h4 class="card-title">
               DATA DESA
             </h4>
@@ -92,11 +92,11 @@
                           echo "Tampil";
                         } else {
                           echo "Tidak Tampil";
-                        } ?><sup><a href="javascript:;" onclick="editdata('<?php echo $k->md_id; ?>','<?php echo $k->md_desa; ?>')"  style="font-size: 10pt !important; padding:4px !important" title="Edit"><i class="fa fa-edit" aria-hidden="true"></i></a></sup></td>
+                        } ?><sup><a href="javascript:;" onclick="editdata('<?php echo $k->md_id; ?>','<?php echo $k->md_desa; ?>','<?php echo $k->md_ket; ?>')"  style="font-size: 10pt !important; padding:4px !important" title="Edit"><i class="fa fa-edit" aria-hidden="true"></i></a></sup></td>
                     <td>
                       <a href="<?php echo base_url() . 'simpan/d_hapus/' . $k->md_id; ?>" onclick="return confirm('Apakah Anda Yakin Ingin Menghapus Data Ini ?');" class="btn btn-danger" style="font-size: 10pt !important; padding:4px !important">
                         <i class="fa fa-trash" title="Hapus"></i> </a>
-                      <a href="javascript:;" onclick="fillData('<?php echo $k->md_id; ?>','<?php echo $k->md_kec; ?>','<?php echo $k->md_desa; ?>','<?php echo $k->md_luas; ?>','<?php echo $k->md_segmen; ?>','<?php echo $k->md_ket; ?>')" class="btn btn-warning " style="font-size: 10pt !important; padding:4px !important" title="Edit"><i class="fa fa-edit" aria-hidden="true"></i></a>
+                      <a href="javascript:;" onclick="fillDataok('<?php echo $k->md_id; ?>','<?php echo $k->md_kec; ?>','<?php echo $k->md_desa; ?>','<?php echo $k->md_luas; ?>','<?php echo $k->md_segmen; ?>','<?php echo $k->md_ket; ?>')" class="btn btn-warning " style="font-size: 10pt !important; padding:4px !important" title="Edit"><i class="fa fa-edit" aria-hidden="true"></i></a>
                     </td>
                   <?php } ?>
               </tbody>
@@ -109,7 +109,7 @@
 
 
 <!-- Modal -->
-<div class="modal fade" id="desa" tabindex="-1" aria-labelledby="exampleModalLabel" a data-backdrop="static" data-keyboard="false" aria-hidden="true">
+<div class="modal fade" id="modaldesa" tabindex="-1" aria-labelledby="exampleModalLabel" a data-backdrop="static" data-keyboard="false" aria-hidden="true">
   <div class="modal-dialog modal-md modal-dialog-centered modal-dialog-scrollable">
     <div class="modal-content">
       <div class="modal-header bg-dark">
@@ -207,13 +207,16 @@
 </div>
 
 <script>
-  function editdata(mk_id, mk_kec) {
+  function editdata(mk_id, mk_kec, mk_ket) {
 
 $('#edit_id').val(mk_id);
 $('#edit_cam').html(mk_kec);
+$('#edit_status').val(mk_ket);
 
 $('#editstatus').modal('show');
 
 
 }
+
+
 </script>

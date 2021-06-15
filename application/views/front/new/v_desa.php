@@ -208,7 +208,9 @@
                                 <div class="row">
                                     <div class="col-sm-6 col-md-5">
                                         <div class="about-img">
-                                            <img src="<?php echo base_url() ?>assets/front1/img/b1.jpeg" class="img-fluid rounded b-shadow-a" alt="Peta Kutim">
+                                        <?php foreach ($aq as $row) { ?>
+                                            <img src="<?php echo base_url(); ?>gambar/peta_desa/<?php echo $row->md_peta; ?>" class="img-fluid rounded b-shadow-a" style="height:170px; width:170px">
+                                        <?php }?>
                                         </div>
                                     </div>
                                     <div class="col-sm-6 col-md-7">
@@ -309,7 +311,7 @@
                                                                     <ul class="dropdown-menu">
                                                                         <?php if ($row->d_jenis == 1) { ?>
                                                                             <li><a href="" style="color:black">Peraturan Bupati</a></li>
-                                                                            <li><a href="" style="color:black">Gambar Peta</a></li>
+                                                                            <li><a target="_blank" href="<?php echo base_url() . 'welcome/download_pk_gambar/' . $row->d_peta; ?>" style="color:black">Gambar Peta</a></li>
                                                                         <?php } else if ($row->d_jenis == 2) { ?>
                                                                             <li><a href="" style="color:black">BA Kesepakatan</a></li>
                                                                             <li><a href="" style="color:black">Peta Kesepakatan</a></li>
@@ -385,7 +387,7 @@
                                                                     <ul class="dropdown-menu">
                                                                         <?php if ($row->d_jenis == 1) { ?>
                                                                             <li><a href="" style="color:black">Peraturan Bupati</a></li>
-                                                                            <li><a href="" style="color:black">Gambar Peta</a></li>
+                                                                            <li><a target="_blank" href="<?php echo base_url() . 'welcome/download_pk_gambar/' . $row->d_peta; ?>" style="color:black">Gambar Peta</a></li>
                                                                         <?php } else if ($row->d_jenis == 2) { ?>
                                                                             <li><a href="" style="color:black">BA Kesepakatan</a></li>
                                                                             <li><a href="" style="color:black">Peta Kesepakatan</a></li>
@@ -460,7 +462,7 @@
                                                                     <ul class="dropdown-menu">
                                                                         <?php if ($row->d_jenis == 1) { ?>
                                                                             <li><a href="" style="color:black">Peraturan Bupati</a></li>
-                                                                            <li><a href="" style="color:black">Gambar Peta</a></li>
+                                                                            <li><a target="_blank" href="<?php echo base_url() . 'welcome/download_pk_gambar/' . $row->d_peta; ?>" style="color:black">Gambar Peta</a></li>
                                                                         <?php } else if ($row->d_jenis == 2) { ?>
                                                                             <li><a href="" style="color:black">BA Kesepakatan</a></li>
                                                                             <li><a href="" style="color:black">Peta Kesepakatan</a></li>
@@ -535,7 +537,7 @@
                                                                     <ul class="dropdown-menu">
                                                                         <?php if ($row->d_jenis == 1) { ?>
                                                                             <li><a href="" style="color:black">Peraturan Bupati</a></li>
-                                                                            <li><a href="" style="color:black">Gambar Peta</a></li>
+                                                                            <li><a target="_blank" href="<?php echo base_url() . 'welcome/download_pk_gambar/' . $row->d_peta; ?>" style="color:black">Gambar Peta</a></li>
                                                                         <?php } else if ($row->d_jenis == 2) { ?>
                                                                             <li><a href="" style="color:black">BA Kesepakatan</a></li>
                                                                             <li><a href="" style="color:black">Peta Kesepakatan</a></li>
