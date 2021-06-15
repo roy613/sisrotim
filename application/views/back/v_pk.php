@@ -1,3 +1,31 @@
+<style>
+    table {
+        width: 100%;
+        font-size: small;
+    }
+
+    th {
+        background-color: skyblue;
+        padding: 7px !important;
+        text-align: center;
+        vertical-align: middle !important;
+    }
+
+    td {
+        padding: 4px !important;
+        text-align: center;
+    }
+
+    li {
+        font-size: small;
+        color: black;
+        margin-left: 8px;
+        margin-right: 8px;
+
+    }
+</style>
+
+
 <!-- body -->
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
@@ -10,137 +38,137 @@
     </section>
     <section class="content">
         <div class="container-fluid">
-           
-                <div class="col-12">
-                    <!-- Main content -->
-                    <div class="card">
-                        <!-- title row -->
-                        <div class="card-header">
-                            
-                                <a data-toggle="modal" data-target="#desa" class="btn btn-sm btn-primary" style="float:right" onclick="empty()">Tambah Data Perbup</a>
-                                <h4 class="card-title">
-                                    DATA PERATURAN BUPATI PENETAPAN
-                                </h4>
-                           
-                            <!-- /.col -->
-                        </div>
-                        
-                            <div class="card-body" style="overflow-x:auto">
-                                <table id="example1" class="table table-bordered table-striped table-responsive">
-                                    <thead>
-                                        <?php
-                                        if (isset($_GET['alert'])) {
-                                            if ($_GET['alert'] == "sukses") {
-                                                echo "<div class='alert alert-success'>Data Berhasil di Tambah!</div>";
-                                            } else if ($_GET['alert'] == "gagal") {
-                                                echo "<div class='alert alert-danger'>Data Berhasil DiHapus</div>";
-                                            } else if ($_GET['alert'] == "sukses1") {
-                                                echo "<div class='alert alert-success'>Data Berhasil Di Ubah</div>";
-                                            }
-                                        }
-                                        ?>
-                                        <?php if (isset($gambar_error)) {
-                                            echo "<div style='color:red'>$gambar_error</div>";
-                                        } ?>
-                                        <tr style="background-color: #0066ff; color: white; font-size:10pt">
-                                            <th style="width: 2%">NO</th>
-                                            <th style="width:23%">NO PERBUP/ TENTANG</th>
-                                            <th style="width:30%">KECAMATAN/ DESA(POSISI)</th>
-                                            <th>PANJANG GARIS</th>
-                                            <th>GAMBAR PETA</th>
-                                            <th style="width:auto">STATUS</th>
-                                            <th style="width:auto">OPSI</th>
-                                        </tr>
 
-                                    </thead>
-                                    <tbody>
-                                        <?php
-                                        $no = 1;
-                                        foreach ($pk as $k) { ?>
-                                            <tr style="font-size: 10pt;">
-                                                <td><?php echo $no++; ?></td>
-                                                <td><?php echo $k->d_nomor; ?>/ <?php echo Ucwords($k->d_tentang); ?></td>
-                                                <td><?php echo Ucwords($k->d_kec1); ?>/<?php echo Ucwords($k->d_desa1); ?>(<?php if ($k->d_posisi1 == 1) {
-                                                                                                                                echo "Utara";
-                                                                                                                            } else if ($k->d_posisi1 == 2) {
-                                                                                                                                echo "Selatan";
-                                                                                                                            } else if ($k->d_posisi1 == 3) {
-                                                                                                                                echo "Timur";
-                                                                                                                            } else if ($k->d_posisi1 == 4) {
-                                                                                                                                echo "Barat";
-                                                                                                                            } ?>)<br>
+            <div class="col-12">
+                <!-- Main content -->
+                <div class="card">
+                    <!-- title row -->
+                    <div class="card-header">
 
-                                                    <?php echo Ucwords($k->d_kec2); ?>/<?php echo Ucwords($k->d_desa2); ?>(<?php if ($k->d_posisi2 == 1) {
-                                                                                                                                echo "Utara";
-                                                                                                                            } else if ($k->d_posisi2 == 2) {
-                                                                                                                                echo "Selatan";
-                                                                                                                            } else if ($k->d_posisi2 == 3) {
-                                                                                                                                echo "Timur";
-                                                                                                                            } else if ($k->d_posisi2 == 4) {
-                                                                                                                                echo "Barat";
-                                                                                                                            } ?>)<br>
+                        <a data-toggle="modal" data-target="#desa" class="btn btn-sm btn-primary" style="float:right" onclick="empty()">Tambah Data Perbup</a>
+                        <h4 class="card-title">
+                            DATA PERATURAN BUPATI PENETAPAN
+                        </h4>
 
-                                                    <?php if ($k->d_kec3 != 0) { ?> <?php echo Ucwords($k->d_kec3); ?>/<?php echo Ucwords($k->d_desa3); ?>(<?php if ($k->d_posisi3 == 1) {
-                                                                                                                                                                echo "Utara";
-                                                                                                                                                            } else if ($k->d_posisi3 == 2) {
-                                                                                                                                                                echo "Selatan";
-                                                                                                                                                            } else if ($k->d_posisi3 == 3) {
-                                                                                                                                                                echo "Timur";
-                                                                                                                                                            } else if ($k->d_posisi3 == 4) {
-                                                                                                                                                                echo "Barat";
-                                                                                                                                                            } ?>)<br> <?php } ?>
+                        <!-- /.col -->
+                    </div>
 
-                                                    <?php if ($k->d_kec4 != 0) { ?> <?php echo Ucwords($k->d_kec4); ?>/<?php echo Ucwords($k->d_desa4); ?>(<?php if ($k->d_posisi4 == 1) {
-                                                                                                                                                                echo "Utara";
-                                                                                                                                                            } else if ($k->d_posisi4 == 2) {
-                                                                                                                                                                echo "Selatan";
-                                                                                                                                                            } else if ($k->d_posisi4 == 3) {
-                                                                                                                                                                echo "Timur";
-                                                                                                                                                            } else if ($k->d_posisi4 == 4) {
-                                                                                                                                                                echo "Barat";
-                                                                                                                                                            } ?>)<br> <?php } ?>
+                    <div class="card-body" style="overflow-x:auto">
+                        <table id="example1" class="table table-bordered table-striped table-hover table-responsive">
+                            <thead>
+                                <?php
+                                if (isset($_GET['alert'])) {
+                                    if ($_GET['alert'] == "sukses") {
+                                        echo "<div class='alert alert-success'>Data Berhasil di Tambah!</div>";
+                                    } else if ($_GET['alert'] == "gagal") {
+                                        echo "<div class='alert alert-danger'>Data Berhasil DiHapus</div>";
+                                    } else if ($_GET['alert'] == "sukses1") {
+                                        echo "<div class='alert alert-success'>Data Berhasil Di Ubah</div>";
+                                    }
+                                }
+                                ?>
+                                <?php if (isset($gambar_error)) {
+                                    echo "<div style='color:red'>$gambar_error</div>";
+                                } ?>
+                                <tr style="background-color: #0066ff; color: white; font-size:10pt">
+                                    <th style="width: 2%">NO</th>
+                                    <th style="width:23%">NO PERBUP/ TENTANG</th>
+                                    <th style="width:27%">KECAMATAN/ DESA(POSISI)</th>
+                                    <th>PANJANG GARIS</th>
+                                    <th>GAMBAR PETA</th>
+                                    <th style="width:auto">STATUS</th>
+                                    <th style="width:auto">OPSI</th>
+                                </tr>
 
-                                                    <?php if ($k->d_kec5 != 0) { ?> <?php echo Ucwords($k->d_kec5); ?>/<?php echo Ucwords($k->d_desa5); ?>(<?php if ($k->d_posisi5 == 1) {
-                                                                                                                                                                echo "Utara";
-                                                                                                                                                            } else if ($k->d_posisi5 == 2) {
-                                                                                                                                                                echo "Selatan";
-                                                                                                                                                            } else if ($k->d_posisi5 == 3) {
-                                                                                                                                                                echo "Timur";
-                                                                                                                                                            } else if ($k->d_posisi5 == 4) {
-                                                                                                                                                                echo "Barat";
-                                                                                                                                                            } ?>)<br> <?php } ?>
+                            </thead>
+                            <tbody>
+                                <?php
+                                $no = 1;
+                                foreach ($pk as $k) { ?>
+                                    <tr style="font-size: 10pt;">
+                                        <td><?php echo $no++; ?></td>
+                                        <td><?php echo $k->d_nomor; ?>/ <?php echo Ucwords($k->d_tentang); ?></td>
+                                        <td><?php echo Ucwords($k->d_kec1); ?>/<?php echo Ucwords($k->d_desa1); ?>(<?php if ($k->d_posisi1 == 1) {
+                                                                                                                        echo "Utara";
+                                                                                                                    } else if ($k->d_posisi1 == 2) {
+                                                                                                                        echo "Selatan";
+                                                                                                                    } else if ($k->d_posisi1 == 3) {
+                                                                                                                        echo "Timur";
+                                                                                                                    } else if ($k->d_posisi1 == 4) {
+                                                                                                                        echo "Barat";
+                                                                                                                    } ?>)<br>
 
-                                                    <?php if ($k->d_kec6 != 0) { ?> <?php echo Ucwords($k->d_kec6); ?>/<?php echo Ucwords($k->d_desa6); ?>(<?php if ($k->d_posisi6 == 1) {
-                                                                                                                                                                echo "Utara";
-                                                                                                                                                            } else if ($k->d_posisi6 == 2) {
-                                                                                                                                                                echo "Selatan";
-                                                                                                                                                            } else if ($k->d_posisi6 == 3) {
-                                                                                                                                                                echo "Timur";
-                                                                                                                                                            } else if ($k->d_posisi6 == 4) {
-                                                                                                                                                                echo "Barat";
-                                                                                                                                                            } ?>)<br> <?php } ?>
+                                            <?php echo Ucwords($k->d_kec2); ?>/<?php echo Ucwords($k->d_desa2); ?>(<?php if ($k->d_posisi2 == 1) {
+                                                                                                                        echo "Utara";
+                                                                                                                    } else if ($k->d_posisi2 == 2) {
+                                                                                                                        echo "Selatan";
+                                                                                                                    } else if ($k->d_posisi2 == 3) {
+                                                                                                                        echo "Timur";
+                                                                                                                    } else if ($k->d_posisi2 == 4) {
+                                                                                                                        echo "Barat";
+                                                                                                                    } ?>)<br>
 
-                                                    <?php if ($k->d_kec7 != 0) { ?> <?php echo Ucwords($k->d_kec7); ?>/<?php echo Ucwords($k->d_desa7); ?>(<?php if ($k->d_posisi7 == 1) {
-                                                                                                                                                                echo "Utara";
-                                                                                                                                                            } else if ($k->d_posisi7 == 2) {
-                                                                                                                                                                echo "Selatan";
-                                                                                                                                                            } else if ($k->d_posisi7 == 3) {
-                                                                                                                                                                echo "Timur";
-                                                                                                                                                            } else if ($k->d_posisi7 == 4) {
-                                                                                                                                                                echo "Barat";
-                                                                                                                                                            } ?>)<br> <?php } ?>
-                                                </td>
-                                                <td><?php echo $k->d_pgaris; ?></td>
-                                                <td><?php echo $k->d_peta; ?></td>
-                                                <td><?php if ($k->d_status == 1) {
-                                                        echo "Tampil";
-                                                    } else {
-                                                        echo "Tidak Tampil";
-                                                    } ?> <a href="javascript:;" onclick="fillData('<?php echo $k->d_id; ?>','<?php echo $k->d_tentang; ?>',)" class="btn btn-warning " style="font-size: 10pt !important; padding:4px !important" title="Edit"><i class="fa fa-edit" aria-hidden="true"></i></a> </td>
-                                                <td>
-                                                    <a href="<?php echo base_url() . 'simpan/pk_hapus/' . $k->d_id; ?>" onclick="return confirm('Apakah Anda Yakin Ingin Menghapus Data Ini ?');" class="btn btn-danger" style="font-size: 10pt !important; padding:4px !important">
-                                                        <i class="fa fa-trash" title="Hapus"></i> </a>
-                                                    <!-- <a href="javascript:;" onclick="fillData(
+                                            <?php if ($k->d_kec3 != 0) { ?> <?php echo Ucwords($k->d_kec3); ?>/<?php echo Ucwords($k->d_desa3); ?>(<?php if ($k->d_posisi3 == 1) {
+                                                                                                                                                        echo "Utara";
+                                                                                                                                                    } else if ($k->d_posisi3 == 2) {
+                                                                                                                                                        echo "Selatan";
+                                                                                                                                                    } else if ($k->d_posisi3 == 3) {
+                                                                                                                                                        echo "Timur";
+                                                                                                                                                    } else if ($k->d_posisi3 == 4) {
+                                                                                                                                                        echo "Barat";
+                                                                                                                                                    } ?>)<br> <?php } ?>
+
+                                            <?php if ($k->d_kec4 != 0) { ?> <?php echo Ucwords($k->d_kec4); ?>/<?php echo Ucwords($k->d_desa4); ?>(<?php if ($k->d_posisi4 == 1) {
+                                                                                                                                                        echo "Utara";
+                                                                                                                                                    } else if ($k->d_posisi4 == 2) {
+                                                                                                                                                        echo "Selatan";
+                                                                                                                                                    } else if ($k->d_posisi4 == 3) {
+                                                                                                                                                        echo "Timur";
+                                                                                                                                                    } else if ($k->d_posisi4 == 4) {
+                                                                                                                                                        echo "Barat";
+                                                                                                                                                    } ?>)<br> <?php } ?>
+
+                                            <?php if ($k->d_kec5 != 0) { ?> <?php echo Ucwords($k->d_kec5); ?>/<?php echo Ucwords($k->d_desa5); ?>(<?php if ($k->d_posisi5 == 1) {
+                                                                                                                                                        echo "Utara";
+                                                                                                                                                    } else if ($k->d_posisi5 == 2) {
+                                                                                                                                                        echo "Selatan";
+                                                                                                                                                    } else if ($k->d_posisi5 == 3) {
+                                                                                                                                                        echo "Timur";
+                                                                                                                                                    } else if ($k->d_posisi5 == 4) {
+                                                                                                                                                        echo "Barat";
+                                                                                                                                                    } ?>)<br> <?php } ?>
+
+                                            <?php if ($k->d_kec6 != 0) { ?> <?php echo Ucwords($k->d_kec6); ?>/<?php echo Ucwords($k->d_desa6); ?>(<?php if ($k->d_posisi6 == 1) {
+                                                                                                                                                        echo "Utara";
+                                                                                                                                                    } else if ($k->d_posisi6 == 2) {
+                                                                                                                                                        echo "Selatan";
+                                                                                                                                                    } else if ($k->d_posisi6 == 3) {
+                                                                                                                                                        echo "Timur";
+                                                                                                                                                    } else if ($k->d_posisi6 == 4) {
+                                                                                                                                                        echo "Barat";
+                                                                                                                                                    } ?>)<br> <?php } ?>
+
+                                            <?php if ($k->d_kec7 != 0) { ?> <?php echo Ucwords($k->d_kec7); ?>/<?php echo Ucwords($k->d_desa7); ?>(<?php if ($k->d_posisi7 == 1) {
+                                                                                                                                                        echo "Utara";
+                                                                                                                                                    } else if ($k->d_posisi7 == 2) {
+                                                                                                                                                        echo "Selatan";
+                                                                                                                                                    } else if ($k->d_posisi7 == 3) {
+                                                                                                                                                        echo "Timur";
+                                                                                                                                                    } else if ($k->d_posisi7 == 4) {
+                                                                                                                                                        echo "Barat";
+                                                                                                                                                    } ?>)<br> <?php } ?>
+                                        </td>
+                                        <td><?php echo $k->d_pgaris; ?></td>
+                                        <td><?php echo $k->d_peta; ?></td>
+                                        <td><?php if ($k->d_status == 1) {
+                                                echo "Tampil";
+                                            } else {
+                                                echo "Tidak Tampil";
+                                            } ?> <a href="javascript:;" onclick="fillData('<?php echo $k->d_id; ?>','<?php echo $k->d_tentang; ?>',)" class="btn btn-warning " style="font-size: 10pt !important; padding:4px !important" title="Edit"><i class="fa fa-edit" aria-hidden="true"></i></a> </td>
+                                        <td>
+                                            <a href="<?php echo base_url() . 'simpan/pk_hapus/' . $k->d_id; ?>" onclick="return confirm('Apakah Anda Yakin Ingin Menghapus Data Ini ?');" class="btn btn-danger" style="font-size: 10pt !important; padding:4px !important">
+                                                <i class="fa fa-trash" title="Hapus"></i> </a>
+                                            <!-- <a href="javascript:;" onclick="fillData(
                             '<?php echo $k->d_tentang; ?>',
                           '<?php echo $k->d_nomor; ?>',
                           '<?php echo $k->d_kec1; ?>',
@@ -166,15 +194,15 @@
                           '<?php echo $k->d_posisi7; ?>',                          
                           '<?php echo $k->d_pgaris; ?>',                          
                           )" class="btn btn-warning " style="font-size: 10pt !important; padding:4px !important" title="Edit"><i class="fa fa-edit" aria-hidden="true"></i></a> -->
-                                                </td>
-                                            <?php } ?>
-                                    </tbody>
-                                </table>
-                            </div>
-                        
+                                        </td>
+                                    <?php } ?>
+                            </tbody>
+                        </table>
                     </div>
+
                 </div>
-            
+            </div>
+
         </div>
 
         <!-- Modal -->
@@ -365,11 +393,12 @@
                                 <div class="form-group" id="cekc3">
                                     <label for="posisi5">Posisi 5</label>
                                     <select class="form-control" name="posisi5" id="posisi5" disabled>
-                                    </select> <option selected disabled>-- Pilih Posisi --</option>
-                                        <option value="1">Utara</option>
-                                        <option value="2">Selatan</option>
-                                        <option value="3">Timur</option>
-                                        <option value="4">Barat</option>
+                                    </select>
+                                    <option selected disabled>-- Pilih Posisi --</option>
+                                    <option value="1">Utara</option>
+                                    <option value="2">Selatan</option>
+                                    <option value="3">Timur</option>
+                                    <option value="4">Barat</option>
                                     </select>
                                 </div>
 
@@ -497,42 +526,42 @@
 </div>
 
 <div class="modal fade" id="edit" tabindex="-1" aria-labelledby="exampleModalLabel" a data-backdrop="static" data-keyboard="false" aria-hidden="true">
-        <div class="modal-dialog modal-sm modal-dialog-centered modal-dialog-scrollable">
-            <div class="modal-content">
-                <div class="modal-header bg-primary">
-                    <img src="<?php echo base_url(); ?>assets/logo.png" width="auto" alt="" height="30px" class="mr-2">
-                    <h5 class="modal-title" id="exampleModalLabel" style="color: white;">SIMPRONATASA</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <form method="post" action="<?php echo base_url() . 'edit/pk' ?>" enctype="multipart/form-data">
-                        <p id="edit_nomor"></p>
-                        <div class="form-group">
-                            <label for="edit_status">Ubah Status Data</label>
-                            <input type="hidden" class="form-control" id="edit_id" name="edit_id">
-                            <select class="form-control" name="edit_status" id="edit_status" required>
-                                        <option value="">-- Pilih Status --</option>
-                                        <option value="1">Tampilkan</option>
-                                        <option value="2">Jangan Tampilkan</option>
-                                    </select>
-                        </div>
-                        <button type="submit" id="save1" class="btn btn-primary" style="float: right;">Pilih</button>
-                    </form>
-                </div>
+    <div class="modal-dialog modal-sm modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header bg-primary">
+                <img src="<?php echo base_url(); ?>assets/logo.png" width="auto" alt="" height="30px" class="mr-2">
+                <h5 class="modal-title" id="exampleModalLabel" style="color: white;">SIMPRONATASA</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form method="post" action="<?php echo base_url() . 'edit/pk' ?>" enctype="multipart/form-data">
+                    <p id="edit_nomor"></p>
+                    <div class="form-group">
+                        <label for="edit_status">Ubah Status Data</label>
+                        <input type="hidden" class="form-control" id="edit_id" name="edit_id">
+                        <select class="form-control" name="edit_status" id="edit_status" required>
+                            <option value="">-- Pilih Status --</option>
+                            <option value="1">Tampilkan</option>
+                            <option value="2">Jangan Tampilkan</option>
+                        </select>
+                    </div>
+                    <button type="submit" id="save1" class="btn btn-primary" style="float: right;">Pilih</button>
+                </form>
             </div>
         </div>
     </div>
+</div>
 
-    
+
 
 <script>
-    function fillData(d_id,d_nomor) {
-        
-        $('#edit_id').val(d_id);       
-        $('#edit_nomor').html(d_nomor);       
-        
+    function fillData(d_id, d_nomor) {
+
+        $('#edit_id').val(d_id);
+        $('#edit_nomor').html(d_nomor);
+
         $('#edit').modal('show');
 
 
@@ -542,7 +571,7 @@
 
     function empty() {
         $('#tentang').val("");
-        $('#nomor').val("");       
+        $('#nomor').val("");
         $('#panjang').val("");
 
         document.getElementById("ceka1").style.display = 'none';
