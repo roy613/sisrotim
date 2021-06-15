@@ -88,3 +88,33 @@
     }
     ?>
     
+    <style>
+    table {
+        width: 100%;
+        font-size: small;
+    }
+
+    th {
+        background-color: #1E90FF;
+        padding: 7px !important;
+        text-align: center;
+        vertical-align: middle !important;
+        color: white;
+    }
+
+    td {
+        padding: 4px !important;
+        text-align: center;
+    }
+
+    li {
+        font-size: small;
+        color: black;
+        margin-left: 8px;
+        margin-right: 8px;
+
+    }
+    tr:hover{
+      background-color: skyblue !important;
+    }
+</style>

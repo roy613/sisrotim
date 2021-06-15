@@ -15,6 +15,7 @@ class Home_b extends CI_Controller
 
     public function index()
     {
+        $data['bss'] = $this->db->query("SELECT * FROM data WHERE d_jenis=3 ORDER BY d_id desc")->result();
         $data['pk'] = $this->db->query("SELECT * FROM data WHERE d_jenis=1")->num_rows();
         $data['bk'] = $this->db->query("SELECT * FROM data WHERE d_jenis=2")->num_rows();
         $data['bs'] = $this->db->query("SELECT * FROM data WHERE d_jenis=3")->num_rows();
