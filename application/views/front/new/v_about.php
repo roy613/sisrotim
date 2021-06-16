@@ -54,50 +54,39 @@
                 </p>
               </div>
             </div>
-          </div>
+          </div><br> <br>
 
-          <h6 class="h2 py-5 typo-space-line" style="font-size:xx-large;">Tim Penyusun</h6>
-          <div class="pt-5 pb-3 d-lg-flex align-items-center gx-5">
-          
-              
-              
-           
-            <div class="row">
-              <div class="col-lg-12 row">
-                <div class="team-member col-md-3">
-                  <img class="team-member-img img-fluid rounded-circle p-4" src="<?php echo base_url() ?>assets/kabag.jpg" alt="foto kabag">
-                  <ul class="team-member-caption list-unstyled text-center pt-4 text-muted light-300">
-                    <li>Joko Suripto, S.Sos, M.Si</li>
-                    <li>Kabag Tata Pemerintahan</li>
-                  </ul>
-                </div>
-                <div class="team-member col-md-3">
-                  <img class="team-member-img img-fluid rounded-circle p-4" src="<?php echo base_url() ?>assets/kasubagpw.jpeg" alt="foto kasubag">
-                  <ul class="team-member-caption list-unstyled text-center pt-4 text-muted light-300">
-                    <li>Trisno, SSTP</li>
-                    <li>Kasubag Adm. Kewilayahan</li>
-                  </ul>
-                </div>
-                <div class="team-member col-md-3">
-                  <img class="team-member-img img-fluid rounded-circle p-4" src="<?php echo base_url() ?>assets/kasubagtp.jpeg" alt="foto kasubag">
-                  <ul class="team-member-caption list-unstyled text-center pt-4 text-muted light-300">
-                    <li>Vita Nurhasanah, S.STP, M.Si</li>
-                    <li>Kasubag Adm. Pemerintahan</li>
-                  </ul>
-                </div>
-                <div class="team-member col-md-3">
-                  <img class="team-member-img img-fluid rounded-circle p-4" src="<?php echo base_url() ?>assets/kasubag.jpeg" alt="foto kasubag">
-                  <ul class="team-member-caption list-unstyled text-center pt-4 text-muted light-300">
-                    <li>Amri, S.Sos</li>
-                    <li>Kasubag Otonomi dan TP</li>
-                  </ul>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="about-me pt-4 pt-md-0">
+                <div class="title-box-2">
+                  <h5 class="title-left">
+                    TENTANG PENYUSUN
+                  </h5>
                 </div>
               </div>
             </div>
-
           </div>
+          <div class="col-md-8">
+            <div class="row">
+              <div class="col-sm-6 col-md-5">
+                <div class="about-img">
+                  <img src="<?php echo base_url() ?>assets/kabag.jpg" alt="foto kabag" width="150px" height="auto">
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-7">
+                <div class="about-info">
+                  <p><span class="title-s">Nama : </span> Joko Suripto, S.Sos, M.Si</p>
+                  <p><span class="title-s">NIP : </span> <span>19670918 200212 1 003</span></p>
+                  <p><span class="title-s">Pangkat : </span> <span>Pembina Tk. I / IVb</span></p>
+                  <p><span class="title-s">Jabatan : </span> Kepala Bagian Tata Pemerintahan</p>
 
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+
       </div>
     </div>
   </div>

@@ -218,7 +218,7 @@
 
                                             <?php foreach ($aq as $row) { ?>
                                                 <p><span class="title-s">Kecamatan : </span><?php echo Ucwords($row->mk_kec) ?></p>
-                                                <p><span class="title-s">Luas: </span> <span><?php echo $row->mk_luas ?><sup>2</sup></span></p>
+                                                <p><span class="title-s">Luas: </span> <span><?php echo number_format($row->mk_luas); ?> km<sup>2</sup></span></p>
                                                 <p><span class="title-s">Ibukota: </span> <span><?php echo $row->mk_ibukota ?></span></p>
 
                                         </div>
@@ -319,7 +319,7 @@
                                                                                                                 echo $row->d_desa7 . " (" . $row->d_kec7 . "),";
                                                                                                             } ?></td>
 
-                                                            <td> <?php echo $row->d_pgaris; ?></td>
+                                                            <td> <?php echo number_format ($row->d_pgaris); ?> km</td>
                                                             <td>
                                                                 <div class="btn-group" role="group" style="float: right; margin-right:15px">
                                                                     <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color:lightskyblue; color:black"> <i class="fa fa-download"> Unduh</i>
@@ -408,7 +408,7 @@
                                                                                                         } ?> <?php if ($row->d_kec7 != $ab && $row->d_posisi7 == 2) {
                                                                                                                 echo $row->d_desa7 . " (" . $row->d_kec7 . "),";
                                                                                                             } ?></td>
-                                                            <td> <?php echo $row->d_pgaris; ?></td>
+                                                            <td> <?php echo number_format ($row->d_pgaris); ?> km</td>
 
                                                             <td>
                                                                 <div class="btn-group" role="group" style="float: right; margin-right:15px">
@@ -497,7 +497,7 @@
                                                                                                                 echo $row->d_desa7 . " (" . $row->d_kec7 . "),";
                                                                                                             } ?></td>
 
-                                                            <td> <?php echo $row->d_pgaris; ?></td>
+                                                            <td> <?php echo number_format ($row->d_pgaris); ?> km</td>
 
                                                             <td>
                                                                 <div class="btn-group" role="group" style="float: right; margin-right:15px">
@@ -586,7 +586,7 @@
                                                                                                                 echo $row->d_desa7 . " (" . $row->d_kec7 . "),";
                                                                                                             } ?></td>
 
-                                                            <td> <?php echo $row->d_pgaris; ?></td>
+                                                            <td> <?php echo number_format ($row->d_pgaris); ?> km</td>
 
                                                             <td>
                                                                 <div class="btn-group" role="group" style="float: right; margin-right:15px">

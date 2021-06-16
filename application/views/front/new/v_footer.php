@@ -1,4 +1,4 @@
-<section class="paralax-mf footer-paralax bg-image sect-mt4 route" style="background-image: url(<?php echo base_url(); ?>assets/f2/img/b1.jpeg)">
+<section class="paralax-mf footer-paralax bg-image sect-mt4 route" style="background-image: url(<?php echo base_url(); ?>assets/f2/img/a.png)">
   <div class="overlay-mf"></div>
   <footer>
     <div class="container">

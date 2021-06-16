@@ -17,7 +17,7 @@
 
 </head>
 
-<body class="img js-fullheight" style="background-image: url(<?php echo base_url(); ?>assets/f2/img/b1.jpeg);">
+<body class="img js-fullheight" style="background-image: url(<?php echo base_url(); ?>assets/f2/img/a.png);">
     <section class="ftco-section">
         <div class="container">
             <div class="row justify-content-center">
