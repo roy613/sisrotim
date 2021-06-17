@@ -122,10 +122,6 @@ class Welcome extends CI_Controller {
         }
     } 
 
-	public function download_pk_gambar($nama)
-	{
-		$this->load->helper('download');
-		force_download("./gambar/peta_penetapan/$nama", NULL);
-	}
+	
 }
 
