@@ -29,6 +29,10 @@
     <link rel="stylesheet" href="<?php echo base_url() ?>assets/front/assets/css/templatemo.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="<?php echo base_url() ?>assets/front/assets/css/custom.css">
+    <!-- DataTables -->
+  <link rel="stylesheet" href="<?php echo base_url(); ?>assets/back/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+  <link rel="stylesheet" href="<?php echo base_url(); ?>assets/back/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+  <link rel="stylesheet" href="<?php echo base_url(); ?>assets/back/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
 
     <!-- =======================================================
     Theme Name: DevFolio

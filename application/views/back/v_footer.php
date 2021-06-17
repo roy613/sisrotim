@@ -1,15 +1,15 @@
 <!-- /.content-wrapper -->
 <footer class="main-footer">
-  <strong>Copyright &copy;2021 Bagian Tata Pemerintahan Sekretariat Daerah <br>Kabupaten Kutai Timur</strong>
-  All rights reserved.
-  <div class="float-right d-none d-sm-inline-block">
-    SIMPRONATASA <b>Version</b> 1.0
-  </div>
+    <strong>Copyright &copy;2021 Bagian Tata Pemerintahan Sekretariat Daerah <br>Kabupaten Kutai Timur</strong>
+    All rights reserved.
+    <div class="float-right d-none d-sm-inline-block">
+        SIMPRONATASA <b>Version</b> 1.0
+    </div>
 </footer>
 
 <!-- Control Sidebar -->
 <aside class="control-sidebar control-sidebar-dark">
-  <!-- Control sidebar content goes here -->
+    <!-- Control sidebar content goes here -->
 </aside>
 <!-- /.control-sidebar -->
 </div>
@@ -21,7 +21,7 @@
 <script src="<?php echo base_url(); ?>assets/back/plugins/jquery-ui/jquery-ui.min.js"></script>
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
 <script>
-  $.widget.bridge('uibutton', $.ui.button)
+    $.widget.bridge('uibutton', $.ui.button)
 </script>
 <!-- Bootstrap 4 -->
 <script src="<?php echo base_url(); ?>assets/back/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -64,132 +64,141 @@
 <script src="<?php echo base_url(); ?>assets/back/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
 <script src="<?php echo base_url(); ?>assets/back/plugins/bs-custom-file-input/bs-custom-file-input.min.js"></script>
 <script>
-  $(function() {
-    bsCustomFileInput.init();
-  });
-</script>
-
-<script>
-  // Jquery Dependency
-
-  $("input[data-type='currency']").on({
-    keyup: function() {
-      formatCurrency($(this));
-    },
-    blur: function() {
-      formatCurrency($(this), "blur");
-    }
-  });
-
-
-  function formatNumber(n) {
-    // format number 1000000 to 1,234,567
-    return n.replace(/\D/g, "").replace(/\B(?=(\d{3})+(?!\d))/g, ",")
-  }
-
-
-  function formatCurrency(input, blur) {
-    // appends $ to value, validates decimal side
-    // and puts cursor back in right position.
-
-    // get input value
-    var input_val = input.val();
-
-    // don't validate empty input
-    if (input_val === "") {
-      return;
-    }
-
-    // original length
-    var original_len = input_val.length;
-
-    // initial caret position 
-    var caret_pos = input.prop("selectionStart");
-
-    // check for decimal
-    if (input_val.indexOf(".") >= 0) {
-
-      // get position of first decimal
-      // this prevents multiple decimals from
-      // being entered
-      var decimal_pos = input_val.indexOf(".");
-
-      // split number by decimal point
-      var left_side = input_val.substring(0, decimal_pos);
-      var right_side = input_val.substring(decimal_pos);
-
-      // add commas to left side of number
-      left_side = formatNumber(left_side);
-
-      // validate right side
-      right_side = formatNumber(right_side);
-
-      // On blur make sure 2 numbers after decimal
-      if (blur === "blur") {
-        right_side += "";
-      }
-
-      // Limit decimal to only 2 digits
-      right_side = right_side.substring(0, 2);
-
-      // join number by .
-      input_val = left_side + "." + right_side;
-
-    } else {
-      // no decimal entered
-      // add commas to number
-      // remove all non-digits
-      input_val = formatNumber(input_val);
-      input_val = input_val;
-
-      // final formatting
-
-    }
-
-    // send updated string to input
-    input.val(input_val);
-
-    // put caret back in the right position
-    var updated_len = input_val.length;
-    caret_pos = updated_len - original_len + caret_pos;
-    input[0].setSelectionRange(caret_pos, caret_pos);
-  }
-</script>
-<script>
-  $(function() {
-    $("#example1").DataTable({
-      "responsive": false,
-      "lengthChange": true,
-      "autoWidth": false,
-      "ordering": false,
-      "buttons": ["pdf","print"]
-    }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
-    
-    $("#example3").DataTable({
-      "responsive": false,
-      "lengthChange": true,
-      "autoWidth": false,
-      "ordering": true,
-      "buttons": ["excel", "pdf", "print"]
-    }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
-
-    $('#example2').DataTable({
-      "paging": true,
-      "lengthChange": false,
-      "searching": false,
-      "ordering": true,
-      "info": true,
-      "autoWidth": false,
-      "responsive": true,
+    $(function() {
+        bsCustomFileInput.init();
     });
-  });
-
-  $('#tanggal').datetimepicker({
-    format: 'L'
-  });
 </script>
 
 <script>
+    // Jquery Dependency
+
+    $("input[data-type='currency']").on({
+        keyup: function() {
+            formatCurrency($(this));
+        },
+        blur: function() {
+            formatCurrency($(this), "blur");
+        }
+    });
+
+
+    function formatNumber(n) {
+        // format number 1000000 to 1,234,567
+        return n.replace(/\D/g, "").replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+    }
+
+
+    function formatCurrency(input, blur) {
+        // appends $ to value, validates decimal side
+        // and puts cursor back in right position.
+
+        // get input value
+        var input_val = input.val();
+
+        // don't validate empty input
+        if (input_val === "") {
+            return;
+        }
+
+        // original length
+        var original_len = input_val.length;
+
+        // initial caret position 
+        var caret_pos = input.prop("selectionStart");
+
+        // check for decimal
+        if (input_val.indexOf(".") >= 0) {
+
+            // get position of first decimal
+            // this prevents multiple decimals from
+            // being entered
+            var decimal_pos = input_val.indexOf(".");
+
+            // split number by decimal point
+            var left_side = input_val.substring(0, decimal_pos);
+            var right_side = input_val.substring(decimal_pos);
+
+            // add commas to left side of number
+            left_side = formatNumber(left_side);
+
+            // validate right side
+            right_side = formatNumber(right_side);
+
+            // On blur make sure 2 numbers after decimal
+            if (blur === "blur") {
+                right_side += "";
+            }
+
+            // Limit decimal to only 2 digits
+            right_side = right_side.substring(0, 2);
+
+            // join number by .
+            input_val = left_side + "." + right_side;
+
+        } else {
+            // no decimal entered
+            // add commas to number
+            // remove all non-digits
+            input_val = formatNumber(input_val);
+            input_val = input_val;
+
+            // final formatting
+
+        }
+
+        // send updated string to input
+        input.val(input_val);
+
+        // put caret back in the right position
+        var updated_len = input_val.length;
+        caret_pos = updated_len - original_len + caret_pos;
+        input[0].setSelectionRange(caret_pos, caret_pos);
+    }
+</script>
+<script>
+    $(function() {
+        $("#example1").DataTable({
+            "responsive": false,
+            "lengthChange": true,
+            "autoWidth": false,
+            "ordering": false,
+            "buttons": ["pdf", "print"]
+        }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+
+        $("#example3").DataTable({
+            "responsive": false,
+            "lengthChange": true,
+            "autoWidth": false,
+            "ordering": true,
+            "buttons": ["excel", "pdf", "print"]
+        }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+
+        $('#example2').DataTable({
+            "paging": true,
+            "lengthChange": false,
+            "searching": false,
+            "ordering": true,
+            "info": true,
+            "autoWidth": false,
+            "responsive": true,
+        });
+    });
+
+    $('#tanggal').datetimepicker({
+        format: 'L'
+    });
+</script>
+
+<script>
+    function tambahPeta(d_id, d_tentang) {
+        $('#tambah_id').val(d_id);
+        $('#tambah_tentang').html(d_tentang);
+        
+
+        $('#tambahpeta').modal('show');
+
+    }
+
     function fillData(d_id, d_nomor, status) {
 
         $('#edit_id').val(d_id);
@@ -207,26 +216,28 @@
 
         $('#tentang').val("");
         $('#nomor').val("");
-        $('#panjang').val("");
-
 
 
         document.getElementById("ceka1").style.display = 'none';
         document.getElementById("ceka2").style.display = 'none';
         document.getElementById("ceka3").style.display = 'none';
         document.getElementById("ceka4").style.display = 'none';
+        document.getElementById("ceka5").style.display = 'none';
         document.getElementById("cekb1").style.display = 'none';
         document.getElementById("cekb2").style.display = 'none';
         document.getElementById("cekb3").style.display = 'none';
         document.getElementById("cekb4").style.display = 'none';
+        document.getElementById("cekb5").style.display = 'none';
         document.getElementById("cekc1").style.display = 'none';
         document.getElementById("cekc2").style.display = 'none';
         document.getElementById("cekc3").style.display = 'none';
         document.getElementById("cekc4").style.display = 'none';
+        document.getElementById("cekc5").style.display = 'none';
         document.getElementById("cekd1").style.display = 'none';
         document.getElementById("cekd2").style.display = 'none';
         document.getElementById("cekd3").style.display = 'none';
         document.getElementById("cekd4").style.display = 'none';
+        document.getElementById("cekd5").style.display = 'none';
         document.getElementById("ceke1").style.display = 'none';
         document.getElementById("ceke2").style.display = 'none';
         document.getElementById("ceke3").style.display = 'none';
@@ -242,11 +253,13 @@
             document.getElementById("ceka2").style.display = "block";
             document.getElementById("ceka3").style.display = "block";
             document.getElementById("ceka4").style.display = "block";
+            document.getElementById("ceka5").style.display = "block";
         } else {
             document.getElementById("ceka1").style.display = "none";
             document.getElementById("ceka2").style.display = "none";
             document.getElementById("ceka3").style.display = "none";
             document.getElementById("ceka4").style.display = "none";
+            document.getElementById("ceka5").style.display = "none";
         }
     }
 
@@ -258,11 +271,13 @@
             document.getElementById("cekb2").style.display = "block";
             document.getElementById("cekb3").style.display = "block";
             document.getElementById("cekb4").style.display = "block";
+            document.getElementById("cekb5").style.display = "block";
         } else {
             document.getElementById("cekb1").style.display = "none";
             document.getElementById("cekb2").style.display = "none";
             document.getElementById("cekb3").style.display = "none";
             document.getElementById("cekb4").style.display = "none";
+            document.getElementById("cekb5").style.display = "none";
         }
     }
 
@@ -274,11 +289,13 @@
             document.getElementById("cekc2").style.display = "block";
             document.getElementById("cekc3").style.display = "block";
             document.getElementById("cekc4").style.display = "block";
+            document.getElementById("cekc5").style.display = "block";
         } else {
             document.getElementById("cekc1").style.display = "none";
             document.getElementById("cekc2").style.display = "none";
             document.getElementById("cekc3").style.display = "none";
             document.getElementById("cekc4").style.display = "none";
+            document.getElementById("cekc5").style.display = "none";
         }
     }
 
@@ -290,11 +307,13 @@
             document.getElementById("cekd2").style.display = "block";
             document.getElementById("cekd3").style.display = "block";
             document.getElementById("cekd4").style.display = "block";
+            document.getElementById("cekd5").style.display = "block";
         } else {
             document.getElementById("cekd1").style.display = "none";
             document.getElementById("cekd2").style.display = "none";
             document.getElementById("cekd3").style.display = "none";
             document.getElementById("cekd4").style.display = "none";
+            document.getElementById("cekd5").style.display = "none";
         }
     }
 
@@ -306,6 +325,7 @@
             document.getElementById("ceke2").style.display = "block";
             document.getElementById("ceke3").style.display = "block";
             document.getElementById("ceke4").style.display = "block";
+
         } else {
             document.getElementById("ceke1").style.display = "none";
             document.getElementById("ceke2").style.display = "none";

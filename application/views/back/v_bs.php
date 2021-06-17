@@ -58,27 +58,27 @@
                                     <tr style="font-size: 10pt;">
                                         <td><?php echo $no++; ?></td>
                                         <td><?php echo $k->d_nomor; ?>/ <?php echo Ucwords($k->d_tentang); ?></td>
-                                        <td><?php echo Ucwords($k->d_kec1); ?>/<?php echo Ucwords($k->d_desa1); ?>(<?php if ($k->d_posisi1 == 1) {
-                                                                                                                        echo "Utara";
-                                                                                                                    } else if ($k->d_posisi1 == 2) {
-                                                                                                                        echo "Selatan";
-                                                                                                                    } else if ($k->d_posisi1 == 3) {
-                                                                                                                        echo "Timur";
-                                                                                                                    } else if ($k->d_posisi1 == 4) {
-                                                                                                                        echo "Barat";
-                                                                                                                    } ?>)<br>
+                                        <td><?php echo Ucwords($k->d_kec1) . "/ "; ?><?php echo Ucwords($k->d_desa1) . " ("; ?><?php if ($k->d_posisi1 == 1) {
+                                                                                                                                    echo "Utara)";
+                                                                                                                                } else if ($k->d_posisi1 == 2) {
+                                                                                                                                    echo "Selatan)";
+                                                                                                                                } else if ($k->d_posisi1 == 3) {
+                                                                                                                                    echo "Timur)";
+                                                                                                                                } else if ($k->d_posisi1 == 4) {
+                                                                                                                                    echo "Barat)";
+                                                                                                                                } ?><br>
 
-                                            <?php echo Ucwords($k->d_kec2); ?>/<?php echo Ucwords($k->d_desa2); ?>(<?php if ($k->d_posisi2 == 1) {
-                                                                                                                        echo "Utara";
-                                                                                                                    } else if ($k->d_posisi2 == 2) {
-                                                                                                                        echo "Selatan";
-                                                                                                                    } else if ($k->d_posisi2 == 3) {
-                                                                                                                        echo "Timur";
-                                                                                                                    } else if ($k->d_posisi2 == 4) {
-                                                                                                                        echo "Barat";
-                                                                                                                    } ?>)<br>
+                                            <?php echo Ucwords($k->d_kec2) . "/ "; ?><?php echo Ucwords($k->d_desa2) . " ("; ?><?php if ($k->d_posisi2 == 1) {
+                                                                                                                                    echo "Utara)";
+                                                                                                                                } else if ($k->d_posisi2 == 2) {
+                                                                                                                                    echo "Selatan)";
+                                                                                                                                } else if ($k->d_posisi2 == 3) {
+                                                                                                                                    echo "Timur)";
+                                                                                                                                } else if ($k->d_posisi2 == 4) {
+                                                                                                                                    echo "Barat)";
+                                                                                                                                } ?><br>
 
-                                            <?php if ($k->d_kec3 != "") { ?> <?php echo Ucwords($k->d_kec3); ?>/<?php echo Ucwords($k->d_desa3); ?>(<?php if ($k->d_posisi3 == 1) {
+                                            <?php if ($k->d_kec3 !== null) { ?> <?php echo Ucwords($k->d_kec3); ?>/<?php echo Ucwords($k->d_desa3); ?>(<?php if ($k->d_posisi3 == 1) {
                                                                                                                                                         echo "Utara";
                                                                                                                                                     } else if ($k->d_posisi3 == 2) {
                                                                                                                                                         echo "Selatan";
@@ -88,7 +88,7 @@
                                                                                                                                                         echo "Barat";
                                                                                                                                                     } ?>)<br> <?php } ?>
 
-                                            <?php if ($k->d_kec4 != "") { ?> <?php echo Ucwords($k->d_kec4); ?>/<?php echo Ucwords($k->d_desa4); ?>(<?php if ($k->d_posisi4 == 1) {
+                                            <?php if ($k->d_kec4 != null) { ?> <?php echo Ucwords($k->d_kec4); ?>/<?php echo Ucwords($k->d_desa4); ?>(<?php if ($k->d_posisi4 == 1) {
                                                                                                                                                         echo "Utara";
                                                                                                                                                     } else if ($k->d_posisi4 == 2) {
                                                                                                                                                         echo "Selatan";
@@ -98,7 +98,7 @@
                                                                                                                                                         echo "Barat";
                                                                                                                                                     } ?>)<br> <?php } ?>
 
-                                            <?php if ($k->d_kec5 != "") { ?> <?php echo Ucwords($k->d_kec5); ?>/<?php echo Ucwords($k->d_desa5); ?>(<?php if ($k->d_posisi5 == 1) {
+                                            <?php if ($k->d_kec5 !== null) { ?> <?php echo Ucwords($k->d_kec5); ?>/<?php echo Ucwords($k->d_desa5); ?>(<?php if ($k->d_posisi5 == 1) {
                                                                                                                                                         echo "Utara";
                                                                                                                                                     } else if ($k->d_posisi5 == 2) {
                                                                                                                                                         echo "Selatan";
@@ -108,7 +108,7 @@
                                                                                                                                                         echo "Barat";
                                                                                                                                                     } ?>)<br> <?php } ?>
 
-                                            <?php if ($k->d_kec6 != "") { ?> <?php echo Ucwords($k->d_kec6); ?>/<?php echo Ucwords($k->d_desa6); ?>(<?php if ($k->d_posisi6 == 1) {
+                                            <?php if ($k->d_kec6 !== null) { ?> <?php echo Ucwords($k->d_kec6); ?>/<?php echo Ucwords($k->d_desa6); ?>(<?php if ($k->d_posisi6 == 1) {
                                                                                                                                                         echo "Utara";
                                                                                                                                                     } else if ($k->d_posisi6 == 2) {
                                                                                                                                                         echo "Selatan";
@@ -118,7 +118,7 @@
                                                                                                                                                         echo "Barat";
                                                                                                                                                     } ?>)<br> <?php } ?>
 
-                                            <?php if ($k->d_kec7 != "") { ?> <?php echo Ucwords($k->d_kec7); ?>/<?php echo Ucwords($k->d_desa7); ?>(<?php if ($k->d_posisi7 == 1) {
+                                            <?php if ($k->d_kec7 !== null) { ?> <?php echo Ucwords($k->d_kec7); ?>/<?php echo Ucwords($k->d_desa7); ?>(<?php if ($k->d_posisi7 == 1) {
                                                                                                                                                         echo "Utara";
                                                                                                                                                     } else if ($k->d_posisi7 == 2) {
                                                                                                                                                         echo "Selatan";
@@ -128,15 +128,15 @@
                                                                                                                                                         echo "Barat";
                                                                                                                                                     } ?>)<br> <?php } ?>
                                         </td>
-                                        <td><?php echo $k->d_pgaris; ?></td>
+                                        <td><?php echo number_format($k->d_pgaris); ?></td>
                                         <td><?php echo $k->d_peta; ?></td>
                                         <td><?php if ($k->d_status == 1) {
                                                 echo "Tampil";
                                             } else {
                                                 echo "Tidak Tampil";
-                                            } ?> <a href="javascript:;" onclick="fillData('<?php echo $k->d_id; ?>','<?php echo $k->d_tentang; ?>','<?php echo $k->d_status; ?>')" style="font-size: 10pt !important; padding:4px !important" title="Edit"><i class="fa fa-edit" aria-hidden="true"></i></a></td>
+                                            } ?> <sup><a href="javascript:;" onclick="fillData('<?php echo $k->d_id; ?>','<?php echo $k->d_tentang; ?>','<?php echo $k->d_status; ?>')" style="font-size: 10pt !important; padding:4px !important" title="Edit"><i class="fa fa-edit" aria-hidden="true"></i></a></sup> </td>
                                         <td>
-                                            <a href="<?php echo base_url() . 'simpan/pk_hapus/' . $k->d_id; ?>" onclick="return confirm('Apakah Anda Yakin Ingin Menghapus Data Ini ?');" class="btn btn-danger" style="font-size: 10pt !important; padding:4px !important">
+                                            <a href="<?php echo base_url() . 'simpan/bs_hapus/' . $k->d_id; ?>" onclick="return confirm('Apakah Anda Yakin Ingin Menghapus Data Ini ?');" class="btn btn-danger" style="font-size: 10pt !important; padding:4px !important">
                                                 <i class="fa fa-trash" title="Hapus"></i> </a>
                                             <!-- <a href="javascript:;" onclick="fillData(
                             '<?php echo $k->d_tentang; ?>',
