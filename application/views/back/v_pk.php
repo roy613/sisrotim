@@ -48,7 +48,7 @@
                                     <th style="width: 2%">NO</th>
                                     <th style="width:23%">NO PERBUP/ TENTANG</th>
                                     <th style="width:27%">KECAMATAN/ DESA(POSISI)</th>
-                                    <th>PANJANG GARIS <br> TOTAL</th>
+                                    <th>PANJANG GARIS <br> (TOTAL)</th>
                                     <th>GAMBAR PETA</th>
                                     <th style="width:min-content">STATUS</th>
                                     <th style="width:auto">OPSI</th>
@@ -124,7 +124,7 @@
                                                                                                                                                             echo "Barat";
                                                                                                                                                         } ?>)<br> <?php } ?>
                                         </td>
-                                        <td><?php echo number_format($k->d_pgaris2 + $k->d_pgaris3 + $k->d_pgaris4 + $k->d_pgaris5 + $k->d_pgaris6 + $k->d_pgaris7); ?></td>
+                                        <td><?php echo number_format(($k->d_pgaris2 + $k->d_pgaris3 + $k->d_pgaris4 + $k->d_pgaris5 + $k->d_pgaris6 + $k->d_pgaris7),2,',','.'); ?></td>
                                         <td><?php if ($k->d_peta == "") { ?> <a href="javascript:;" onclick="tambahPeta('<?php echo $k->d_id; ?>','<?php echo $k->d_tentang; ?>')" style="font-size: 10pt !important;" class="btn btn-info" title="klik untuk tambah peta"><i class="fas fa-plus-square">Tambah Peta</i></a> <?php } else { ?> <?php echo $k->d_peta;
                                                                                                                                                                                                                                                                                                                                             } ?></td>
                                         <td><?php if ($k->d_status == 1) {
@@ -135,32 +135,7 @@
                                         <td>
                                             <a href="<?php echo base_url() . 'simpan/pk_hapus/' . $k->d_id; ?>" onclick="return confirm('Apakah Anda Yakin Ingin Menghapus Data Ini ?');" class="btn btn-danger" style="font-size: 10pt !important; padding:4px !important">
                                                 <i class="fa fa-trash" title="Hapus"></i> </a>
-                                            <!-- <a href="javascript:;" onclick="fillData(
-                            '<?php echo $k->d_tentang; ?>',
-                          '<?php echo $k->d_nomor; ?>',
-                          '<?php echo $k->d_kec1; ?>',
-                          '<?php echo $k->d_desa1; ?>',
-                          '<?php echo $k->d_posisi1; ?>',
-                          '<?php echo $k->d_kec2; ?>',
-                          '<?php echo $k->d_desa2; ?>',
-                          '<?php echo $k->d_posisi2; ?>',
-                          '<?php echo $k->d_kec3; ?>',
-                          '<?php echo $k->d_desa3; ?>',
-                          '<?php echo $k->d_posisi3; ?>',
-                          '<?php echo $k->d_kec4; ?>',
-                          '<?php echo $k->d_desa4; ?>',
-                          '<?php echo $k->d_posisi4; ?>',
-                          '<?php echo $k->d_kec5; ?>',
-                          '<?php echo $k->d_desa5; ?>',
-                          '<?php echo $k->d_posisi5; ?>',
-                          '<?php echo $k->d_kec6; ?>',
-                          '<?php echo $k->d_desa6; ?>',
-                          '<?php echo $k->d_posisi6; ?>',
-                          '<?php echo $k->d_kec7; ?>',
-                          '<?php echo $k->d_desa7; ?>',
-                          '<?php echo $k->d_posisi7; ?>',                          
-                          '<?php echo $k->d_pgaris; ?>',                          
-                          )" class="btn btn-warning " style="font-size: 10pt !important; padding:4px !important" title="Edit"><i class="fa fa-edit" aria-hidden="true"></i></a> -->
+                                           
                                         </td>
                                     <?php } ?>
                             </tbody>
@@ -517,7 +492,7 @@
                 <form method="post" action="<?php echo base_url() . 'simpan/pk_peta' ?>" enctype="multipart/form-data">
                     <h5 id="tambah_tentang"></h5>
                     <div class="form-group">
-                    <input type="text" class="form-control" id="tambah_id" name="tambah_id">
+                    <input type="hidden" class="form-control" id="tambah_id" name="tambah_id">
                         <label for="filegambar">Gambar Peta (jpg|jpeg|png)</label>
                         <div class="input-group">
                             <div class="custom-file">                            

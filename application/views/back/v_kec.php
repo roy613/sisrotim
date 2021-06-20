@@ -87,7 +87,7 @@
                     <td><?php echo $no++; ?></td>
                     <td style="text-align: left;"><?php echo $k->mk_kec; ?></td>
                     <td style="text-align: left;"><?php echo $k->mk_ibukota; ?></td>
-                    <td><?php echo $k->mk_luas; ?></td>
+                    <td><?php echo number_format (($k->mk_luas),2,',','.'); ?></td>
                     <td><?php echo $k->mk_segmen; ?></td>
                     <td><?php echo $k->mk_peta; ?></td>
                     <td><?php if ($k->mk_ket == 1) {

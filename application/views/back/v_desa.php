@@ -85,7 +85,7 @@
                     <td><?php echo $no++; ?></td>
                     <td><?php echo $k->md_kec; ?></td>
                     <td><?php echo $k->md_desa; ?></td>
-                    <td><?php echo $k->md_luas; ?></td>
+                    <td><?php echo number_format (($k->md_luas),2,',','.'); ?></td>
                     <td><?php echo $k->md_segmen; ?></td>
                     <td><?php echo $k->md_peta; ?></td>
                     <td><?php if ($k->md_ket == 1) {

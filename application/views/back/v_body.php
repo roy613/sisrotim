@@ -81,7 +81,7 @@
                           <th style="width: 2%">NO</th>
                           <th style=" width:23%">NO PERBUP/ TENTANG</th>
                           <th style=" width:27%">KECAMATAN/ DESA(POSISI)</th>
-                          <th>PANJANG GARIS</th>
+                          <th>PANJANG GARIS <br> TOTAL</th>
                           <th style="width:auto">STATUS</th>
                         </tr>
                       </thead>
@@ -91,83 +91,76 @@
                         foreach ($pks as $k) { ?>
                           <tr style="font-size: 10pt;">
                             <td><?php echo $no++; ?></td>
-                            <td style="text-align:left;"><?php echo $k->d_nomor; ?>/ <?php echo Ucwords($k->d_tentang); ?></td>
-                            <td style="text-align:left;"><?php echo Ucwords($k->d_kec1); ?>/<?php echo Ucwords($k->d_desa1); ?>(<?php if ($k->d_posisi1 == 1) {
-                                                                                                                                  echo "Utara";
-                                                                                                                                } else if ($k->d_posisi1 == 2) {
-                                                                                                                                  echo "Selatan";
-                                                                                                                                } else if ($k->d_posisi1 == 3) {
-                                                                                                                                  echo "Timur";
-                                                                                                                                } else if ($k->d_posisi1 == 4) {
-                                                                                                                                  echo "Barat";
-                                                                                                                                } ?>)<br>
+                            <td><?php echo $k->d_nomor; ?>/ <?php echo Ucwords($k->d_tentang); ?></td>
+                            <td><?php echo Ucwords($k->d_kec1) . "/ "; ?><?php echo Ucwords($k->d_desa1) . " (Acuan)"; ?><br>
 
-                              <?php echo Ucwords($k->d_kec2); ?>/<?php echo Ucwords($k->d_desa2); ?>(<?php if ($k->d_posisi2 == 1) {
-                                                                                                        echo "Utara";
-                                                                                                      } else if ($k->d_posisi2 == 2) {
-                                                                                                        echo "Selatan";
-                                                                                                      } else if ($k->d_posisi2 == 3) {
-                                                                                                        echo "Timur";
-                                                                                                      } else if ($k->d_posisi2 == 4) {
-                                                                                                        echo "Barat";
-                                                                                                      } ?>)<br>
+                              <?php echo Ucwords($k->d_kec2) . "/ "; ?><?php echo Ucwords($k->d_desa2) . " ("; ?><?php if ($k->d_posisi2 == 1) {
+                                                                                                                    echo "Utara)";
+                                                                                                                  } else if ($k->d_posisi2 == 2) {
+                                                                                                                    echo "Selatan)";
+                                                                                                                  } else if ($k->d_posisi2 == 3) {
+                                                                                                                    echo "Timur)";
+                                                                                                                  } else if ($k->d_posisi2 == 4) {
+                                                                                                                    echo "Barat)";
+                                                                                                                  } ?><br>
 
-                              <?php if ($k->d_kec3 != "") { ?> <?php echo Ucwords($k->d_kec3); ?>/<?php echo Ucwords($k->d_desa3); ?>(<?php if ($k->d_posisi3 == 1) {
-                                                                                                                                        echo "Utara";
-                                                                                                                                      } else if ($k->d_posisi3 == 2) {
-                                                                                                                                        echo "Selatan";
-                                                                                                                                      } else if ($k->d_posisi3 == 3) {
-                                                                                                                                        echo "Timur";
-                                                                                                                                      } else if ($k->d_posisi3 == 4) {
-                                                                                                                                        echo "Barat";
-                                                                                                                                      } ?>)<br> <?php } ?>
+                              <?php if ($k->d_kec3 !== null) { ?> <?php echo Ucwords($k->d_kec3); ?>/<?php echo Ucwords($k->d_desa3); ?>(<?php if ($k->d_posisi3 == 1) {
+                                                                                                                                            echo "Utara";
+                                                                                                                                          } else if ($k->d_posisi3 == 2) {
+                                                                                                                                            echo "Selatan";
+                                                                                                                                          } else if ($k->d_posisi3 == 3) {
+                                                                                                                                            echo "Timur";
+                                                                                                                                          } else if ($k->d_posisi3 == 4) {
+                                                                                                                                            echo "Barat";
+                                                                                                                                          } ?>)<br> <?php } ?>
 
-                              <?php if ($k->d_kec4 != "") { ?> <?php echo Ucwords($k->d_kec4); ?>/<?php echo Ucwords($k->d_desa4); ?>(<?php if ($k->d_posisi4 == 1) {
-                                                                                                                                        echo "Utara";
-                                                                                                                                      } else if ($k->d_posisi4 == 2) {
-                                                                                                                                        echo "Selatan";
-                                                                                                                                      } else if ($k->d_posisi4 == 3) {
-                                                                                                                                        echo "Timur";
-                                                                                                                                      } else if ($k->d_posisi4 == 4) {
-                                                                                                                                        echo "Barat";
-                                                                                                                                      } ?>)<br> <?php } ?>
+                              <?php if ($k->d_kec4 != null) { ?> <?php echo Ucwords($k->d_kec4); ?>/<?php echo Ucwords($k->d_desa4); ?>(<?php if ($k->d_posisi4 == 1) {
+                                                                                                                                          echo "Utara";
+                                                                                                                                        } else if ($k->d_posisi4 == 2) {
+                                                                                                                                          echo "Selatan";
+                                                                                                                                        } else if ($k->d_posisi4 == 3) {
+                                                                                                                                          echo "Timur";
+                                                                                                                                        } else if ($k->d_posisi4 == 4) {
+                                                                                                                                          echo "Barat";
+                                                                                                                                        } ?>)<br> <?php } ?>
 
-                              <?php if ($k->d_kec5 != "") { ?> <?php echo Ucwords($k->d_kec5); ?>/<?php echo Ucwords($k->d_desa5); ?>(<?php if ($k->d_posisi5 == 1) {
-                                                                                                                                        echo "Utara";
-                                                                                                                                      } else if ($k->d_posisi5 == 2) {
-                                                                                                                                        echo "Selatan";
-                                                                                                                                      } else if ($k->d_posisi5 == 3) {
-                                                                                                                                        echo "Timur";
-                                                                                                                                      } else if ($k->d_posisi5 == 4) {
-                                                                                                                                        echo "Barat";
-                                                                                                                                      } ?>)<br> <?php } ?>
+                              <?php if ($k->d_kec5 !== null) { ?> <?php echo Ucwords($k->d_kec5); ?>/<?php echo Ucwords($k->d_desa5); ?>(<?php if ($k->d_posisi5 == 1) {
+                                                                                                                                            echo "Utara";
+                                                                                                                                          } else if ($k->d_posisi5 == 2) {
+                                                                                                                                            echo "Selatan";
+                                                                                                                                          } else if ($k->d_posisi5 == 3) {
+                                                                                                                                            echo "Timur";
+                                                                                                                                          } else if ($k->d_posisi5 == 4) {
+                                                                                                                                            echo "Barat";
+                                                                                                                                          } ?>)<br> <?php } ?>
 
-                              <?php if ($k->d_kec6 != "") { ?> <?php echo Ucwords($k->d_kec6); ?>/<?php echo Ucwords($k->d_desa6); ?>(<?php if ($k->d_posisi6 == 1) {
-                                                                                                                                        echo "Utara";
-                                                                                                                                      } else if ($k->d_posisi6 == 2) {
-                                                                                                                                        echo "Selatan";
-                                                                                                                                      } else if ($k->d_posisi6 == 3) {
-                                                                                                                                        echo "Timur";
-                                                                                                                                      } else if ($k->d_posisi6 == 4) {
-                                                                                                                                        echo "Barat";
-                                                                                                                                      } ?>)<br> <?php } ?>
+                              <?php if ($k->d_kec6 !== null) { ?> <?php echo Ucwords($k->d_kec6); ?>/<?php echo Ucwords($k->d_desa6); ?>(<?php if ($k->d_posisi6 == 1) {
+                                                                                                                                            echo "Utara";
+                                                                                                                                          } else if ($k->d_posisi6 == 2) {
+                                                                                                                                            echo "Selatan";
+                                                                                                                                          } else if ($k->d_posisi6 == 3) {
+                                                                                                                                            echo "Timur";
+                                                                                                                                          } else if ($k->d_posisi6 == 4) {
+                                                                                                                                            echo "Barat";
+                                                                                                                                          } ?>)<br> <?php } ?>
 
-                              <?php if ($k->d_kec7 != "") { ?> <?php echo Ucwords($k->d_kec7); ?>/<?php echo Ucwords($k->d_desa7); ?>(<?php if ($k->d_posisi7 == 1) {
-                                                                                                                                        echo "Utara";
-                                                                                                                                      } else if ($k->d_posisi7 == 2) {
-                                                                                                                                        echo "Selatan";
-                                                                                                                                      } else if ($k->d_posisi7 == 3) {
-                                                                                                                                        echo "Timur";
-                                                                                                                                      } else if ($k->d_posisi7 == 4) {
-                                                                                                                                        echo "Barat";
-                                                                                                                                      } ?>)<br> <?php } ?>
+                              <?php if ($k->d_kec7 !== null) { ?> <?php echo Ucwords($k->d_kec7); ?>/<?php echo Ucwords($k->d_desa7); ?>(<?php if ($k->d_posisi7 == 1) {
+                                                                                                                                            echo "Utara";
+                                                                                                                                          } else if ($k->d_posisi7 == 2) {
+                                                                                                                                            echo "Selatan";
+                                                                                                                                          } else if ($k->d_posisi7 == 3) {
+                                                                                                                                            echo "Timur";
+                                                                                                                                          } else if ($k->d_posisi7 == 4) {
+                                                                                                                                            echo "Barat";
+                                                                                                                                          } ?>)<br> <?php } ?>
                             </td>
-                            <td><?php echo $k->d_pgaris; ?></td>
+                            <td><?php echo number_format(($k->d_pgaris2 + $k->d_pgaris3 + $k->d_pgaris4 + $k->d_pgaris5 + $k->d_pgaris6 + $k->d_pgaris7), 2, ',', '.'); ?></td>
+
                             <td><?php if ($k->d_status == 1) {
                                   echo "Tampil";
                                 } else {
                                   echo "Tidak Tampil";
-                                } ?></td>
+                                } ?> </td>
                           <?php } ?>
                       </tbody>
                     </table>
@@ -194,7 +187,7 @@
                           <th style="width: 2%">NO</th>
                           <th style=" width:23%">NO PERBUP/ TENTANG</th>
                           <th style=" width:27%">KECAMATAN/ DESA(POSISI)</th>
-                          <th>PANJANG GARIS</th>
+                          <th>PANJANG GARIS <br> TOTAL</th>
                           <th style="width:auto">STATUS</th>
                         </tr>
                       </thead>
@@ -204,78 +197,71 @@
                         foreach ($bks as $k) { ?>
                           <tr style="font-size: 10pt;">
                             <td><?php echo $no++; ?></td>
-                            <td style="text-align:left;"><?php echo $k->d_nomor; ?>/ <?php echo Ucwords($k->d_tentang); ?></td>
-                            <td style="text-align:left;"><?php echo Ucwords($k->d_kec1); ?>/<?php echo Ucwords($k->d_desa1); ?>(<?php if ($k->d_posisi1 == 1) {
-                                                                                                                                  echo "Utara";
-                                                                                                                                } else if ($k->d_posisi1 == 2) {
-                                                                                                                                  echo "Selatan";
-                                                                                                                                } else if ($k->d_posisi1 == 3) {
-                                                                                                                                  echo "Timur";
-                                                                                                                                } else if ($k->d_posisi1 == 4) {
-                                                                                                                                  echo "Barat";
-                                                                                                                                } ?>)<br>
+                            <td><?php echo $k->d_nomor; ?>/ <?php echo Ucwords($k->d_tentang); ?></td>
+                            <td><?php echo Ucwords($k->d_kec1) . "/ "; ?><?php echo Ucwords($k->d_desa1) . " (Acuan)"; ?><br>
 
-                              <?php echo Ucwords($k->d_kec2); ?>/<?php echo Ucwords($k->d_desa2); ?>(<?php if ($k->d_posisi2 == 1) {
-                                                                                                        echo "Utara";
-                                                                                                      } else if ($k->d_posisi2 == 2) {
-                                                                                                        echo "Selatan";
-                                                                                                      } else if ($k->d_posisi2 == 3) {
-                                                                                                        echo "Timur";
-                                                                                                      } else if ($k->d_posisi2 == 4) {
-                                                                                                        echo "Barat";
-                                                                                                      } ?>)<br>
+                              <?php echo Ucwords($k->d_kec2) . "/ "; ?><?php echo Ucwords($k->d_desa2) . " ("; ?><?php if ($k->d_posisi2 == 1) {
+                                                                                                                    echo "Utara)";
+                                                                                                                  } else if ($k->d_posisi2 == 2) {
+                                                                                                                    echo "Selatan)";
+                                                                                                                  } else if ($k->d_posisi2 == 3) {
+                                                                                                                    echo "Timur)";
+                                                                                                                  } else if ($k->d_posisi2 == 4) {
+                                                                                                                    echo "Barat)";
+                                                                                                                  } ?><br>
 
-                              <?php if ($k->d_kec3 != "") { ?> <?php echo Ucwords($k->d_kec3); ?>/<?php echo Ucwords($k->d_desa3); ?>(<?php if ($k->d_posisi3 == 1) {
-                                                                                                                                        echo "Utara";
-                                                                                                                                      } else if ($k->d_posisi3 == 2) {
-                                                                                                                                        echo "Selatan";
-                                                                                                                                      } else if ($k->d_posisi3 == 3) {
-                                                                                                                                        echo "Timur";
-                                                                                                                                      } else if ($k->d_posisi3 == 4) {
-                                                                                                                                        echo "Barat";
-                                                                                                                                      } ?>)<br> <?php } ?>
+                              <?php if ($k->d_kec3 !== null) { ?> <?php echo Ucwords($k->d_kec3); ?>/<?php echo Ucwords($k->d_desa3); ?>(<?php if ($k->d_posisi3 == 1) {
+                                                                                                                                            echo "Utara";
+                                                                                                                                          } else if ($k->d_posisi3 == 2) {
+                                                                                                                                            echo "Selatan";
+                                                                                                                                          } else if ($k->d_posisi3 == 3) {
+                                                                                                                                            echo "Timur";
+                                                                                                                                          } else if ($k->d_posisi3 == 4) {
+                                                                                                                                            echo "Barat";
+                                                                                                                                          } ?>)<br> <?php } ?>
 
-                              <?php if ($k->d_kec4 != "") { ?> <?php echo Ucwords($k->d_kec4); ?>/<?php echo Ucwords($k->d_desa4); ?>(<?php if ($k->d_posisi4 == 1) {
-                                                                                                                                        echo "Utara";
-                                                                                                                                      } else if ($k->d_posisi4 == 2) {
-                                                                                                                                        echo "Selatan";
-                                                                                                                                      } else if ($k->d_posisi4 == 3) {
-                                                                                                                                        echo "Timur";
-                                                                                                                                      } else if ($k->d_posisi4 == 4) {
-                                                                                                                                        echo "Barat";
-                                                                                                                                      } ?>)<br> <?php } ?>
+                              <?php if ($k->d_kec4 != null) { ?> <?php echo Ucwords($k->d_kec4); ?>/<?php echo Ucwords($k->d_desa4); ?>(<?php if ($k->d_posisi4 == 1) {
+                                                                                                                                          echo "Utara";
+                                                                                                                                        } else if ($k->d_posisi4 == 2) {
+                                                                                                                                          echo "Selatan";
+                                                                                                                                        } else if ($k->d_posisi4 == 3) {
+                                                                                                                                          echo "Timur";
+                                                                                                                                        } else if ($k->d_posisi4 == 4) {
+                                                                                                                                          echo "Barat";
+                                                                                                                                        } ?>)<br> <?php } ?>
 
-                              <?php if ($k->d_kec5 != "") { ?> <?php echo Ucwords($k->d_kec5); ?>/<?php echo Ucwords($k->d_desa5); ?>(<?php if ($k->d_posisi5 == 1) {
-                                                                                                                                        echo "Utara";
-                                                                                                                                      } else if ($k->d_posisi5 == 2) {
-                                                                                                                                        echo "Selatan";
-                                                                                                                                      } else if ($k->d_posisi5 == 3) {
-                                                                                                                                        echo "Timur";
-                                                                                                                                      } else if ($k->d_posisi5 == 4) {
-                                                                                                                                        echo "Barat";
-                                                                                                                                      } ?>)<br> <?php } ?>
+                              <?php if ($k->d_kec5 !== null) { ?> <?php echo Ucwords($k->d_kec5); ?>/<?php echo Ucwords($k->d_desa5); ?>(<?php if ($k->d_posisi5 == 1) {
+                                                                                                                                            echo "Utara";
+                                                                                                                                          } else if ($k->d_posisi5 == 2) {
+                                                                                                                                            echo "Selatan";
+                                                                                                                                          } else if ($k->d_posisi5 == 3) {
+                                                                                                                                            echo "Timur";
+                                                                                                                                          } else if ($k->d_posisi5 == 4) {
+                                                                                                                                            echo "Barat";
+                                                                                                                                          } ?>)<br> <?php } ?>
 
-                              <?php if ($k->d_kec6 != "") { ?> <?php echo Ucwords($k->d_kec6); ?>/<?php echo Ucwords($k->d_desa6); ?>(<?php if ($k->d_posisi6 == 1) {
-                                                                                                                                        echo "Utara";
-                                                                                                                                      } else if ($k->d_posisi6 == 2) {
-                                                                                                                                        echo "Selatan";
-                                                                                                                                      } else if ($k->d_posisi6 == 3) {
-                                                                                                                                        echo "Timur";
-                                                                                                                                      } else if ($k->d_posisi6 == 4) {
-                                                                                                                                        echo "Barat";
-                                                                                                                                      } ?>)<br> <?php } ?>
+                              <?php if ($k->d_kec6 !== null) { ?> <?php echo Ucwords($k->d_kec6); ?>/<?php echo Ucwords($k->d_desa6); ?>(<?php if ($k->d_posisi6 == 1) {
+                                                                                                                                            echo "Utara";
+                                                                                                                                          } else if ($k->d_posisi6 == 2) {
+                                                                                                                                            echo "Selatan";
+                                                                                                                                          } else if ($k->d_posisi6 == 3) {
+                                                                                                                                            echo "Timur";
+                                                                                                                                          } else if ($k->d_posisi6 == 4) {
+                                                                                                                                            echo "Barat";
+                                                                                                                                          } ?>)<br> <?php } ?>
 
-                              <?php if ($k->d_kec7 != "") { ?> <?php echo Ucwords($k->d_kec7); ?>/<?php echo Ucwords($k->d_desa7); ?>(<?php if ($k->d_posisi7 == 1) {
-                                                                                                                                        echo "Utara";
-                                                                                                                                      } else if ($k->d_posisi7 == 2) {
-                                                                                                                                        echo "Selatan";
-                                                                                                                                      } else if ($k->d_posisi7 == 3) {
-                                                                                                                                        echo "Timur";
-                                                                                                                                      } else if ($k->d_posisi7 == 4) {
-                                                                                                                                        echo "Barat";
-                                                                                                                                      } ?>)<br> <?php } ?>
+                              <?php if ($k->d_kec7 !== null) { ?> <?php echo Ucwords($k->d_kec7); ?>/<?php echo Ucwords($k->d_desa7); ?>(<?php if ($k->d_posisi7 == 1) {
+                                                                                                                                            echo "Utara";
+                                                                                                                                          } else if ($k->d_posisi7 == 2) {
+                                                                                                                                            echo "Selatan";
+                                                                                                                                          } else if ($k->d_posisi7 == 3) {
+                                                                                                                                            echo "Timur";
+                                                                                                                                          } else if ($k->d_posisi7 == 4) {
+                                                                                                                                            echo "Barat";
+                                                                                                                                          } ?>)<br> <?php } ?>
                             </td>
-                            <td><?php echo $k->d_pgaris; ?></td>
+                            <td><?php echo number_format(($k->d_pgaris2 + $k->d_pgaris3 + $k->d_pgaris4 + $k->d_pgaris5 + $k->d_pgaris6 + $k->d_pgaris7), 2, ',', '.'); ?></td>
+
                             <td><?php if ($k->d_status == 1) {
                                   echo "Tampil";
                                 } else {
@@ -317,78 +303,71 @@
                         foreach ($bss as $k) { ?>
                           <tr style="font-size: 10pt;">
                             <td><?php echo $no++; ?></td>
-                            <td style="text-align:left;"><?php echo $k->d_nomor; ?>/ <?php echo Ucwords($k->d_tentang); ?></td>
-                            <td style="text-align:left;"><?php echo Ucwords($k->d_kec1); ?>/<?php echo Ucwords($k->d_desa1); ?>(<?php if ($k->d_posisi1 == 1) {
-                                                                                                                                  echo "Utara";
-                                                                                                                                } else if ($k->d_posisi1 == 2) {
-                                                                                                                                  echo "Selatan";
-                                                                                                                                } else if ($k->d_posisi1 == 3) {
-                                                                                                                                  echo "Timur";
-                                                                                                                                } else if ($k->d_posisi1 == 4) {
-                                                                                                                                  echo "Barat";
-                                                                                                                                } ?>)<br>
+                            <td><?php echo $k->d_nomor; ?>/ <?php echo Ucwords($k->d_tentang); ?></td>
+                            <td><?php echo Ucwords($k->d_kec1) . "/ "; ?><?php echo Ucwords($k->d_desa1) . " (Acuan)"; ?><br>
 
-                              <?php echo Ucwords($k->d_kec2); ?>/<?php echo Ucwords($k->d_desa2); ?>(<?php if ($k->d_posisi2 == 1) {
-                                                                                                        echo "Utara";
-                                                                                                      } else if ($k->d_posisi2 == 2) {
-                                                                                                        echo "Selatan";
-                                                                                                      } else if ($k->d_posisi2 == 3) {
-                                                                                                        echo "Timur";
-                                                                                                      } else if ($k->d_posisi2 == 4) {
-                                                                                                        echo "Barat";
-                                                                                                      } ?>)<br>
+                              <?php echo Ucwords($k->d_kec2) . "/ "; ?><?php echo Ucwords($k->d_desa2) . " ("; ?><?php if ($k->d_posisi2 == 1) {
+                                                                                                                    echo "Utara)";
+                                                                                                                  } else if ($k->d_posisi2 == 2) {
+                                                                                                                    echo "Selatan)";
+                                                                                                                  } else if ($k->d_posisi2 == 3) {
+                                                                                                                    echo "Timur)";
+                                                                                                                  } else if ($k->d_posisi2 == 4) {
+                                                                                                                    echo "Barat)";
+                                                                                                                  } ?><br>
 
-                              <?php if ($k->d_kec3 != "") { ?> <?php echo Ucwords($k->d_kec3); ?>/<?php echo Ucwords($k->d_desa3); ?>(<?php if ($k->d_posisi3 == 1) {
-                                                                                                                                        echo "Utara";
-                                                                                                                                      } else if ($k->d_posisi3 == 2) {
-                                                                                                                                        echo "Selatan";
-                                                                                                                                      } else if ($k->d_posisi3 == 3) {
-                                                                                                                                        echo "Timur";
-                                                                                                                                      } else if ($k->d_posisi3 == 4) {
-                                                                                                                                        echo "Barat";
-                                                                                                                                      } ?>)<br> <?php } ?>
+                              <?php if ($k->d_kec3 !== null) { ?> <?php echo Ucwords($k->d_kec3); ?>/<?php echo Ucwords($k->d_desa3); ?>(<?php if ($k->d_posisi3 == 1) {
+                                                                                                                                            echo "Utara";
+                                                                                                                                          } else if ($k->d_posisi3 == 2) {
+                                                                                                                                            echo "Selatan";
+                                                                                                                                          } else if ($k->d_posisi3 == 3) {
+                                                                                                                                            echo "Timur";
+                                                                                                                                          } else if ($k->d_posisi3 == 4) {
+                                                                                                                                            echo "Barat";
+                                                                                                                                          } ?>)<br> <?php } ?>
 
-                              <?php if ($k->d_kec4 != "") { ?> <?php echo Ucwords($k->d_kec4); ?>/<?php echo Ucwords($k->d_desa4); ?>(<?php if ($k->d_posisi4 == 1) {
-                                                                                                                                        echo "Utara";
-                                                                                                                                      } else if ($k->d_posisi4 == 2) {
-                                                                                                                                        echo "Selatan";
-                                                                                                                                      } else if ($k->d_posisi4 == 3) {
-                                                                                                                                        echo "Timur";
-                                                                                                                                      } else if ($k->d_posisi4 == 4) {
-                                                                                                                                        echo "Barat";
-                                                                                                                                      } ?>)<br> <?php } ?>
+                              <?php if ($k->d_kec4 != null) { ?> <?php echo Ucwords($k->d_kec4); ?>/<?php echo Ucwords($k->d_desa4); ?>(<?php if ($k->d_posisi4 == 1) {
+                                                                                                                                          echo "Utara";
+                                                                                                                                        } else if ($k->d_posisi4 == 2) {
+                                                                                                                                          echo "Selatan";
+                                                                                                                                        } else if ($k->d_posisi4 == 3) {
+                                                                                                                                          echo "Timur";
+                                                                                                                                        } else if ($k->d_posisi4 == 4) {
+                                                                                                                                          echo "Barat";
+                                                                                                                                        } ?>)<br> <?php } ?>
 
-                              <?php if ($k->d_kec5 != "") { ?> <?php echo Ucwords($k->d_kec5); ?>/<?php echo Ucwords($k->d_desa5); ?>(<?php if ($k->d_posisi5 == 1) {
-                                                                                                                                        echo "Utara";
-                                                                                                                                      } else if ($k->d_posisi5 == 2) {
-                                                                                                                                        echo "Selatan";
-                                                                                                                                      } else if ($k->d_posisi5 == 3) {
-                                                                                                                                        echo "Timur";
-                                                                                                                                      } else if ($k->d_posisi5 == 4) {
-                                                                                                                                        echo "Barat";
-                                                                                                                                      } ?>)<br> <?php } ?>
+                              <?php if ($k->d_kec5 !== null) { ?> <?php echo Ucwords($k->d_kec5); ?>/<?php echo Ucwords($k->d_desa5); ?>(<?php if ($k->d_posisi5 == 1) {
+                                                                                                                                            echo "Utara";
+                                                                                                                                          } else if ($k->d_posisi5 == 2) {
+                                                                                                                                            echo "Selatan";
+                                                                                                                                          } else if ($k->d_posisi5 == 3) {
+                                                                                                                                            echo "Timur";
+                                                                                                                                          } else if ($k->d_posisi5 == 4) {
+                                                                                                                                            echo "Barat";
+                                                                                                                                          } ?>)<br> <?php } ?>
 
-                              <?php if ($k->d_kec6 != "") { ?> <?php echo Ucwords($k->d_kec6); ?>/<?php echo Ucwords($k->d_desa6); ?>(<?php if ($k->d_posisi6 == 1) {
-                                                                                                                                        echo "Utara";
-                                                                                                                                      } else if ($k->d_posisi6 == 2) {
-                                                                                                                                        echo "Selatan";
-                                                                                                                                      } else if ($k->d_posisi6 == 3) {
-                                                                                                                                        echo "Timur";
-                                                                                                                                      } else if ($k->d_posisi6 == 4) {
-                                                                                                                                        echo "Barat";
-                                                                                                                                      } ?>)<br> <?php } ?>
+                              <?php if ($k->d_kec6 !== null) { ?> <?php echo Ucwords($k->d_kec6); ?>/<?php echo Ucwords($k->d_desa6); ?>(<?php if ($k->d_posisi6 == 1) {
+                                                                                                                                            echo "Utara";
+                                                                                                                                          } else if ($k->d_posisi6 == 2) {
+                                                                                                                                            echo "Selatan";
+                                                                                                                                          } else if ($k->d_posisi6 == 3) {
+                                                                                                                                            echo "Timur";
+                                                                                                                                          } else if ($k->d_posisi6 == 4) {
+                                                                                                                                            echo "Barat";
+                                                                                                                                          } ?>)<br> <?php } ?>
 
-                              <?php if ($k->d_kec7 != "") { ?> <?php echo Ucwords($k->d_kec7); ?>/<?php echo Ucwords($k->d_desa7); ?>(<?php if ($k->d_posisi7 == 1) {
-                                                                                                                                        echo "Utara";
-                                                                                                                                      } else if ($k->d_posisi7 == 2) {
-                                                                                                                                        echo "Selatan";
-                                                                                                                                      } else if ($k->d_posisi7 == 3) {
-                                                                                                                                        echo "Timur";
-                                                                                                                                      } else if ($k->d_posisi7 == 4) {
-                                                                                                                                        echo "Barat";
-                                                                                                                                      } ?>)<br> <?php } ?>
+                              <?php if ($k->d_kec7 !== null) { ?> <?php echo Ucwords($k->d_kec7); ?>/<?php echo Ucwords($k->d_desa7); ?>(<?php if ($k->d_posisi7 == 1) {
+                                                                                                                                            echo "Utara";
+                                                                                                                                          } else if ($k->d_posisi7 == 2) {
+                                                                                                                                            echo "Selatan";
+                                                                                                                                          } else if ($k->d_posisi7 == 3) {
+                                                                                                                                            echo "Timur";
+                                                                                                                                          } else if ($k->d_posisi7 == 4) {
+                                                                                                                                            echo "Barat";
+                                                                                                                                          } ?>)<br> <?php } ?>
                             </td>
-                            <td><?php echo $k->d_pgaris; ?></td>
+                            <td><?php echo number_format(($k->d_pgaris2 + $k->d_pgaris3 + $k->d_pgaris4 + $k->d_pgaris5 + $k->d_pgaris6 + $k->d_pgaris7), 2, ',', '.'); ?></td>
+
                             <td><?php if ($k->d_status == 1) {
                                   echo "Tampil";
                                 } else {

@@ -23,13 +23,20 @@
 <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
 <div id="preloader"></div>
 
+
+
+
+
+
+
+
+
+
 <!-- JavaScript Libraries -->
 <script src="<?php echo base_url() ?>assets/f2/lib/jquery/jquery.min.js"></script>
+
 <script src="<?php echo base_url() ?>assets/f2/lib/jquery/jquery-migrate.min.js"></script>
 <script src="<?php echo base_url() ?>assets/f2/lib/popper/popper.min.js"></script>
-<script src="<?php echo base_url(); ?>assets/back/plugins/datatables/jquery.dataTables.min.js"></script>
-<script src="<?php echo base_url(); ?>assets/back/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
-<script src="<?php echo base_url(); ?>assets/back/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
 <script src="<?php echo base_url() ?>assets/f2/lib/bootstrap/js/bootstrap.min.js"></script>
 <script src="<?php echo base_url() ?>assets/f2/lib/easing/easing.min.js"></script>
 <script src="<?php echo base_url() ?>assets/f2/lib/counterup/jquery.waypoints.min.js"></script>
@@ -44,35 +51,57 @@
 <!-- Template Main Javascript File -->
 <script src="<?php echo base_url() ?>assets/f2/js/main.js"></script>
 
+<script src="<?php echo base_url(); ?>assets/back/plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="<?php echo base_url(); ?>assets/back/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+<script src="<?php echo base_url(); ?>assets/back/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+<script src="<?php echo base_url(); ?>assets/back/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+<script src="<?php echo base_url(); ?>assets/back/plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
+<script src="<?php echo base_url(); ?>assets/back/plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
+<script src="<?php echo base_url(); ?>assets/back/plugins/jszip/jszip.min.js"></script>
+<script src="<?php echo base_url(); ?>assets/back/plugins/pdfmake/pdfmake.min.js"></script>
+<script src="<?php echo base_url(); ?>assets/back/plugins/pdfmake/vfs_fonts.js"></script>
+<script src="<?php echo base_url(); ?>assets/back/plugins/datatables-buttons/js/buttons.html5.min.js"></script>
+<script src="<?php echo base_url(); ?>assets/back/plugins/datatables-buttons/js/buttons.print.min.js"></script>
+<script src="<?php echo base_url(); ?>assets/back/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
+<script src="<?php echo base_url(); ?>assets/back/plugins/bs-custom-file-input/bs-custom-file-input.min.js"></script>
+
 
 <script>
   $(function() {
-    $("#example1").DataTable({
-      "responsive": false,
-      "lengthChange": true,
-      "autoWidth": false,
-      "ordering": false,
-      "buttons": ["pdf","print"]
-    }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
-    
-    $("#example3").DataTable({
-      "responsive": false,
-      "lengthChange": true,
-      "autoWidth": false,
-      "ordering": true,
-      "buttons": ["excel", "pdf", "print"]
-    }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
 
     $('#example2').DataTable({
       "paging": true,
-      "lengthChange": false,
-      "searching": false,
-      "ordering": false,
+      "lengthChange": true,
+      "searching": true,
+      "ordering": true,
       "info": true,
       "autoWidth": false,
       "responsive": false,
-    });
+      "buttons": ["print"]
+    }).buttons().container().appendTo('#example2_wrapper .col-md-6:eq(0)');
+    $('#tabel2').DataTable({
+      "paging": true,
+      "lengthChange": true,
+      "searching": true,
+      "ordering": true,
+      "info": true,
+      "autoWidth": false,
+      "responsive": false,
+      "buttons": ["print"]
+    }).buttons().container().appendTo('#tabel2_wrapper .col-md-6:eq(0)');
+    $('#tabel3').DataTable({
+      "paging": true,
+      "lengthChange": true,
+      "searching": true,
+      "ordering": true,
+      "info": true,
+      "autoWidth": false,
+      "responsive": false,
+      "buttons": ["print"]
+    }).buttons().container().appendTo('#tabel3_wrapper .col-md-6:eq(0)');
   });
+    
+</script>
 
 
 </body>

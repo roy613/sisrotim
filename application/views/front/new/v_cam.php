@@ -1,6 +1,6 @@
 <body id="page-top">
 
-    <script>
+<script>
         function pilkec() {
             $('#kec').modal('show');
         }
@@ -22,7 +22,7 @@
                 dataType: 'json',
                 success: function(data) {
                     var html = '';
-                    // var a = "<option selected disabled>-- Silahkan Pilih Desa --</option>";
+                    // var a = "<option selected disabled">-- Silahkan Pilih Desa --</option>";
                     var i;
                     for (i = 0; i < data.length; i++) {
                         html += '<option>' + data[i].md_desa + '</option>';
@@ -36,6 +36,8 @@
             });
         }
     </script>
+
+    
     <style>
         table {
             width: 100%;
@@ -93,7 +95,7 @@
             <div class="navbar-collapse collapse justify-content-end" id="navbarDefault">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link js-scroll" href="<?php echo base_url() . 'welcome/protas'; ?>">Kabupaten</a>
+                        <a class="nav-link js-scroll" href="<?php echo base_url() . 'welcome/protas'; ?>">Progres Batas</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link js-scroll" href="javascript:;" onclick="pilkec()">Kecamatan</a>
@@ -186,7 +188,7 @@
                             <a href="<?php echo base_url(); ?>">Home</a>
                         </li>
                         <li class="breadcrumb-item">
-                            <a href="<?php echo base_url() . 'welcome/protas'; ?>">Progress Batas</a>
+                            <a href="<?php echo base_url() . 'welcome/protas'; ?>">Progres Batas</a>
                         </li>
                         <li class="breadcrumb-item active">
                             <a href="#" style="color:grey">Kecamatan <?php echo ucwords($ab); ?></a>
@@ -209,8 +211,8 @@
                                     <div class="col-sm-6 col-md-5">
                                         <div class="about-img">
                                             <?php foreach ($aq as $row) { ?>
-                                            <img src="<?php echo base_url(); ?>gambar/peta_kecamatan/<?php echo $row->mk_peta; ?>" style="height:170px; width:170px" class="img-fluid rounded b-shadow-a" alt="Peta Kutim">
-                                            <?php }?>
+                                                <img src="<?php echo base_url(); ?>gambar/peta_kecamatan/<?php echo $row->mk_peta; ?>" class="img-fluid rounded b-shadow-a" alt="Peta Kutim">
+                                            <?php } ?>
                                         </div>
                                     </div>
                                     <div class="col-sm-6 col-md-7">
@@ -218,7 +220,7 @@
 
                                             <?php foreach ($aq as $row) { ?>
                                                 <p><span class="title-s">Kecamatan : </span><?php echo Ucwords($row->mk_kec) ?></p>
-                                                <p><span class="title-s">Luas: </span> <span><?php echo number_format($row->mk_luas); ?> km<sup>2</sup></span></p>
+                                                <?php if ($row->mk_luas != 0) { ?> <p><span class="title-s">Luas: </span> <span><?php echo number_format (($row->mk_luas),3,',','.'); ?> km<sup>2</sup></span></p><?php } ?>
                                                 <p><span class="title-s">Ibukota: </span> <span><?php echo $row->mk_ibukota ?></span></p>
 
                                         </div>
@@ -231,22 +233,22 @@
                                     <div class="progress">
                                         <div class="progress-bar" role="progressbar" style="width: 100%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
                                     </div>
-                                    <span>Kesepakatan</span> <span class="pull-right"><?php echo number_format($k); ?> Segmen (<?php echo number_format($k / $row->mk_segmen * 100); ?> %)</span>
+                                    <span>Penetapan</span> <span class="pull-right"><?php echo number_format($p); ?> Segmen (<?php echo number_format($p / $row->mk_segmen * 100); ?> %)</span>
                                     <div class="progress">
-                                        <div class="progress-bar" role="progressbar" style="width: <?php echo number_format($k / $row->mk_segmen * 100); ?>%" aria-valuenow="<?php echo number_format($k / $row->mk_segmen * 100); ?>" aria-valuemin="0" aria-valuemax="100" id="kesepakatan"></div>
+                                        <div class="progress-bar" role="progressbar" style="width: <?php echo number_format($p / $row->mk_segmen * 100); ?>%" aria-valuenow="<?php echo number_format($p / $row->mk_segmen * 100); ?>" aria-valuemin="0" aria-valuemax="100" id="penetapan"></div>
                                     </div>
 
                                 </div>
                             </div>
                             <div class="col-md-3">
                                 <div class="skill-mf">
+                                    <span>Kesepakatan</span> <span class="pull-right"><?php echo number_format($k); ?> Segmen (<?php echo number_format($k / $row->mk_segmen * 100); ?> %)</span>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar" style="width: <?php echo number_format($k / $row->mk_segmen * 100); ?>%" aria-valuenow="<?php echo number_format($k / $row->mk_segmen * 100); ?>" aria-valuemin="0" aria-valuemax="100" id="kesepakatan"></div>
+                                    </div>
                                     <span>Sengketa</span> <span class="pull-right"><?php echo number_format($s); ?> Segmen (<?php echo number_format($s / $row->mk_segmen * 100); ?> %)</span>
                                     <div class="progress">
                                         <div class="progress-bar" role="progressbar" style="width:<?php echo number_format($s / $row->mk_segmen * 100); ?>%" aria-valuenow="<?php echo number_format($s / $row->mk_segmen * 100); ?>" aria-valuemin="0" aria-valuemax="100" id="sengketa"></div>
-                                    </div>
-                                    <span>Penetapan</span> <span class="pull-right"><?php echo number_format($p); ?> Segmen (<?php echo number_format($p / $row->mk_segmen * 100); ?> %)</span>
-                                    <div class="progress">
-                                        <div class="progress-bar" role="progressbar" style="width: <?php echo number_format($p / $row->mk_segmen * 100); ?>%" aria-valuenow="<?php echo number_format($p / $row->mk_segmen * 100); ?>" aria-valuemin="0" aria-valuemax="100" id="penetapan"></div>
                                     </div>
                                 <?php } ?>
                                 </div>
@@ -265,12 +267,16 @@
                                         <table class="table table-bordered table-hover">
                                             <thead>
                                                 <tr>
-                                                    <th style="width:5%">No</th>
-                                                    <th style="width:15%">Jenis Batas</th>
+                                                    <th style="width:5%" rowspan="2">No</th>
+                                                    <th rowspan="2">Desa</th>
+                                                    <th colspan="2">Berbatasan Dengan</th>
+                                                    <th style="width:14%" rowspan="2">Panjang Garis (km)</th>
+                                                    <th style="width:15%" rowspan="2">Progres</th>
+                                                    <th style="width:10%" rowspan="2">Action</th>
+                                                </tr>
+                                                <tr>
                                                     <th style="width:20%">Desa</th>
-                                                    <th>Berbatasan Dengan<br> Desa(Kecamatan)</th>
-                                                    <th style="width:10%">Panjang Garis</th>
-                                                    <th style="width:10%">Action</th>
+                                                    <th style="width:20%">Kecamatan</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -278,8 +284,65 @@
                                                 $no = 1;
                                                 foreach ($qq as $row) { ?>
                                                     <tr>
-                                                        <?php if (($row->d_kec1 == $ab && $row->d_posisi1 == 2) || ($row->d_kec2 == $ab &&  $row->d_posisi2 == 2) || ($row->d_kec3 == $ab && $row->d_posisi3 == 2) || ($row->d_kec4 == $ab && $row->d_posisi4 == 2) || ($row->d_kec5 == $ab && $row->d_posisi5 == 2) || ($row->d_kec6 == $ab && $row->d_posisi6 == 2) || ($row->d_kec7 == $ab && $row->d_posisi7 == 2)) { ?>
+                                                    <?php if (($row->d_kec1 == $ab && $row->d_ket2 == 1 && $row->d_posisi2 == 1) || ($row->d_kec1 == $ab && $row->d_ket3 == 1 && $row->d_posisi3 == 1) || ($row->d_kec1 == $ab && $row->d_ket4 == 1 && $row->d_posisi4 == 1) || ($row->d_kec1 == $ab && $row->d_ket5 == 1 && $row->d_posisi5 == 1) || ($row->d_kec1 == $ab && $row->d_ket6 == 1 && $row->d_posisi6 == 1) || ($row->d_kec1 == $ab && $row->d_ket7 == 1 && $row->d_posisi7 == 1) || ($row->d_kec2 == $ab && $row->d_ket2 == 1 && $row->d_posisi2 == 2) || ($row->d_kec3 == $ab && $row->d_ket3 == 1 && $row->d_posisi3 == 2) || ($row->d_kec4 == $ab && $row->d_ket4 == 1 && $row->d_posisi4 == 2) || ($row->d_kec5 == $ab && $row->d_ket5 == 1 && $row->d_posisi5 == 2) || ($row->d_kec6 == $ab && $row->d_ket6 == 1 && $row->d_posisi6 == 2) || ($row->d_kec7 == $ab && $row->d_ket7 == 1 && $row->d_posisi7 == 2))  { ?>
                                                             <td> <?php echo $no++; ?></td>
+
+                                                            <td><?php if ($row->d_kec1 == $ab && $row->d_ket2 == 1 && $row->d_posisi2 == 1) {echo $row->d_desa1 . "<br>"; } ?> 
+                                                                <?php if ($row->d_kec1 == $ab && $row->d_ket3 == 1 && $row->d_posisi3 == 1) {echo $row->d_desa1 . "<br>"; } ?> 
+                                                                <?php if ($row->d_kec1 == $ab && $row->d_ket4 == 1 && $row->d_posisi4 == 1) {echo $row->d_desa1 . "<br>";} ?>
+                                                                <?php if ($row->d_kec1 == $ab && $row->d_ket5 == 1 && $row->d_posisi5 == 1) {echo $row->d_desa1 . "<br>";} ?> 
+                                                                <?php if ($row->d_kec1 == $ab && $row->d_ket6 == 1 && $row->d_posisi6 == 1) {echo $row->d_desa1 . "<br>";} ?>
+                                                                <?php if ($row->d_kec1 == $ab && $row->d_ket7 == 1 && $row->d_posisi7 == 1) {echo $row->d_desa1 . "<br>";} ?> 
+                                                                <?php if ($row->d_kec2 == $ab && $row->d_ket2 == 1 && $row->d_posisi2 == 2) {echo $row->d_desa2 . "<br>";} ?>
+                                                                <?php if ($row->d_kec3 == $ab && $row->d_ket3 == 1 && $row->d_posisi3 == 2) {echo $row->d_desa3 . "<br>";} ?> 
+                                                                <?php if ($row->d_kec4 == $ab && $row->d_ket4 == 1 && $row->d_posisi4 == 2) {echo $row->d_desa4 . "<br>";} ?> 
+                                                                <?php if ($row->d_kec5 == $ab && $row->d_ket5 == 1 && $row->d_posisi5 == 2) {echo $row->d_desa5 . "<br>";} ?> 
+                                                                <?php if ($row->d_kec6 == $ab && $row->d_ket6 == 1 && $row->d_posisi6 == 2) {echo $row->d_desa6 . "<br>";} ?> 
+                                                                <?php if ($row->d_kec7 == $ab && $row->d_ket7 == 1 && $row->d_posisi7 == 2) {echo $row->d_desa7 . "<br>";} ?> 
+                                                            </td>
+                                                            <td>
+                                                                <?php if ($row->d_kec1 == $ab && $row->d_ket2 == 1 && $row->d_posisi2 == 1) {echo $row->d_desa2 . "<br>"; } ?> 
+                                                                <?php if ($row->d_kec1 == $ab && $row->d_ket3 == 1 && $row->d_posisi3 == 1) {echo $row->d_desa3 . "<br>"; } ?> 
+                                                                <?php if ($row->d_kec1 == $ab && $row->d_ket4 == 1 && $row->d_posisi4 == 1) {echo $row->d_desa4 . "<br>";} ?>
+                                                                <?php if ($row->d_kec1 == $ab && $row->d_ket5 == 1 && $row->d_posisi5 == 1) {echo $row->d_desa5 . "<br>";} ?> 
+                                                                <?php if ($row->d_kec1 == $ab && $row->d_ket6 == 1 && $row->d_posisi6 == 1) {echo $row->d_desa6 . "<br>";} ?>
+                                                                <?php if ($row->d_kec1 == $ab && $row->d_ket7 == 1 && $row->d_posisi7 == 1) {echo $row->d_desa7 . "<br>";} ?> 
+                                                                <?php if ($row->d_kec2 == $ab && $row->d_ket2 == 1 && $row->d_posisi2 == 2) {echo $row->d_desa1 . "<br>";} ?>
+                                                                <?php if ($row->d_kec3 == $ab && $row->d_ket3 == 1 && $row->d_posisi3 == 2) {echo $row->d_desa1 . "<br>";} ?> 
+                                                                <?php if ($row->d_kec4 == $ab && $row->d_ket4 == 1 && $row->d_posisi4 == 2) {echo $row->d_desa1 . "<br>";} ?> 
+                                                                <?php if ($row->d_kec5 == $ab && $row->d_ket5 == 1 && $row->d_posisi5 == 2) {echo $row->d_desa1 . "<br>";} ?> 
+                                                                <?php if ($row->d_kec6 == $ab && $row->d_ket6 == 1 && $row->d_posisi6 == 2) {echo $row->d_desa1 . "<br>";} ?> 
+                                                                <?php if ($row->d_kec7 == $ab && $row->d_ket7 == 1 && $row->d_posisi7 == 2) {echo $row->d_desa1 . "<br>";} ?>
+                                                            </td>
+                                                            <td>
+                                                                <?php if ($row->d_kec1 == $ab && $row->d_ket2 == 1 && $row->d_posisi2 == 1) {echo $row->d_kec2 . "<br>"; } ?> 
+                                                                <?php if ($row->d_kec1 == $ab && $row->d_ket3 == 1 && $row->d_posisi3 == 1) {echo $row->d_kec3 . "<br>"; } ?> 
+                                                                <?php if ($row->d_kec1 == $ab && $row->d_ket4 == 1 && $row->d_posisi4 == 1) {echo $row->d_kec4 . "<br>";} ?>
+                                                                <?php if ($row->d_kec1 == $ab && $row->d_ket5 == 1 && $row->d_posisi5 == 1) {echo $row->d_kec5 . "<br>";} ?> 
+                                                                <?php if ($row->d_kec1 == $ab && $row->d_ket6 == 1 && $row->d_posisi6 == 1) {echo $row->d_kec6 . "<br>";} ?>
+                                                                <?php if ($row->d_kec1 == $ab && $row->d_ket7 == 1 && $row->d_posisi7 == 1) {echo $row->d_kec7 . "<br>";} ?> 
+                                                                <?php if ($row->d_kec2 == $ab && $row->d_ket2 == 1 && $row->d_posisi2 == 2) {echo $row->d_kec1 . "<br>";} ?>
+                                                                <?php if ($row->d_kec3 == $ab && $row->d_ket3 == 1 && $row->d_posisi3 == 2) {echo $row->d_kec1 . "<br>";} ?> 
+                                                                <?php if ($row->d_kec4 == $ab && $row->d_ket4 == 1 && $row->d_posisi4 == 2) {echo $row->d_kec1 . "<br>";} ?> 
+                                                                <?php if ($row->d_kec5 == $ab && $row->d_ket5 == 1 && $row->d_posisi5 == 2) {echo $row->d_kec1 . "<br>";} ?> 
+                                                                <?php if ($row->d_kec6 == $ab && $row->d_ket6 == 1 && $row->d_posisi6 == 2) {echo $row->d_kec1 . "<br>";} ?> 
+                                                                <?php if ($row->d_kec7 == $ab && $row->d_ket7 == 1 && $row->d_posisi7 == 2) {echo $row->d_kec1 . "<br>";} ?>
+                                                            </td>
+
+                                                            <td> 
+                                                                <?php if ($row->d_kec1 == $ab && $row->d_ket2 == 1 && $row->d_posisi2 == 1) {echo number_format (($row->d_pgaris2),2,',','.') . " km<br>"; } ?> 
+                                                                <?php if ($row->d_kec1 == $ab && $row->d_ket3 == 1 && $row->d_posisi3 == 1) {echo number_format (($row->d_pgaris3),2,',','.') . " km<br>"; } ?> 
+                                                                <?php if ($row->d_kec1 == $ab && $row->d_ket4 == 1 && $row->d_posisi4 == 1) {echo number_format (($row->d_pgaris4),2,',','.') . " km<br>"; } ?>
+                                                                <?php if ($row->d_kec1 == $ab && $row->d_ket5 == 1 && $row->d_posisi5 == 1) {echo number_format (($row->d_pgaris5),2,',','.') . " km<br>"; } ?> 
+                                                                <?php if ($row->d_kec1 == $ab && $row->d_ket6 == 1 && $row->d_posisi6 == 1) {echo number_format (($row->d_pgaris6),2,',','.') . " km<br>"; } ?>
+                                                                <?php if ($row->d_kec1 == $ab && $row->d_ket7 == 1 && $row->d_posisi7 == 1) {echo number_format (($row->d_pgaris7),2,',','.') . " km<br>"; } ?> 
+                                                                <?php if ($row->d_kec2 == $ab && $row->d_ket2 == 1 && $row->d_posisi2 == 2) {echo number_format (($row->d_pgaris2),2,',','.') . " km<br>"; } ?>
+                                                                <?php if ($row->d_kec3 == $ab && $row->d_ket3 == 1 && $row->d_posisi3 == 2) {echo number_format (($row->d_pgaris3),2,',','.') . " km<br>"; } ?> 
+                                                                <?php if ($row->d_kec4 == $ab && $row->d_ket4 == 1 && $row->d_posisi4 == 2) {echo number_format (($row->d_pgaris4),2,',','.') . " km<br>"; } ?> 
+                                                                <?php if ($row->d_kec5 == $ab && $row->d_ket5 == 1 && $row->d_posisi5 == 2) {echo number_format (($row->d_pgaris5),2,',','.') . " km<br>"; } ?> 
+                                                                <?php if ($row->d_kec6 == $ab && $row->d_ket6 == 1 && $row->d_posisi6 == 2) {echo number_format (($row->d_pgaris6),2,',','.') . " km<br>"; } ?> 
+                                                                <?php if ($row->d_kec7 == $ab && $row->d_ket7 == 1 && $row->d_posisi7 == 2) {echo number_format (($row->d_pgaris7),2,',','.') . " km<br>"; } ?>
+                                                            </td>
                                                             <td><?php if ($row->d_jenis == 1) {
                                                                     echo "Penetapan";
                                                                 } else if ($row->d_jenis == 2) {
@@ -288,38 +351,6 @@
                                                                     echo "Sengketa";
                                                                 }
                                                                 ?></td>
-                                                            <td><?php if ($row->d_kec1 == $ab && $row->d_posisi1 == 2) {
-                                                                    echo $row->d_desa1 . ",";
-                                                                } ?> <?php if ($row->d_kec2 == $ab && $row->d_posisi2 == 2) {
-                                                                            echo $row->d_desa2 . ",";
-                                                                        } ?><?php if ($row->d_kec3 == $ab && $row->d_posisi3 == 2) {
-                                                                                echo $row->d_desa3 . ",";
-                                                                            } ?> <?php if ($row->d_kec4 == $ab && $row->d_posisi4 == 2) {
-                                                                                        echo $row->d_desa4 . ",";
-                                                                                    } ?> <?php if ($row->d_kec5 == $ab && $row->d_posisi5 == 2) {
-                                                                                            echo $row->d_desa5 . ",";
-                                                                                        } ?> <?php if ($row->d_kec6 == $ab && $row->d_posisi6 == 2) {
-                                                                                                    echo $row->d_desa6 . ",";
-                                                                                                } ?> <?php if ($row->d_kec7 == $ab && $row->d_posisi7 == 2) {
-                                                                                                            echo $row->d_desa7 . ",";
-                                                                                                        } ?></td>
-                                                            <td><?php if ($row->d_kec1 != $ab && $row->d_posisi1 == 1) {
-                                                                    echo $row->d_desa1 . " (" . $row->d_kec1 . "),";
-                                                                } ?> <?php if ($row->d_kec2 != $ab && $row->d_posisi2 == 1) {
-                                                                            echo $row->d_desa2 . " (" . $row->d_kec2 . "), <br>";
-                                                                        } ?> <?php if ($row->d_kec3 != $ab && $row->d_posisi3 == 1) {
-                                                                                    echo $row->d_desa3 . " (" . $row->d_kec3 . "), <br>";
-                                                                                } ?> <?php if ($row->d_kec4 != $ab && $row->d_posisi4 == 1) {
-                                                                                            echo $row->d_desa4 . " (" . $row->d_kec4 . "), <br>";
-                                                                                        } ?> <?php if ($row->d_kec5 != $ab && $row->d_posisi5 == 1) {
-                                                                                                echo $row->d_desa5 . " (" . $row->d_kec5 . "), <br>";
-                                                                                            } ?> <?php if ($row->d_kec6 != $ab && $row->d_posisi6 ==  1) {
-                                                                                                        echo $row->d_desa6 . " (" . $row->d_kec6 . "), <br>";
-                                                                                                    } ?> <?php if ($row->d_kec7 != $ab && $row->d_posisi7 == 1) {
-                                                                                                                echo $row->d_desa7 . " (" . $row->d_kec7 . "),";
-                                                                                                            } ?></td>
-
-                                                            <td> <?php echo number_format ($row->d_pgaris); ?> km</td>
                                                             <td>
                                                                 <div class="btn-group" role="group" style="float: right; margin-right:15px">
                                                                     <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color:lightskyblue; color:black"> <i class="fa fa-download"> Unduh</i>
@@ -327,14 +358,14 @@
                                                                     </button>
                                                                     <ul class="dropdown-menu">
                                                                         <?php if ($row->d_jenis == 1) { ?>
-                                                                            <li><a href="" style="color:black">Peraturan Bupati</a></li>
-                                                                            <li><a href="" style="color:black">Gambar Peta</a></li>
+                                                                            <li><a target="_blank" href="<?php echo base_url() . 'dokumen/perbup/' . $row->d_perbup; ?>" style="color:black">Peraturan Bupati</a></li>
+                                                                            <li><a target="_blank" href="<?php echo base_url() . 'gambar/peta_penetapan/' . $row->d_peta; ?>" style="color:black">Gambar Peta</a></li>
                                                                         <?php } else if ($row->d_jenis == 2) { ?>
-                                                                            <li><a href="" style="color:black">BA Kesepakatan</a></li>
-                                                                            <li><a href="" style="color:black">Peta Kesepakatan</a></li>
+                                                                            <li><a target="_blank" href="<?php echo base_url() . 'dokumen/ba_k/' . $row->d_perbup; ?>" style="color:black">BA Kesepakatan</a></li>
+                                                                            <li><a target="_blank" href="<?php echo base_url() . 'gambar/peta_kesepakatan/' . $row->d_peta; ?>" style="color:black">Peta Kesepakatan</a></li>
                                                                         <?php } else if ($row->d_jenis == 3) { ?>
-                                                                            <li><a href="" style="color:black">BA Sengketa</a></li>
-                                                                            <li><a href="" style="color:black">Peta Areal Sengketa</a></li>
+                                                                            <li><a target="_blank" href="<?php echo base_url() . 'dokumen/ba_s/' . $row->d_perbup; ?>" style="color:black">BA Sengketa</a></li>
+                                                                            <li><a target="_blank" href="<?php echo base_url() . 'gambar/peta_sengketa/' . $row->d_peta; ?>" style="color:black">Peta Areal Sengketa</a></li>
                                                                         <?php } ?>
                                                                     </ul>
                                                                 </div>
@@ -352,64 +383,90 @@
                                         <table class="table table-bordered table-hover">
                                             <thead>
                                                 <tr>
-                                                    <th style="width:5%">No</th>
-                                                    <th style="width:15%">Jenis Batas</th>
+                                                    <th style="width:5%" rowspan="2">No</th>
+                                                    <th rowspan="2">Desa</th>
+                                                    <th colspan="2">Berbatasan Dengan</th>
+                                                    <th style="width:14%" rowspan="2">Panjang Garis (km)</th>
+                                                    <th style="width:15%" rowspan="2">Progres</th>
+                                                    <th style="width:10%" rowspan="2">Action</th>
+                                                </tr>
+                                                <tr>
                                                     <th style="width:20%">Desa</th>
-                                                    <th>Berbatasan Dengan<br> Desa(Kecamatan)</th>
-                                                    <th style="width:10%">Panjang Garis</th>
-                                                    <th style="width:10%">Action</th>
+                                                    <th style="width:20%">Kecamatan</th>
                                                 </tr>
                                             </thead>
-                                            <tbody>
+                                           <tbody>
                                                 <?php $cam = $ab;
                                                 $no = 1;
                                                 foreach ($qq as $row) { ?>
                                                     <tr>
-                                                        <?php if (($row->d_kec1 == $ab && $row->d_posisi1 == 1) || ($row->d_kec2 == $ab &&  $row->d_posisi2 == 1) || ($row->d_kec3 == $ab && $row->d_posisi3 == 1) || ($row->d_kec4 == $ab && $row->d_posisi4 == 1) || ($row->d_kec5 == $ab && $row->d_posisi5 == 1) || ($row->d_kec6 == $ab && $row->d_posisi6 == 1) || ($row->d_kec7 == $ab && $row->d_posisi7 == 1)) { ?>
-                                                            <td>
-                                                                <?php echo $no++; ?>
-                                                            </td>
-                                                            <td> <?php
-                                                                    if ($row->d_jenis == 1) {
-                                                                        echo "Penetapan";
-                                                                    } else if ($row->d_jenis == 2) {
-                                                                        echo "Kesepakatan";
-                                                                    } else {
-                                                                        echo "Sengketa";
-                                                                    } ?>
-                                                            </td>
-                                                            <td><?php if ($row->d_kec1 == $ab && $row->d_posisi1 == 1) {
-                                                                    echo $row->d_desa1 . ",";
-                                                                } ?> <?php if ($row->d_kec2 == $ab && $row->d_posisi2 == 1) {
-                                                                            echo $row->d_desa2 . ",";
-                                                                        } ?><?php if ($row->d_kec3 == $ab && $row->d_posisi3 == 1) {
-                                                                                echo $row->d_desa3 . ",";
-                                                                            } ?> <?php if ($row->d_kec4 == $ab && $row->d_posisi4 == 1) {
-                                                                                        echo $row->d_desa4 . ",";
-                                                                                    } ?> <?php if ($row->d_kec5 == $ab && $row->d_posisi5 == 1) {
-                                                                                                echo $row->d_desa5 . ",";
-                                                                                            } ?> <?php if ($row->d_kec6 == $ab && $row->d_posisi6 == 1) {
-                                                                                                        echo $row->d_desa6 . ",";
-                                                                                                    } ?> <?php if ($row->d_kec7 == $ab && $row->d_posisi7 == 1) {
-                                                                                                            echo $row->d_desa7 . ",";
-                                                                                                        } ?></td>
-                                                            <td><?php if ($row->d_kec1 != $ab && $row->d_posisi1 == 2) {
-                                                                    echo $row->d_desa1 . " (" . $row->d_kec1 . "),";
-                                                                } ?> <?php if ($row->d_kec2 != $ab && $row->d_posisi2 == 2) {
-                                                                            echo $row->d_desa2 . " (" . $row->d_kec2 . "), <br>";
-                                                                        } ?> <?php if ($row->d_kec3 != $ab && $row->d_posisi3 == 2) {
-                                                                                    echo $row->d_desa3 . " (" . $row->d_kec3 . "), <br>";
-                                                                                } ?> <?php if ($row->d_kec4 != $ab && $row->d_posisi4 == 2) {
-                                                                                            echo $row->d_desa4 . " (" . $row->d_kec4 . "), <br>";
-                                                                                        } ?> <?php if ($row->d_kec5 != $ab && $row->d_posisi5 == 2) {
-                                                                                                    echo $row->d_desa5 . " (" . $row->d_kec5 . "), <br>";
-                                                                                                } ?> <?php if ($row->d_kec6 != $ab && $row->d_posisi6 ==  2) {
-                                                                                                            echo $row->d_desa6 . " (" . $row->d_kec6 . "), <br>";
-                                                                                                        } ?> <?php if ($row->d_kec7 != $ab && $row->d_posisi7 == 2) {
-                                                                                                                echo $row->d_desa7 . " (" . $row->d_kec7 . "),";
-                                                                                                            } ?></td>
-                                                            <td> <?php echo number_format ($row->d_pgaris); ?> km</td>
+                                                    <?php if (($row->d_kec1 == $ab && $row->d_ket2 == 1 && $row->d_posisi2 == 2) || ($row->d_kec1 == $ab && $row->d_ket3 == 1 && $row->d_posisi3 == 2) || ($row->d_kec1 == $ab && $row->d_ket4 == 1 && $row->d_posisi4 == 2) || ($row->d_kec1 == $ab && $row->d_ket5 == 1 && $row->d_posisi5 == 2) || ($row->d_kec1 == $ab && $row->d_ket6 == 1 && $row->d_posisi6 == 2) || ($row->d_kec1 == $ab && $row->d_ket7 == 1 && $row->d_posisi7 == 2) || ($row->d_kec2 == $ab && $row->d_ket2 == 1 && $row->d_posisi2 == 1) || ($row->d_kec3 == $ab && $row->d_ket3 == 1 && $row->d_posisi3 == 1) || ($row->d_kec4 == $ab && $row->d_ket4 == 1 && $row->d_posisi4 == 1) || ($row->d_kec5 == $ab && $row->d_ket5 == 1 && $row->d_posisi5 == 1) || ($row->d_kec6 == $ab && $row->d_ket6 == 1 && $row->d_posisi6 == 1) || ($row->d_kec7 == $ab && $row->d_ket7 == 1 && $row->d_posisi7 == 1))  { ?>
+                                                            <td> <?php echo $no++; ?></td>
 
+                                                            <td><?php if ($row->d_kec1 == $ab && $row->d_ket2 == 1 && $row->d_posisi2 == 2) {echo $row->d_desa1 . "<br>"; } ?> 
+                                                                <?php if ($row->d_kec1 == $ab && $row->d_ket3 == 1 && $row->d_posisi3 == 2) {echo $row->d_desa1 . "<br>"; } ?> 
+                                                                <?php if ($row->d_kec1 == $ab && $row->d_ket4 == 1 && $row->d_posisi4 == 2) {echo $row->d_desa1 . "<br>";} ?>
+                                                                <?php if ($row->d_kec1 == $ab && $row->d_ket5 == 1 && $row->d_posisi5 == 2) {echo $row->d_desa1 . "<br>";} ?> 
+                                                                <?php if ($row->d_kec1 == $ab && $row->d_ket6 == 1 && $row->d_posisi6 == 2) {echo $row->d_desa1 . "<br>";} ?>
+                                                                <?php if ($row->d_kec1 == $ab && $row->d_ket7 == 1 && $row->d_posisi7 == 2) {echo $row->d_desa1 . "<br>";} ?> 
+                                                                <?php if ($row->d_kec2 == $ab && $row->d_ket2 == 1 && $row->d_posisi2 == 1) {echo $row->d_desa2 . "<br>";} ?>
+                                                                <?php if ($row->d_kec3 == $ab && $row->d_ket3 == 1 && $row->d_posisi3 == 1) {echo $row->d_desa3 . "<br>";} ?> 
+                                                                <?php if ($row->d_kec4 == $ab && $row->d_ket4 == 1 && $row->d_posisi4 == 1) {echo $row->d_desa4 . "<br>";} ?> 
+                                                                <?php if ($row->d_kec5 == $ab && $row->d_ket5 == 1 && $row->d_posisi5 == 1) {echo $row->d_desa5 . "<br>";} ?> 
+                                                                <?php if ($row->d_kec6 == $ab && $row->d_ket6 == 1 && $row->d_posisi6 == 1) {echo $row->d_desa6 . "<br>";} ?> 
+                                                                <?php if ($row->d_kec7 == $ab && $row->d_ket7 == 1 && $row->d_posisi7 == 1) {echo $row->d_desa7 . "<br>";} ?> 
+                                                            </td>
+                                                            <td>
+                                                                <?php if ($row->d_kec1 == $ab && $row->d_ket2 == 1 && $row->d_posisi2 == 2) {echo $row->d_desa2 . "<br>"; } ?> 
+                                                                <?php if ($row->d_kec1 == $ab && $row->d_ket3 == 1 && $row->d_posisi3 == 2) {echo $row->d_desa3 . "<br>"; } ?> 
+                                                                <?php if ($row->d_kec1 == $ab && $row->d_ket4 == 1 && $row->d_posisi4 == 2) {echo $row->d_desa4 . "<br>";} ?>
+                                                                <?php if ($row->d_kec1 == $ab && $row->d_ket5 == 1 && $row->d_posisi5 == 2) {echo $row->d_desa5 . "<br>";} ?> 
+                                                                <?php if ($row->d_kec1 == $ab && $row->d_ket6 == 1 && $row->d_posisi6 == 2) {echo $row->d_desa6 . "<br>";} ?>
+                                                                <?php if ($row->d_kec1 == $ab && $row->d_ket7 == 1 && $row->d_posisi7 == 2) {echo $row->d_desa7 . "<br>";} ?> 
+                                                                <?php if ($row->d_kec2 == $ab && $row->d_ket2 == 1 && $row->d_posisi2 == 1) {echo $row->d_desa1 . "<br>";} ?>
+                                                                <?php if ($row->d_kec3 == $ab && $row->d_ket3 == 1 && $row->d_posisi3 == 1) {echo $row->d_desa1 . "<br>";} ?> 
+                                                                <?php if ($row->d_kec4 == $ab && $row->d_ket4 == 1 && $row->d_posisi4 == 1) {echo $row->d_desa1 . "<br>";} ?> 
+                                                                <?php if ($row->d_kec5 == $ab && $row->d_ket5 == 1 && $row->d_posisi5 == 1) {echo $row->d_desa1 . "<br>";} ?> 
+                                                                <?php if ($row->d_kec6 == $ab && $row->d_ket6 == 1 && $row->d_posisi6 == 1) {echo $row->d_desa1 . "<br>";} ?> 
+                                                                <?php if ($row->d_kec7 == $ab && $row->d_ket7 == 1 && $row->d_posisi7 == 1) {echo $row->d_desa1 . "<br>";} ?>
+                                                            </td>
+                                                            <td>
+                                                                <?php if ($row->d_kec1 == $ab && $row->d_ket2 == 1 && $row->d_posisi2 == 2) {echo $row->d_kec2 . "<br>"; } ?> 
+                                                                <?php if ($row->d_kec1 == $ab && $row->d_ket3 == 1 && $row->d_posisi3 == 2) {echo $row->d_kec3 . "<br>"; } ?> 
+                                                                <?php if ($row->d_kec1 == $ab && $row->d_ket4 == 1 && $row->d_posisi4 == 2) {echo $row->d_kec4 . "<br>";} ?>
+                                                                <?php if ($row->d_kec1 == $ab && $row->d_ket5 == 1 && $row->d_posisi5 == 2) {echo $row->d_kec5 . "<br>";} ?> 
+                                                                <?php if ($row->d_kec1 == $ab && $row->d_ket6 == 1 && $row->d_posisi6 == 2) {echo $row->d_kec6 . "<br>";} ?>
+                                                                <?php if ($row->d_kec1 == $ab && $row->d_ket7 == 1 && $row->d_posisi7 == 2) {echo $row->d_kec7 . "<br>";} ?> 
+                                                                <?php if ($row->d_kec2 == $ab && $row->d_ket2 == 1 && $row->d_posisi2 == 1) {echo $row->d_kec1 . "<br>";} ?>
+                                                                <?php if ($row->d_kec3 == $ab && $row->d_ket3 == 1 && $row->d_posisi3 == 1) {echo $row->d_kec1 . "<br>";} ?> 
+                                                                <?php if ($row->d_kec4 == $ab && $row->d_ket4 == 1 && $row->d_posisi4 == 1) {echo $row->d_kec1 . "<br>";} ?> 
+                                                                <?php if ($row->d_kec5 == $ab && $row->d_ket5 == 1 && $row->d_posisi5 == 1) {echo $row->d_kec1 . "<br>";} ?> 
+                                                                <?php if ($row->d_kec6 == $ab && $row->d_ket6 == 1 && $row->d_posisi6 == 1) {echo $row->d_kec1 . "<br>";} ?> 
+                                                                <?php if ($row->d_kec7 == $ab && $row->d_ket7 == 1 && $row->d_posisi7 == 1) {echo $row->d_kec1 . "<br>";} ?>
+                                                            </td>
+
+                                                            <td> 
+                                                                <?php if ($row->d_kec1 == $ab && $row->d_ket2 == 1 && $row->d_posisi2 == 2) {echo number_format (($row->d_pgaris2),2,',','.') . " km<br>"; } ?> 
+                                                                <?php if ($row->d_kec1 == $ab && $row->d_ket3 == 1 && $row->d_posisi3 == 2) {echo number_format (($row->d_pgaris3),2,',','.') . " km<br>"; } ?> 
+                                                                <?php if ($row->d_kec1 == $ab && $row->d_ket4 == 1 && $row->d_posisi4 == 2) {echo number_format (($row->d_pgaris4),2,',','.') . " km<br>"; } ?>
+                                                                <?php if ($row->d_kec1 == $ab && $row->d_ket5 == 1 && $row->d_posisi5 == 2) {echo number_format (($row->d_pgaris5),2,',','.') . " km<br>"; } ?> 
+                                                                <?php if ($row->d_kec1 == $ab && $row->d_ket6 == 1 && $row->d_posisi6 == 2) {echo number_format (($row->d_pgaris6),2,',','.') . " km<br>"; } ?>
+                                                                <?php if ($row->d_kec1 == $ab && $row->d_ket7 == 1 && $row->d_posisi7 == 2) {echo number_format (($row->d_pgaris7),2,',','.') . " km<br>"; } ?> 
+                                                                <?php if ($row->d_kec2 == $ab && $row->d_ket2 == 1 && $row->d_posisi2 == 1) {echo number_format (($row->d_pgaris2),2,',','.') . " km<br>"; } ?>
+                                                                <?php if ($row->d_kec3 == $ab && $row->d_ket3 == 1 && $row->d_posisi3 == 1) {echo number_format (($row->d_pgaris3),2,',','.') . " km<br>"; } ?> 
+                                                                <?php if ($row->d_kec4 == $ab && $row->d_ket4 == 1 && $row->d_posisi4 == 1) {echo number_format (($row->d_pgaris4),2,',','.') . " km<br>"; } ?> 
+                                                                <?php if ($row->d_kec5 == $ab && $row->d_ket5 == 1 && $row->d_posisi5 == 1) {echo number_format (($row->d_pgaris5),2,',','.') . " km<br>"; } ?> 
+                                                                <?php if ($row->d_kec6 == $ab && $row->d_ket6 == 1 && $row->d_posisi6 == 1) {echo number_format (($row->d_pgaris6),2,',','.') . " km<br>"; } ?> 
+                                                                <?php if ($row->d_kec7 == $ab && $row->d_ket7 == 1 && $row->d_posisi7 == 1) {echo number_format (($row->d_pgaris7),2,',','.') . " km<br>"; } ?>
+                                                            </td>
+                                                            <td><?php if ($row->d_jenis == 1) {
+                                                                    echo "Penetapan";
+                                                                } else if ($row->d_jenis == 2) {
+                                                                    echo "Kesepakatan";
+                                                                } else {
+                                                                    echo "Sengketa";
+                                                                }
+                                                                ?></td>
                                                             <td>
                                                                 <div class="btn-group" role="group" style="float: right; margin-right:15px">
                                                                     <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color:lightskyblue; color:black"> <i class="fa fa-download"> Unduh</i>
@@ -417,19 +474,19 @@
                                                                     </button>
                                                                     <ul class="dropdown-menu">
                                                                         <?php if ($row->d_jenis == 1) { ?>
-                                                                            <li><a href="" style="color:black">Peraturan Bupati</a></li>
-                                                                            <li><a href="" style="color:black">Gambar Peta</a></li>
+                                                                            <li><a target="_blank" href="<?php echo base_url() . 'dokumen/perbup/' . $row->d_perbup; ?>" style="color:black">Peraturan Bupati</a></li>
+                                                                            <li><a target="_blank" href="<?php echo base_url() . 'gambar/peta_penetapan/' . $row->d_peta; ?>" style="color:black">Gambar Peta</a></li>
                                                                         <?php } else if ($row->d_jenis == 2) { ?>
-                                                                            <li><a href="" style="color:black">BA Kesepakatan</a></li>
-                                                                            <li><a href="" style="color:black">Peta Kesepakatan</a></li>
+                                                                            <li><a target="_blank" href="<?php echo base_url() . 'dokumen/ba_k/' . $row->d_perbup; ?>" style="color:black">BA Kesepakatan</a></li>
+                                                                            <li><a target="_blank" href="<?php echo base_url() . 'gambar/peta_kesepakatan/' . $row->d_peta; ?>" style="color:black">Peta Kesepakatan</a></li>
                                                                         <?php } else if ($row->d_jenis == 3) { ?>
-                                                                            <li><a href="" style="color:black">BA Sengketa</a></li>
-                                                                            <li><a href="" style="color:black">Peta Areal Sengketa</a></li>
+                                                                            <li><a target="_blank" href="<?php echo base_url() . 'dokumen/ba_s/' . $row->d_perbup; ?>" style="color:black">BA Sengketa</a></li>
+                                                                            <li><a target="_blank" href="<?php echo base_url() . 'gambar/peta_sengketa/' . $row->d_peta; ?>" style="color:black">Peta Areal Sengketa</a></li>
                                                                         <?php } ?>
                                                                     </ul>
                                                                 </div>
                                                             </td>
-                                                        <?php } ?>
+                                                        <?php }  ?>
                                                     </tr>
                                                 <?php } ?>
                                             </tbody>
@@ -442,23 +499,83 @@
                                         <table class="table table-bordered table-hover">
                                             <thead>
                                                 <tr>
-                                                    <th style="width:5%">No</th>
-                                                    <th style="width:15%">Jenis Batas</th>
+                                                    <th style="width:5%" rowspan="2">No</th>
+                                                    <th rowspan="2">Desa</th>
+                                                    <th colspan="2">Berbatasan Dengan</th>
+                                                    <th style="width:14%" rowspan="2">Panjang Garis (km)</th>
+                                                    <th style="width:15%" rowspan="2">Progres</th>
+                                                    <th style="width:10%" rowspan="2">Action</th>
+                                                </tr>
+                                                <tr>
                                                     <th style="width:20%">Desa</th>
-                                                    <th>Berbatasan Dengan<br> Desa(Kecamatan)</th>
-                                                    <th style="width:10%">Panjang Garis</th>
-                                                    <th style="width:10%">Action</th>
+                                                    <th style="width:20%">Kecamatan</th>
                                                 </tr>
                                             </thead>
-                                            <tbody>
+                                           <tbody>
                                                 <?php $cam = $ab;
                                                 $no = 1;
                                                 foreach ($qq as $row) { ?>
                                                     <tr>
-                                                        <?php if (($row->d_kec1 == $ab && $row->d_posisi1 == 4) || ($row->d_kec2 == $ab &&  $row->d_posisi2 == 4) || ($row->d_kec3 == $ab && $row->d_posisi3 == 4) || ($row->d_kec4 == $ab && $row->d_posisi4 == 4) || ($row->d_kec5 == $ab && $row->d_posisi5 == 4) || ($row->d_kec6 == $ab && $row->d_posisi6 == 4) || ($row->d_kec7 == $ab && $row->d_posisi7 == 4)) { ?>
-                                                            <td><?php echo $no++; ?></td>
-                                                            <td><?php
-                                                                if ($row->d_jenis == 1) {
+                                                    <?php if (($row->d_kec1 == $ab && $row->d_ket2 == 1 && $row->d_posisi2 == 3) || ($row->d_kec1 == $ab && $row->d_ket3 == 1 && $row->d_posisi3 == 3) || ($row->d_kec1 == $ab && $row->d_ket4 == 1 && $row->d_posisi4 == 3) || ($row->d_kec1 == $ab && $row->d_ket5 == 1 && $row->d_posisi5 == 3) || ($row->d_kec1 == $ab && $row->d_ket6 == 1 && $row->d_posisi6 == 3) || ($row->d_kec1 == $ab && $row->d_ket7 == 1 && $row->d_posisi7 == 3) || ($row->d_kec2 == $ab && $row->d_ket2 == 1 && $row->d_posisi2 == 4) || ($row->d_kec3 == $ab && $row->d_ket3 == 1 && $row->d_posisi3 == 4) || ($row->d_kec4 == $ab && $row->d_ket4 == 1 && $row->d_posisi4 == 4) || ($row->d_kec5 == $ab && $row->d_ket5 == 1 && $row->d_posisi5 == 4) || ($row->d_kec6 == $ab && $row->d_ket6 == 1 && $row->d_posisi6 == 4) || ($row->d_kec7 == $ab && $row->d_ket7 == 1 && $row->d_posisi7 == 4))  { ?>
+                                                            <td> <?php echo $no++; ?></td>
+
+                                                            <td><?php if ($row->d_kec1 == $ab && $row->d_ket2 == 1 && $row->d_posisi2 == 3) {echo $row->d_desa1 . "<br>"; } ?> 
+                                                                <?php if ($row->d_kec1 == $ab && $row->d_ket3 == 1 && $row->d_posisi3 == 3) {echo $row->d_desa1 . "<br>"; } ?> 
+                                                                <?php if ($row->d_kec1 == $ab && $row->d_ket4 == 1 && $row->d_posisi4 == 3) {echo $row->d_desa1 . "<br>";} ?>
+                                                                <?php if ($row->d_kec1 == $ab && $row->d_ket5 == 1 && $row->d_posisi5 == 3) {echo $row->d_desa1 . "<br>";} ?> 
+                                                                <?php if ($row->d_kec1 == $ab && $row->d_ket6 == 1 && $row->d_posisi6 == 3) {echo $row->d_desa1 . "<br>";} ?>
+                                                                <?php if ($row->d_kec1 == $ab && $row->d_ket7 == 1 && $row->d_posisi7 == 3) {echo $row->d_desa1 . "<br>";} ?> 
+                                                                <?php if ($row->d_kec2 == $ab && $row->d_ket2 == 1 && $row->d_posisi2 == 4) {echo $row->d_desa2 . "<br>";} ?>
+                                                                <?php if ($row->d_kec3 == $ab && $row->d_ket3 == 1 && $row->d_posisi3 == 4) {echo $row->d_desa3 . "<br>";} ?> 
+                                                                <?php if ($row->d_kec4 == $ab && $row->d_ket4 == 1 && $row->d_posisi4 == 4) {echo $row->d_desa4 . "<br>";} ?> 
+                                                                <?php if ($row->d_kec5 == $ab && $row->d_ket5 == 1 && $row->d_posisi5 == 4) {echo $row->d_desa5 . "<br>";} ?> 
+                                                                <?php if ($row->d_kec6 == $ab && $row->d_ket6 == 1 && $row->d_posisi6 == 4) {echo $row->d_desa6 . "<br>";} ?> 
+                                                                <?php if ($row->d_kec7 == $ab && $row->d_ket7 == 1 && $row->d_posisi7 == 4) {echo $row->d_desa7 . "<br>";} ?> 
+                                                            </td>
+                                                            <td>
+                                                                <?php if ($row->d_kec1 == $ab && $row->d_ket2 == 1 && $row->d_posisi2 == 3) {echo $row->d_desa2 . "<br>"; } ?> 
+                                                                <?php if ($row->d_kec1 == $ab && $row->d_ket3 == 1 && $row->d_posisi3 == 3) {echo $row->d_desa3 . "<br>"; } ?> 
+                                                                <?php if ($row->d_kec1 == $ab && $row->d_ket4 == 1 && $row->d_posisi4 == 3) {echo $row->d_desa4 . "<br>";} ?>
+                                                                <?php if ($row->d_kec1 == $ab && $row->d_ket5 == 1 && $row->d_posisi5 == 3) {echo $row->d_desa5 . "<br>";} ?> 
+                                                                <?php if ($row->d_kec1 == $ab && $row->d_ket6 == 1 && $row->d_posisi6 == 3) {echo $row->d_desa6 . "<br>";} ?>
+                                                                <?php if ($row->d_kec1 == $ab && $row->d_ket7 == 1 && $row->d_posisi7 == 3) {echo $row->d_desa7 . "<br>";} ?> 
+                                                                <?php if ($row->d_kec2 == $ab && $row->d_ket2 == 1 && $row->d_posisi2 == 4) {echo $row->d_desa1 . "<br>";} ?>
+                                                                <?php if ($row->d_kec3 == $ab && $row->d_ket3 == 1 && $row->d_posisi3 == 4) {echo $row->d_desa1 . "<br>";} ?> 
+                                                                <?php if ($row->d_kec4 == $ab && $row->d_ket4 == 1 && $row->d_posisi4 == 4) {echo $row->d_desa1 . "<br>";} ?> 
+                                                                <?php if ($row->d_kec5 == $ab && $row->d_ket5 == 1 && $row->d_posisi5 == 4) {echo $row->d_desa1 . "<br>";} ?> 
+                                                                <?php if ($row->d_kec6 == $ab && $row->d_ket6 == 1 && $row->d_posisi6 == 4) {echo $row->d_desa1 . "<br>";} ?> 
+                                                                <?php if ($row->d_kec7 == $ab && $row->d_ket7 == 1 && $row->d_posisi7 == 4) {echo $row->d_desa1 . "<br>";} ?>
+                                                            </td>
+                                                            <td>
+                                                                <?php if ($row->d_kec1 == $ab && $row->d_ket2 == 1 && $row->d_posisi2 == 3) {echo $row->d_kec2 . "<br>"; } ?> 
+                                                                <?php if ($row->d_kec1 == $ab && $row->d_ket3 == 1 && $row->d_posisi3 == 3) {echo $row->d_kec3 . "<br>"; } ?> 
+                                                                <?php if ($row->d_kec1 == $ab && $row->d_ket4 == 1 && $row->d_posisi4 == 3) {echo $row->d_kec4 . "<br>";} ?>
+                                                                <?php if ($row->d_kec1 == $ab && $row->d_ket5 == 1 && $row->d_posisi5 == 3) {echo $row->d_kec5 . "<br>";} ?> 
+                                                                <?php if ($row->d_kec1 == $ab && $row->d_ket6 == 1 && $row->d_posisi6 == 3) {echo $row->d_kec6 . "<br>";} ?>
+                                                                <?php if ($row->d_kec1 == $ab && $row->d_ket7 == 1 && $row->d_posisi7 == 3) {echo $row->d_kec7 . "<br>";} ?> 
+                                                                <?php if ($row->d_kec2 == $ab && $row->d_ket2 == 1 && $row->d_posisi2 == 4) {echo $row->d_kec1 . "<br>";} ?>
+                                                                <?php if ($row->d_kec3 == $ab && $row->d_ket3 == 1 && $row->d_posisi3 == 4) {echo $row->d_kec1 . "<br>";} ?> 
+                                                                <?php if ($row->d_kec4 == $ab && $row->d_ket4 == 1 && $row->d_posisi4 == 4) {echo $row->d_kec1 . "<br>";} ?> 
+                                                                <?php if ($row->d_kec5 == $ab && $row->d_ket5 == 1 && $row->d_posisi5 == 4) {echo $row->d_kec1 . "<br>";} ?> 
+                                                                <?php if ($row->d_kec6 == $ab && $row->d_ket6 == 1 && $row->d_posisi6 == 4) {echo $row->d_kec1 . "<br>";} ?> 
+                                                                <?php if ($row->d_kec7 == $ab && $row->d_ket7 == 1 && $row->d_posisi7 == 4) {echo $row->d_kec1 . "<br>";} ?>
+                                                            </td>
+
+                                                            <td> 
+                                                                <?php if ($row->d_kec1 == $ab && $row->d_ket2 == 1 && $row->d_posisi2 == 3) {echo number_format (($row->d_pgaris2),2,',','.') . " km<br>"; } ?> 
+                                                                <?php if ($row->d_kec1 == $ab && $row->d_ket3 == 1 && $row->d_posisi3 == 3) {echo number_format (($row->d_pgaris3),2,',','.') . " km<br>"; } ?> 
+                                                                <?php if ($row->d_kec1 == $ab && $row->d_ket4 == 1 && $row->d_posisi4 == 3) {echo number_format (($row->d_pgaris4),2,',','.') . " km<br>"; } ?>
+                                                                <?php if ($row->d_kec1 == $ab && $row->d_ket5 == 1 && $row->d_posisi5 == 3) {echo number_format (($row->d_pgaris5),2,',','.') . " km<br>"; } ?> 
+                                                                <?php if ($row->d_kec1 == $ab && $row->d_ket6 == 1 && $row->d_posisi6 == 3) {echo number_format (($row->d_pgaris6),2,',','.') . " km<br>"; } ?>
+                                                                <?php if ($row->d_kec1 == $ab && $row->d_ket7 == 1 && $row->d_posisi7 == 3) {echo number_format (($row->d_pgaris7),2,',','.') . " km<br>"; } ?> 
+                                                                <?php if ($row->d_kec2 == $ab && $row->d_ket2 == 1 && $row->d_posisi2 == 4) {echo number_format (($row->d_pgaris2),2,',','.') . " km<br>"; } ?>
+                                                                <?php if ($row->d_kec3 == $ab && $row->d_ket3 == 1 && $row->d_posisi3 == 4) {echo number_format (($row->d_pgaris3),2,',','.') . " km<br>"; } ?> 
+                                                                <?php if ($row->d_kec4 == $ab && $row->d_ket4 == 1 && $row->d_posisi4 == 4) {echo number_format (($row->d_pgaris4),2,',','.') . " km<br>"; } ?> 
+                                                                <?php if ($row->d_kec5 == $ab && $row->d_ket5 == 1 && $row->d_posisi5 == 4) {echo number_format (($row->d_pgaris5),2,',','.') . " km<br>"; } ?> 
+                                                                <?php if ($row->d_kec6 == $ab && $row->d_ket6 == 1 && $row->d_posisi6 == 4) {echo number_format (($row->d_pgaris6),2,',','.') . " km<br>"; } ?> 
+                                                                <?php if ($row->d_kec7 == $ab && $row->d_ket7 == 1 && $row->d_posisi7 == 4) {echo number_format (($row->d_pgaris7),2,',','.') . " km<br>"; } ?>
+                                                            </td>
+                                                            <td><?php if ($row->d_jenis == 1) {
                                                                     echo "Penetapan";
                                                                 } else if ($row->d_jenis == 2) {
                                                                     echo "Kesepakatan";
@@ -466,39 +583,6 @@
                                                                     echo "Sengketa";
                                                                 }
                                                                 ?></td>
-                                                            <td><?php if ($row->d_kec1 == $ab && $row->d_posisi1 == 4) {
-                                                                    echo $row->d_desa1 . ",";
-                                                                } ?> <?php if ($row->d_kec2 == $ab && $row->d_posisi2 == 4) {
-                                                                            echo $row->d_desa2 . ",";
-                                                                        } ?><?php if ($row->d_kec3 == $ab && $row->d_posisi3 == 4) {
-                                                                            echo $row->d_desa3 . ",";
-                                                                        } ?> <?php if ($row->d_kec4 == $ab && $row->d_posisi4 == 4) {
-                                                                                    echo $row->d_desa4 . ",";
-                                                                                } ?> <?php if ($row->d_kec5 == $ab && $row->d_posisi5 == 4) {
-                                                                                            echo $row->d_desa5 . ",";
-                                                                                        } ?> <?php if ($row->d_kec6 == $ab && $row->d_posisi6 == 4) {
-                                                                                                    echo $row->d_desa6 . ",";
-                                                                                                } ?> <?php if ($row->d_kec7 == $ab && $row->d_posisi7 == 4) {
-                                                                                                            echo $row->d_desa7 . ",";
-                                                                                                        } ?></td>
-                                                            <td><?php if ($row->d_kec1 != $ab && $row->d_posisi1 == 3) {
-                                                                    echo $row->d_desa1 . " (" . $row->d_kec1 . "),";
-                                                                } ?> <?php if ($row->d_kec2 != $ab && $row->d_posisi2 == 3) {
-                                                                            echo $row->d_desa2 . " (" . $row->d_kec2 . "), <br>";
-                                                                        } ?> <?php if ($row->d_kec3 != $ab && $row->d_posisi3 == 3) {
-                                                                                echo $row->d_desa3 . " (" . $row->d_kec3 . "), <br>";
-                                                                            } ?> <?php if ($row->d_kec4 != $ab && $row->d_posisi4 == 3) {
-                                                                                        echo $row->d_desa4 . " (" . $row->d_kec4 . "), <br>";
-                                                                                    } ?> <?php if ($row->d_kec5 != $ab && $row->d_posisi5 == 3) {
-                                                                                                echo $row->d_desa5 . " (" . $row->d_kec5 . "), <br>";
-                                                                                            } ?> <?php if ($row->d_kec6 != $ab && $row->d_posisi6 ==  3) {
-                                                                                                        echo $row->d_desa6 . " (" . $row->d_kec6 . "), <br>";
-                                                                                                    } ?> <?php if ($row->d_kec7 != $ab && $row->d_posisi7 == 3) {
-                                                                                                                echo $row->d_desa7 . " (" . $row->d_kec7 . "),";
-                                                                                                            } ?></td>
-
-                                                            <td> <?php echo number_format ($row->d_pgaris); ?> km</td>
-
                                                             <td>
                                                                 <div class="btn-group" role="group" style="float: right; margin-right:15px">
                                                                     <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color:lightskyblue; color:black"> <i class="fa fa-download"> Unduh</i>
@@ -506,19 +590,19 @@
                                                                     </button>
                                                                     <ul class="dropdown-menu">
                                                                         <?php if ($row->d_jenis == 1) { ?>
-                                                                            <li><a href="" style="color:black">Peraturan Bupati</a></li>
-                                                                            <li><a href="" style="color:black">Gambar Peta</a></li>
+                                                                            <li><a target="_blank" href="<?php echo base_url() . 'dokumen/perbup/' . $row->d_perbup; ?>" style="color:black">Peraturan Bupati</a></li>
+                                                                            <li><a target="_blank" href="<?php echo base_url() . 'gambar/peta_penetapan/' . $row->d_peta; ?>" style="color:black">Gambar Peta</a></li>
                                                                         <?php } else if ($row->d_jenis == 2) { ?>
-                                                                            <li><a href="" style="color:black">BA Kesepakatan</a></li>
-                                                                            <li><a href="" style="color:black">Peta Kesepakatan</a></li>
+                                                                            <li><a target="_blank" href="<?php echo base_url() . 'dokumen/ba_k/' . $row->d_perbup; ?>" style="color:black">BA Kesepakatan</a></li>
+                                                                            <li><a target="_blank" href="<?php echo base_url() . 'gambar/peta_kesepakatan/' . $row->d_peta; ?>" style="color:black">Peta Kesepakatan</a></li>
                                                                         <?php } else if ($row->d_jenis == 3) { ?>
-                                                                            <li><a href="" style="color:black">BA Sengketa</a></li>
-                                                                            <li><a href="" style="color:black">Peta Areal Sengketa</a></li>
+                                                                            <li><a target="_blank" href="<?php echo base_url() . 'dokumen/ba_s/' . $row->d_perbup; ?>" style="color:black">BA Sengketa</a></li>
+                                                                            <li><a target="_blank" href="<?php echo base_url() . 'gambar/peta_sengketa/' . $row->d_peta; ?>" style="color:black">Peta Areal Sengketa</a></li>
                                                                         <?php } ?>
                                                                     </ul>
                                                                 </div>
                                                             </td>
-                                                        <?php } ?>
+                                                        <?php }  ?>
                                                     </tr>
                                                 <?php } ?>
                                             </tbody>
@@ -531,12 +615,16 @@
                                         <table class="table table-bordered table-hover">
                                             <thead>
                                                 <tr>
-                                                    <th style="width:5%">No</th>
-                                                    <th style="width:15%">Jenis Batas</th>
+                                                    <th style="width:5%" rowspan="2">No</th>
+                                                    <th rowspan="2">Desa</th>
+                                                    <th colspan="2">Berbatasan Dengan</th>
+                                                    <th style="width:14%" rowspan="2">Panjang Garis (km)</th>
+                                                    <th style="width:15%" rowspan="2">Progres</th>
+                                                    <th style="width:10%" rowspan="2">Action</th>
+                                                </tr>
+                                                <tr>
                                                     <th style="width:20%">Desa</th>
-                                                    <th>Berbatasan Dengan<br> Desa(Kecamatan)</th>
-                                                    <th style="width:10%">Panjang Garis</th>
-                                                    <th style="width:10%">Action</th>
+                                                    <th style="width:20%">Kecamatan</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -544,10 +632,68 @@
                                                 $no = 1;
                                                 foreach ($qq as $row) { ?>
                                                     <tr>
-                                                        <?php if (($row->d_kec1 == $ab && $row->d_posisi1 == 3) || ($row->d_kec2 == $ab &&  $row->d_posisi2 == 3) || ($row->d_kec3 == $ab && $row->d_posisi3 == 3) || ($row->d_kec4 == $ab && $row->d_posisi4 == 3) || ($row->d_kec5 == $ab && $row->d_posisi5 == 3) || ($row->d_kec6 == $ab && $row->d_posisi6 == 3) || ($row->d_kec7 == $ab && $row->d_posisi7 == 3)) { ?>
-                                                            <td><?php echo $no++; ?></td>
-                                                            <td><?php
-                                                                if ($row->d_jenis == 1) {
+                                                        <?php if (($row->d_kec1 == $ab && $row->d_ket2 == 1 && $row->d_posisi2 == 4) || ($row->d_kec1 == $ab && $row->d_ket3 == 1 && $row->d_posisi3 == 4) || ($row->d_kec1 == $ab && $row->d_ket4 == 1 && $row->d_posisi4 == 4) || ($row->d_kec1 == $ab && $row->d_ket5 == 1 && $row->d_posisi5 == 4) || ($row->d_kec1 == $ab && $row->d_ket6 == 1 && $row->d_posisi6 == 4) || ($row->d_kec1 == $ab && $row->d_ket7 == 1 && $row->d_posisi7 == 4) || ($row->d_kec2 == $ab && $row->d_ket2 == 1 && $row->d_posisi2 == 3) || ($row->d_kec3 == $ab && $row->d_ket3 == 1 && $row->d_posisi3 == 3) || ($row->d_kec4 == $ab && $row->d_ket4 == 1 && $row->d_posisi4 == 3) || ($row->d_kec5 == $ab && $row->d_ket5 == 1 && $row->d_posisi5 == 3) || ($row->d_kec6 == $ab && $row->d_ket6 == 1 && $row->d_posisi6 == 3) || ($row->d_kec7 == $ab && $row->d_ket7 == 1 && $row->d_posisi7 == 3))  { ?>
+                                                        
+                                                       
+                                                            <td> <?php echo $no++; ?></td>
+
+                                                            <td><?php if ($row->d_kec1 == $ab && $row->d_ket2 == 1 && $row->d_posisi2 == 4) {echo $row->d_desa1 . "<br>"; } ?> 
+                                                                <?php if ($row->d_kec1 == $ab && $row->d_ket3 == 1 && $row->d_posisi3 == 4) {echo $row->d_desa1 . "<br>"; } ?> 
+                                                                <?php if ($row->d_kec1 == $ab && $row->d_ket4 == 1 && $row->d_posisi4 == 4) {echo $row->d_desa1 . "<br>";} ?>
+                                                                <?php if ($row->d_kec1 == $ab && $row->d_ket5 == 1 && $row->d_posisi5 == 4) {echo $row->d_desa1 . "<br>";} ?> 
+                                                                <?php if ($row->d_kec1 == $ab && $row->d_ket6 == 1 && $row->d_posisi6 == 4) {echo $row->d_desa1 . "<br>";} ?>
+                                                                <?php if ($row->d_kec1 == $ab && $row->d_ket7 == 1 && $row->d_posisi7 == 4) {echo $row->d_desa1 . "<br>";} ?> 
+                                                                <?php if ($row->d_kec2 == $ab && $row->d_ket2 == 1 && $row->d_posisi2 == 3) {echo $row->d_desa2 . "<br>";} ?>
+                                                                <?php if ($row->d_kec3 == $ab && $row->d_ket3 == 1 && $row->d_posisi3 == 3) {echo $row->d_desa3 . "<br>";} ?> 
+                                                                <?php if ($row->d_kec4 == $ab && $row->d_ket4 == 1 && $row->d_posisi4 == 3) {echo $row->d_desa4 . "<br>";} ?> 
+                                                                <?php if ($row->d_kec5 == $ab && $row->d_ket5 == 1 && $row->d_posisi5 == 3) {echo $row->d_desa5 . "<br>";} ?> 
+                                                                <?php if ($row->d_kec6 == $ab && $row->d_ket6 == 1 && $row->d_posisi6 == 3) {echo $row->d_desa6 . "<br>";} ?> 
+                                                                <?php if ($row->d_kec7 == $ab && $row->d_ket7 == 1 && $row->d_posisi7 == 3) {echo $row->d_desa7 . "<br>";} ?> 
+                                                            </td>
+                                                            <td>
+                                                                <?php if ($row->d_kec1 == $ab && $row->d_ket2 == 1 && $row->d_posisi2 == 4) {echo $row->d_desa2 . "<br>"; } ?> 
+                                                                <?php if ($row->d_kec1 == $ab && $row->d_ket3 == 1 && $row->d_posisi3 == 4) {echo $row->d_desa3 . "<br>"; } ?> 
+                                                                <?php if ($row->d_kec1 == $ab && $row->d_ket4 == 1 && $row->d_posisi4 == 4) {echo $row->d_desa4 . "<br>";} ?>
+                                                                <?php if ($row->d_kec1 == $ab && $row->d_ket5 == 1 && $row->d_posisi5 == 4) {echo $row->d_desa5 . "<br>";} ?> 
+                                                                <?php if ($row->d_kec1 == $ab && $row->d_ket6 == 1 && $row->d_posisi6 == 4) {echo $row->d_desa6 . "<br>";} ?>
+                                                                <?php if ($row->d_kec1 == $ab && $row->d_ket7 == 1 && $row->d_posisi7 == 4) {echo $row->d_desa7 . "<br>";} ?> 
+                                                                <?php if ($row->d_kec2 == $ab && $row->d_ket2 == 1 && $row->d_posisi2 == 3) {echo $row->d_desa1 . "<br>";} ?>
+                                                                <?php if ($row->d_kec3 == $ab && $row->d_ket3 == 1 && $row->d_posisi3 == 3) {echo $row->d_desa1 . "<br>";} ?> 
+                                                                <?php if ($row->d_kec4 == $ab && $row->d_ket4 == 1 && $row->d_posisi4 == 3) {echo $row->d_desa1 . "<br>";} ?> 
+                                                                <?php if ($row->d_kec5 == $ab && $row->d_ket5 == 1 && $row->d_posisi5 == 3) {echo $row->d_desa1 . "<br>";} ?> 
+                                                                <?php if ($row->d_kec6 == $ab && $row->d_ket6 == 1 && $row->d_posisi6 == 3) {echo $row->d_desa1 . "<br>";} ?> 
+                                                                <?php if ($row->d_kec7 == $ab && $row->d_ket7 == 1 && $row->d_posisi7 == 3) {echo $row->d_desa1 . "<br>";} ?>
+                                                            </td>
+                                                            <td>
+                                                                <?php if ($row->d_kec1 == $ab && $row->d_ket2 == 1 && $row->d_posisi2 == 4) {echo $row->d_kec2 . "<br>"; } ?> 
+                                                                <?php if ($row->d_kec1 == $ab && $row->d_ket3 == 1 && $row->d_posisi3 == 4) {echo $row->d_kec3 . "<br>"; } ?> 
+                                                                <?php if ($row->d_kec1 == $ab && $row->d_ket4 == 1 && $row->d_posisi4 == 4) {echo $row->d_kec4 . "<br>";} ?>
+                                                                <?php if ($row->d_kec1 == $ab && $row->d_ket5 == 1 && $row->d_posisi5 == 4) {echo $row->d_kec5 . "<br>";} ?> 
+                                                                <?php if ($row->d_kec1 == $ab && $row->d_ket6 == 1 && $row->d_posisi6 == 4) {echo $row->d_kec6 . "<br>";} ?>
+                                                                <?php if ($row->d_kec1 == $ab && $row->d_ket7 == 1 && $row->d_posisi7 == 4) {echo $row->d_kec7 . "<br>";} ?> 
+                                                                <?php if ($row->d_kec2 == $ab && $row->d_ket2 == 1 && $row->d_posisi2 == 3) {echo $row->d_kec1 . "<br>";} ?>
+                                                                <?php if ($row->d_kec3 == $ab && $row->d_ket3 == 1 && $row->d_posisi3 == 3) {echo $row->d_kec1 . "<br>";} ?> 
+                                                                <?php if ($row->d_kec4 == $ab && $row->d_ket4 == 1 && $row->d_posisi4 == 3) {echo $row->d_kec1 . "<br>";} ?> 
+                                                                <?php if ($row->d_kec5 == $ab && $row->d_ket5 == 1 && $row->d_posisi5 == 3) {echo $row->d_kec1 . "<br>";} ?> 
+                                                                <?php if ($row->d_kec6 == $ab && $row->d_ket6 == 1 && $row->d_posisi6 == 3) {echo $row->d_kec1 . "<br>";} ?> 
+                                                                <?php if ($row->d_kec7 == $ab && $row->d_ket7 == 1 && $row->d_posisi7 == 3) {echo $row->d_kec1 . "<br>";} ?>
+                                                            </td>
+
+                                                            <td> 
+                                                                <?php if ($row->d_kec1 == $ab && $row->d_ket2 == 1 && $row->d_posisi2 == 4) {echo number_format (($row->d_pgaris2),2,',','.') . " km<br>"; } ?> 
+                                                                <?php if ($row->d_kec1 == $ab && $row->d_ket3 == 1 && $row->d_posisi3 == 4) {echo number_format (($row->d_pgaris3),2,',','.') . " km<br>"; } ?> 
+                                                                <?php if ($row->d_kec1 == $ab && $row->d_ket4 == 1 && $row->d_posisi4 == 4) {echo number_format (($row->d_pgaris4),2,',','.') . " km<br>"; } ?>
+                                                                <?php if ($row->d_kec1 == $ab && $row->d_ket5 == 1 && $row->d_posisi5 == 4) {echo number_format (($row->d_pgaris5),2,',','.') . " km<br>"; } ?> 
+                                                                <?php if ($row->d_kec1 == $ab && $row->d_ket6 == 1 && $row->d_posisi6 == 4) {echo number_format (($row->d_pgaris6),2,',','.') . " km<br>"; } ?>
+                                                                <?php if ($row->d_kec1 == $ab && $row->d_ket7 == 1 && $row->d_posisi7 == 4) {echo number_format (($row->d_pgaris7),2,',','.') . " km<br>"; } ?> 
+                                                                <?php if ($row->d_kec2 == $ab && $row->d_ket2 == 1 && $row->d_posisi2 == 3) {echo number_format (($row->d_pgaris2),2,',','.') . " km<br>"; } ?>
+                                                                <?php if ($row->d_kec3 == $ab && $row->d_ket3 == 1 && $row->d_posisi3 == 3) {echo number_format (($row->d_pgaris3),2,',','.') . " km<br>"; } ?> 
+                                                                <?php if ($row->d_kec4 == $ab && $row->d_ket4 == 1 && $row->d_posisi4 == 3) {echo number_format (($row->d_pgaris4),2,',','.') . " km<br>"; } ?> 
+                                                                <?php if ($row->d_kec5 == $ab && $row->d_ket5 == 1 && $row->d_posisi5 == 3) {echo number_format (($row->d_pgaris5),2,',','.') . " km<br>"; } ?> 
+                                                                <?php if ($row->d_kec6 == $ab && $row->d_ket6 == 1 && $row->d_posisi6 == 3) {echo number_format (($row->d_pgaris6),2,',','.') . " km<br>"; } ?> 
+                                                                <?php if ($row->d_kec7 == $ab && $row->d_ket7 == 1 && $row->d_posisi7 == 3) {echo number_format (($row->d_pgaris7),2,',','.') . " km<br>"; } ?>
+                                                            </td>
+                                                            <td><?php if ($row->d_jenis == 1) {
                                                                     echo "Penetapan";
                                                                 } else if ($row->d_jenis == 2) {
                                                                     echo "Kesepakatan";
@@ -555,39 +701,6 @@
                                                                     echo "Sengketa";
                                                                 }
                                                                 ?></td>
-                                                            <td><?php if ($row->d_kec1 == $ab && $row->d_posisi1 == 3) {
-                                                                    echo $row->d_desa1 . ",";
-                                                                } ?> <?php if ($row->d_kec2 == $ab && $row->d_posisi2 == 3) {
-                                                                            echo $row->d_desa2 . ",";
-                                                                        } ?><?php if ($row->d_kec3 == $ab && $row->d_posisi3 == 3) {
-                                                                            echo $row->d_desa3 . ",";
-                                                                        } ?> <?php if ($row->d_kec4 == $ab && $row->d_posisi4 == 3) {
-                                                                                    echo $row->d_desa4 . ",";
-                                                                                } ?> <?php if ($row->d_kec5 == $ab && $row->d_posisi5 == 3) {
-                                                                                            echo $row->d_desa5 . ",";
-                                                                                        } ?> <?php if ($row->d_kec6 == $ab && $row->d_posisi6 == 3) {
-                                                                                                    echo $row->d_desa6 . ",";
-                                                                                                } ?> <?php if ($row->d_kec7 == $ab && $row->d_posisi7 == 3) {
-                                                                                                            echo $row->d_desa7 . ",";
-                                                                                                        } ?></td>
-                                                            <td><?php if ($row->d_kec1 != $ab && $row->d_posisi1 == 4) {
-                                                                    echo $row->d_desa1 . " (" . $row->d_kec1 . "),";
-                                                                } ?> <?php if ($row->d_kec2 != $ab && $row->d_posisi2 == 4) {
-                                                                            echo $row->d_desa2 . " (" . $row->d_kec2 . "), <br>";
-                                                                        } ?> <?php if ($row->d_kec3 != $ab && $row->d_posisi3 == 4) {
-                                                                                echo $row->d_desa3 . " (" . $row->d_kec3 . "), <br>";
-                                                                            } ?> <?php if ($row->d_kec4 != $ab && $row->d_posisi4 == 4) {
-                                                                                        echo $row->d_desa4 . " (" . $row->d_kec4 . "), <br>";
-                                                                                    } ?> <?php if ($row->d_kec5 != $ab && $row->d_posisi5 == 4) {
-                                                                                                echo $row->d_desa5 . " (" . $row->d_kec5 . "), <br>";
-                                                                                            } ?> <?php if ($row->d_kec6 != $ab && $row->d_posisi6 ==  4) {
-                                                                                                        echo $row->d_desa6 . " (" . $row->d_kec6 . "), <br>";
-                                                                                                    } ?> <?php if ($row->d_kec7 != $ab && $row->d_posisi7 == 4) {
-                                                                                                                echo $row->d_desa7 . " (" . $row->d_kec7 . "),";
-                                                                                                            } ?></td>
-
-                                                            <td> <?php echo number_format ($row->d_pgaris); ?> km</td>
-
                                                             <td>
                                                                 <div class="btn-group" role="group" style="float: right; margin-right:15px">
                                                                     <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color:lightskyblue; color:black"> <i class="fa fa-download"> Unduh</i>
@@ -595,19 +708,19 @@
                                                                     </button>
                                                                     <ul class="dropdown-menu">
                                                                         <?php if ($row->d_jenis == 1) { ?>
-                                                                            <li><a href="" style="color:black">Peraturan Bupati</a></li>
-                                                                            <li><a href="" style="color:black">Gambar Peta</a></li>
+                                                                            <li><a target="_blank" href="<?php echo base_url() . 'dokumen/perbup/' . $row->d_perbup; ?>" style="color:black">Peraturan Bupati</a></li>
+                                                                            <li><a target="_blank" href="<?php echo base_url() . 'gambar/peta_penetapan/' . $row->d_peta; ?>" style="color:black">Gambar Peta</a></li>
                                                                         <?php } else if ($row->d_jenis == 2) { ?>
-                                                                            <li><a href="" style="color:black">BA Kesepakatan</a></li>
-                                                                            <li><a href="" style="color:black">Peta Kesepakatan</a></li>
+                                                                            <li><a target="_blank" href="<?php echo base_url() . 'dokumen/ba_k/' . $row->d_perbup; ?>" style="color:black">BA Kesepakatan</a></li>
+                                                                            <li><a target="_blank" href="<?php echo base_url() . 'gambar/peta_kesepakatan/' . $row->d_peta; ?>" style="color:black">Peta Kesepakatan</a></li>
                                                                         <?php } else if ($row->d_jenis == 3) { ?>
-                                                                            <li><a href="" style="color:black">BA Sengketa</a></li>
-                                                                            <li><a href="" style="color:black">Peta Areal Sengketa</a></li>
+                                                                            <li><a target="_blank" href="<?php echo base_url() . 'dokumen/ba_s/' . $row->d_perbup; ?>" style="color:black">BA Sengketa</a></li>
+                                                                            <li><a target="_blank" href="<?php echo base_url() . 'gambar/peta_sengketa/' . $row->d_peta; ?>" style="color:black">Peta Areal Sengketa</a></li>
                                                                         <?php } ?>
                                                                     </ul>
                                                                 </div>
                                                             </td>
-                                                        <?php } ?>
+                                                        <?php }  ?>
                                                     </tr>
                                                 <?php } ?>
                                             </tbody>

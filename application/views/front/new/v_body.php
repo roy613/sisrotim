@@ -57,14 +57,14 @@ https://www.tooplate.com/view/2117-infinite-loop
                         <div class="col-md-3 link">
                             <a href="<?php echo base_url() . 'welcome/protas' ?>">
                                 <center><i class="fas fa-map-marked-alt fa-2x"></i><br>
-                                    <p class="huruf">Progress Batas</p>
+                                    <p class="huruf">Progres Batas</p>
                                 </center>
                             </a>
                         </div>
                         <div class="col-md-3 link">
                             <a href="<?php echo base_url() . 'welcome/login' ?>">
                                 <center><i class="fas fa-door-open fa-2x"></i><br>
-                                    <p class="huruf">Login</p>
+                                    <p class="huruf">Admin</p>
                                 </center>
                             </a>
                         </div>
