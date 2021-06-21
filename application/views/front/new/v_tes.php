@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Coming Soon 3</title>
+    <title>SIMPRONATASA | KUTAI TIMUR</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!--===============================================================================================-->
@@ -26,7 +26,7 @@
 <body>
 
 
-    <div class="bg-img1 size1 flex-w flex-c-m p-t-55 p-b-55 p-l-15 p-r-15" style="background-image: url(<?php echo base_url(); ?>assets/f2/img/b1.jpeg);">
+    <div class="bg-img1 size1 flex-w flex-c-m p-t-55 p-b-55 p-l-15 p-r-15" style="background-image: url(<?php echo base_url(); ?>assets/f2/img/a.png);">
         <div class="wsize1 bor1 bg1 p-t-175 p-b-45 p-l-15 p-r-15 respon1">
             <div class="wrappic1">
                 <img src="<?php echo base_url(); ?>assets/logo.png" width="auto" alt="" height="70px" class="mr-2"><br><br>
@@ -34,7 +34,7 @@
             </div>
 
             <p class="txt-center m1-txt1 p-t-33 p-b-68">
-                APLIKASI SEDANG DALAM PROSES PEMBUATAN
+                APLIKASI AKAN LAUNCHING PADA
             </p>
 
             <div class="wsize2 flex-w flex-c hsize1 cd100">

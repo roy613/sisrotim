@@ -14,7 +14,7 @@
   }
 
   function empty() {
-    
+
     $('#id').val("");
     $('#nama').val("");
     $('#ibukota').val("");
@@ -56,9 +56,10 @@
                 <?php
                 if (isset($_GET['alert'])) {
                   if ($_GET['alert'] == "sukses") {
-                    echo "<div class='alert alert-success'>Data Berhasil di Tambah!</div>";
+                    echo "<div class='alert alert-success'>Data Berhasil Di Tambah</div>";
                   } else if ($_GET['alert'] == "gagal") {
-                    echo "<div class='alert alert-danger'>Data Berhasil DiHapus</div>";
+                    echo "<div class='alert alert-danger'>Data Berhasil Di Hapus</div>" ;
+                    
                   } else if ($_GET['alert'] == "sukses1") {
                     echo "<div class='alert alert-success'>Data Berhasil Di Ubah</div>";
                   }
@@ -87,14 +88,14 @@
                     <td><?php echo $no++; ?></td>
                     <td style="text-align: left;"><?php echo $k->mk_kec; ?></td>
                     <td style="text-align: left;"><?php echo $k->mk_ibukota; ?></td>
-                    <td><?php echo number_format (($k->mk_luas),2,',','.'); ?></td>
+                    <td><?php echo number_format(($k->mk_luas), 2, ',', '.'); ?></td>
                     <td><?php echo $k->mk_segmen; ?></td>
                     <td><?php echo $k->mk_peta; ?></td>
                     <td><?php if ($k->mk_ket == 1) {
                           echo "Tampil";
                         } else {
-                          echo "Tidak Tampil";                          
-                        }?> <a href="javascript:;" onclick="editdata('<?php echo $k->mk_id; ?>','<?php echo $k->mk_kec; ?>','<?php echo $k->mk_ket; ?>')"  style="font-size: 10pt !important; padding:4px !important" title="Edit"><i class="fa fa-edit" aria-hidden="true"></i></a></td>
+                          echo "Tidak Tampil";
+                        } ?> <a href="javascript:;" onclick="editdata('<?php echo $k->mk_id; ?>','<?php echo $k->mk_kec; ?>','<?php echo $k->mk_ket; ?>')" style="font-size: 10pt !important; padding:4px !important" title="Edit"><i class="fa fa-edit" aria-hidden="true"></i></a></td>
                     <td>
                       <a href="<?php echo base_url() . 'simpan/k_hapus/' . $k->mk_id; ?>" onclick="return confirm('Apakah Anda Yakin Ingin Menghapus Data Ini ?');" class="btn btn-danger" style="font-size: 10pt !important; padding:4px !important">
                         <i class="fa fa-trash" title="Hapus"></i> </a>
@@ -174,43 +175,43 @@
 </div>
 
 <div class="modal fade" id="editstatus" tabindex="-1" aria-labelledby="exampleModalLabel" a data-backdrop="static" data-keyboard="false" aria-hidden="true">
-    <div class="modal-dialog modal-sm modal-dialog-centered modal-dialog-scrollable">
-        <div class="modal-content">
-            <div class="modal-header bg-primary">
-                <img src="<?php echo base_url(); ?>assets/logo.png" width="auto" alt="" height="30px" class="mr-2">
-                <h5 class="modal-title" id="exampleModalLabel" style="color: white;">SIMPRONATASA</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <form method="post" action="<?php echo base_url() . 'edit/kec' ?>" enctype="multipart/form-data">
-                    <p id="edit_cam"></p>
-                    <div class="form-group">
-                        <label for="edit_status">Ubah Status Data</label>
-                        <input type="hidden" class="form-control" id="edit_id" name="edit_id">
-                        <select class="form-control" name="edit_status" id="edit_status" required>
-                            <option value="">-- Pilih Status --</option>
-                            <option value="1">Tampilkan</option>
-                            <option value="2">Jangan Tampilkan</option>
-                        </select>
-                    </div>
-                    <button type="submit" id="save1" class="btn btn-primary" style="float: right;">Pilih</button>
-                </form>
-            </div>
-        </div>
+  <div class="modal-dialog modal-sm modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header bg-primary">
+        <img src="<?php echo base_url(); ?>assets/logo.png" width="auto" alt="" height="30px" class="mr-2">
+        <h5 class="modal-title" id="exampleModalLabel" style="color: white;">SIMPRONATASA</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form method="post" action="<?php echo base_url() . 'edit/kec' ?>" enctype="multipart/form-data">
+          <p id="edit_cam"></p>
+          <div class="form-group">
+            <label for="edit_status">Ubah Status Data</label>
+            <input type="hidden" class="form-control" id="edit_id" name="edit_id">
+            <select class="form-control" name="edit_status" id="edit_status" required>
+              <option value="">-- Pilih Status --</option>
+              <option value="1">Tampilkan</option>
+              <option value="2">Jangan Tampilkan</option>
+            </select>
+          </div>
+          <button type="submit" id="save1" class="btn btn-primary" style="float: right;">Pilih</button>
+        </form>
+      </div>
     </div>
+  </div>
 </div>
 
 <script>
   function editdata(mk_id, mk_kec, mk_status) {
 
-$('#edit_id').val(mk_id);
-$('#edit_cam').html(mk_kec);
-$('#edit_status').val(mk_status);
+    $('#edit_id').val(mk_id);
+    $('#edit_cam').html(mk_kec);
+    $('#edit_status').val(mk_status);
 
-$('#editstatus').modal('show');
+    $('#editstatus').modal('show');
 
 
-}
+  }
 </script>

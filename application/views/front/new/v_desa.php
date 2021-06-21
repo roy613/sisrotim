@@ -1,4 +1,4 @@
-<body id="page-top">
+<body id="page-top" oncontextmenu="return false" onselectstart="return false" ondragstart="return false">
 
     <script>
         function pilkec() {
@@ -93,7 +93,7 @@
             <div class="navbar-collapse collapse justify-content-end" id="navbarDefault">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link js-scroll" href="<?php echo base_url() . 'welcome/protas'; ?>">Progres Batas</a>
+                        <a class="nav-link js-scroll" href="<?php echo base_url('progres'); ?>">Progres Batas</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link js-scroll" href="javascript:;" onclick="pilkec()">Kecamatan</a>
@@ -186,7 +186,7 @@
                             <a href="<?php echo base_url(); ?>">Home</a>
                         </li>
                         <li class="breadcrumb-item">
-                            <a href="<?php echo base_url() . 'welcome/protas'; ?>">Progress Batas</a>
+                            <a href="<?php echo base_url('progres'); ?>">Progress Batas</a>
                         </li>
                         <li class="breadcrumb-item active">
                             <a href="#" style="color:grey">Desa <?php echo ucwords($ab); ?></a>
@@ -234,21 +234,22 @@
                                     <div class="progress">
                                         <div class="progress-bar" role="progressbar" style="width: 100%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
                                     </div>
-                                    <span>Penetapan</span> <span class="pull-right"><?php echo number_format($p1+$p2+$p3+$p4+$p5+$p6+$p7); ?> Segmen (<?php echo number_format((($p1+$p2+$p3+$p4+$p5+$p6+$p7)/1) / $row->md_segmen * 100); ?> %)</span>
+                                    <span>Penetapan</span> <span class="pull-right"><?php echo number_format($p); ?> Peraturan Bupati</span>
                                     <div class="progress">
-                                        <div class="progress-bar" role="progressbar" style="width: <?php echo number_format($p1 / $row->md_segmen * 100); ?>%" aria-valuenow="<?php echo number_format($p1 / $row->md_segmen * 100); ?>" aria-valuemin="0" aria-valuemax="100" id="penetapan"></div>
-                                    </div>                               
+                                        <div class="progress-bar" role="progressbar" style="width: 100%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" id="penetapan"></div>
+                                    </div>
+
                                 </div>
                             </div>
                             <div class="col-md-3">
                                 <div class="skill-mf">
-                                    <span>Sengketa</span> <span class="pull-right"><?php echo number_format($s1); ?> Segmen (<?php echo number_format($s1 / $row->md_segmen * 100); ?> %)</span>
+                                    <span>Kesepakatan</span> <span class="pull-right"><?php echo number_format($k); ?> Berita Acara</span>
                                     <div class="progress">
-                                        <div class="progress-bar" role="progressbar" style="width:<?php echo number_format($s1 / $row->md_segmen * 100); ?>%" aria-valuenow="<?php echo number_format($s1 / $row->md_segmen * 100); ?>" aria-valuemin="0" aria-valuemax="100" id="sengketa"></div>
+                                        <div class="progress-bar" role="progressbar" style="width: 100%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" id="kesepakatan"></div>
                                     </div>
-                                    <span>Kesepakatan</span> <span class="pull-right"><?php echo number_format($k1); ?> Segmen (<?php echo number_format($k1 / $row->md_segmen * 100); ?> %)</span>
+                                    <span>Sengketa</span> <span class="pull-right"><?php echo number_format($s); ?> Berita Acara</span>
                                     <div class="progress">
-                                        <div class="progress-bar" role="progressbar" style="width: <?php echo number_format($k1 / $row->md_segmen * 100); ?>%" aria-valuenow="<?php echo number_format($k1 / $row->md_segmen * 100); ?>" aria-valuemin="0" aria-valuemax="100" id="kesepakatan"></div>
+                                        <div class="progress-bar" role="progressbar" style="width: 100%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" id="sengketa"></div>
                                     </div>
                                 <?php } ?>
                                 </div>

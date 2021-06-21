@@ -1,4 +1,4 @@
-<body id="page-top">
+<body id="page-top" oncontextmenu="return false" onselectstart="return false" ondragstart="return false">
     <script>
         function pilkec() {
             $('#kec').modal('show');
@@ -118,7 +118,7 @@
             <div class="navbar-collapse collapse justify-content-end" id="navbarDefault">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link js-scroll" href="<?php echo base_url() . 'welcome/protas'; ?>">Progres Batas</a>
+                        <a class="nav-link js-scroll" href="<?php echo base_url('progres'); ?>">Progres Batas</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link js-scroll" href="javascript:;" onclick="pilkec()">Kecamatan</a>
@@ -252,21 +252,21 @@
                                         <div class="progress-bar" role="progressbar" style="width: 100%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
                                     </div>
                                     <a href="javascript:;" onclick="penetapan()" title="Lihat Data Penetapan">
-                                        <span>Penetapan</span> <span class="pull-right">3 Segmen (30 %)</span>
+                                        <span>Penetapan</span> <span class="pull-right"><?php echo number_format($p); ?> Peraturan Bupati</span>
                                         <div class="progress">
-                                            <div class="progress-bar" id="penetapan" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
+                                            <div class="progress-bar" id="penetapan" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
                                         </div>
                                     </a>
                                     <a href="javascript:;" onclick="kesepakatan()" title="Lihat Data Kesepakatan">
-                                        <span>Kesepakatan</span> <span class="pull-right">7 Segmen (70 %)</span>
+                                        <span>Kesepakatan</span> <span class="pull-right"><?php echo number_format($k); ?> Berita Acara</span>
                                         <div class="progress">
-                                            <div class="progress-bar" id="kesepakatan" role="progressbar" style="width:70%" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+                                            <div class="progress-bar" id="kesepakatan" role="progressbar" style="width:100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
                                         </div>
                                     </a>
                                     <a href="javascript:;" onclick="sengketa()" title="Lihat Data Sengketa">
-                                        <span>Sengketa</span> <span class="pull-right">3 Segmen (30 %)</span>
+                                        <span>Sengketa</span> <span class="pull-right"><?php echo number_format($s); ?> Berita Acara</span>
                                         <div class="progress">
-                                            <div class="progress-bar" id="sengketa" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
+                                            <div class="progress-bar" id="sengketa" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
                                         </div>
                                     </a>
 

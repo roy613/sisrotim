@@ -17,7 +17,7 @@
 
 </head>
 
-<body class="img js-fullheight" style="background-image: url(<?php echo base_url(); ?>assets/f2/img/a.png);">
+<body class="img js-fullheight" style="background-image: url(<?php echo base_url(); ?>assets/f2/img/a.png);" oncontextmenu="return false" onselectstart="return false" ondragstart="return false">
     <section class="ftco-section">
         <div class="container">
             <div class="row justify-content-center">

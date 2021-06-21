@@ -21,10 +21,12 @@ https://www.tooplate.com/view/2117-infinite-loop
 -->
 
 </head>
-<body>
+
+<body oncontextmenu="return false" onselectstart="return false" ondragstart="return false">
+
     <!-- Hero section -->
     <section id="infinite" class="text-white tm-font-big tm-parallax">
-       
+
 
         <div class="text-center tm-hero-text-container">
             <div class="tm-hero-text-container-inner">
@@ -48,22 +50,22 @@ https://www.tooplate.com/view/2117-infinite-loop
                             </a>
                         </div> -->
                         <div class="col-md-3 link">
-                            <a href="<?php echo base_url() . 'welcome/about' ?>">
+                            <a href="<?php echo base_url('about')?>">
                                 <center><i class="fas fa-info-circle fa-2x"></i><br>
                                     <p class="huruf">Tentang Aplikasi</p>
                                 </center>
                             </a>
                         </div>
                         <div class="col-md-3 link">
-                            <a href="<?php echo base_url() . 'welcome/protas' ?>">
+                            <a href="<?php echo base_url('progres')?>">
                                 <center><i class="fas fa-map-marked-alt fa-2x"></i><br>
                                     <p class="huruf">Progres Batas</p>
                                 </center>
                             </a>
                         </div>
                         <div class="col-md-3 link">
-                            <a href="<?php echo base_url() . 'welcome/login' ?>">
-                                <center><i class="fas fa-door-open fa-2x"></i><br>
+                            <a href="<?php echo base_url('admin')?>">
+                                <center><i class="fas fa-user-lock fa-2x"></i><br>
                                     <p class="huruf">Admin</p>
                                 </center>
                             </a>
@@ -76,15 +78,15 @@ https://www.tooplate.com/view/2117-infinite-loop
 
         <footer class="text-center small tm-footer" style="margin-top: -60px;">
             <p class="mb-0">
-            Copyright &copy; 2021 Bagian Pemerintahan Sekretariat Daerah <br>Kabupaten Kutai Timur</p>
-    
-                <!-- . <a rel="nofollow" href="https://www.tooplate.com" title="HTML templates">Designed by TOOPLATE</a></p> -->
+                Copyright &copy; 2021 Bagian Pemerintahan Sekretariat Daerah <br>Kabupaten Kutai Timur</p>
+
+            <!-- . <a rel="nofollow" href="https://www.tooplate.com" title="HTML templates">Designed by TOOPLATE</a></p> -->
         </footer>
     </section>
 
-   
 
-       
+
+
 
     <div id="preloader"></div>
 

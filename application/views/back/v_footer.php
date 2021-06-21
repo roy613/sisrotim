@@ -49,6 +49,8 @@
 <script src="<?php echo base_url(); ?>assets/back/dist/js/demo.js"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="<?php echo base_url(); ?>assets/back/dist/js/pages/dashboard.js"></script>
+<!-- SweetAlert2 -->
+<script src="<?php echo base_url(); ?>assets/back/plugins/sweetalert2/sweetalert2.min.js"></script>
 
 <script src="<?php echo base_url(); ?>assets/back/plugins/datatables/jquery.dataTables.min.js"></script>
 <script src="<?php echo base_url(); ?>assets/back/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>

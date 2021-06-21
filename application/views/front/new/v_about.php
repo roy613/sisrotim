@@ -36,6 +36,7 @@
     </div>
   </div>
 </div>
+<body oncontextmenu="return false" onselectstart="return false" ondragstart="return false">
 <section id="about" class="about-mf sect-pt4 route">
   <div class="container">
     <div class="row">
